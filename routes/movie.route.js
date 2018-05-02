@@ -27,7 +27,7 @@ router.get('/genre', (req, res) => {
     TmdbHandler.get('/genre/movie/list', null, res);
 });
 
-router.get('/lates', (req, res) => {
+router.get('/latest', (req, res) => {
     TmdbHandler.get('/movie/latest', null, res);
 });
 
