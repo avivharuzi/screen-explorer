@@ -7,9 +7,8 @@
 @import "./utils/_mixins";
 @import "./utils/_placeholders";
 
+// Globals
+@import "./base/_globals";
+
 // Components
 @import "./components/_inputs";
-
-.pointer {
-  cursor: pointer;
-}

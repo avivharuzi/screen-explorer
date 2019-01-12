@@ -1,2 +1,2 @@
 # cinema
-explore all the movies and tv series from tmdb api
+explore all the movies, tv shows and people from tmdb api

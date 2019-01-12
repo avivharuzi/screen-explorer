@@ -7,21 +7,15 @@ import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
 
 // Custom Modules
-import { MessageModule } from './modules/message/message.module';
-import { PaginationModule } from './modules/pagination/pagination.module';
 import { BackToTopModule } from './modules/back-to-top/back-to-top.module';
-import { LoadingModule } from './modules/loading/loading.module';
-import { InputModule } from './modules/input/input.module';
-import { FileInputModule } from './modules/file-input/file-input.module';
-import { PictureModule } from './modules/picture/picture.module';
-import { CountDownTimerModule } from './modules/countdown-timer/countdown-timer.module';
-import { ErrorFormModule } from './modules/error-form/error-form.module';
 
+// 3rd Pary Modules
 import { NgbDropdownModule } from '@ng-bootstrap/ng-bootstrap';
+import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 
-// Components
-import { AppComponent } from './app.component';
+// Pages Components
 import { HomeComponent } from './pages/home/home.component';
+import { ErrorPageComponent } from './pages/error-page/error-page.component';
 import { DiscoverMoviesComponent } from './pages/discover/discover-movies/discover-movies.component';
 import { DiscoverTvShowsComponent } from './pages/discover/discover-tv-shows/discover-tv-shows.component';
 import { MoviesComponent } from './pages/movies/movies.component';
@@ -38,46 +32,33 @@ import { TvShowsSeasonsComponent } from './pages/tv-shows/tv-shows-seasons/tv-sh
 import { TvShowsSeasonsEpisodesComponent } from './pages/tv-shows/tv-shows-seasons/tv-shows-seasons-episodes/tv-shows-seasons-episodes.component';
 import { PeopleComponent } from './pages/people/people.component';
 import { PeoplePopularComponent } from './pages/people/people-popular/people-popular.component';
-import { ErrorPageComponent } from './pages/error-page/error-page.component';
+
+// Partial Components
+import { AppComponent } from './app.component';
+import { HeaderComponent } from './components/base/header/header.component';
+import { CardsListComponent } from './components/cards-list/cards-list.component';
+import { CardsItemComponent } from './components/cards-list/cards-item/cards-item.component';
+import { LoaderComponent } from './components/base/loader/loader.component';
 
 // Pipes
-import { SearchPipe } from './pipes/search.pipe';
-import { CapitalizePipe } from './pipes/capitalize.pipe';
-import { UcwordsPipe } from './pipes/ucwords.pipe';
-import { DefaultPipe } from './pipes/default.pipe';
-import { TruncatePipe } from './pipes/truncate.pipe';
-import { SafeUrlPipe } from './pipes/safe-url.pipe';
-import { SafeHtmlPipe } from './pipes/safe-html.pipe';
-import { RepeatPipe } from './pipes/repeat.pipe';
-import { TrimPipe } from './pipes/trim.pipe';
-import { MatchPipe } from './pipes/match.pipe';
-import { SlugifyPipe } from './pipes/slugify.pipe';
-import { AutoLinkPipe } from './pipes/auto-link.pipe';
+import { TmdbImagePipe } from './pipes/tmdb-image.pipe';
 
 // Directives
 import { DefaultImageDirective } from './directives/default-image.directive';
-import { ClipboardDirective } from './directives/clipboard.directive';
-import { HeaderComponent } from './components/base/header/header.component';
+import { PaginationStatsComponent } from './components/pagination-stats/pagination-stats.component';
+import { FilterComponent } from './components/filter/filter.component';
 
 @NgModule({
   declarations: [
+    // Partial components
     AppComponent,
+    HeaderComponent,
+    CardsListComponent,
+    CardsItemComponent,
+    LoaderComponent,
+    // Pages components
     HomeComponent,
     ErrorPageComponent,
-    DefaultImageDirective,
-    ClipboardDirective,
-    CapitalizePipe,
-    SearchPipe,
-    UcwordsPipe,
-    DefaultPipe,
-    TruncatePipe,
-    SafeUrlPipe,
-    SafeHtmlPipe,
-    RepeatPipe,
-    TrimPipe,
-    MatchPipe,
-    SlugifyPipe,
-    AutoLinkPipe,
     DiscoverMoviesComponent,
     DiscoverTvShowsComponent,
     MoviesComponent,
@@ -94,25 +75,26 @@ import { HeaderComponent } from './components/base/header/header.component';
     TvShowsSeasonsEpisodesComponent,
     PeopleComponent,
     PeoplePopularComponent,
-    HeaderComponent
+    // Pipes
+    TmdbImagePipe,
+    // Directives
+    DefaultImageDirective,
+    PaginationStatsComponent,
+    FilterComponent
   ],
   imports: [
+    // Modules
     BrowserModule.withServerTransition({ appId: 'my-app' }),
     BrowserAnimationsModule,
     FormsModule,
     ReactiveFormsModule,
     AppRoutingModule,
     HttpClientModule,
-    MessageModule.forRoot(),
-    PaginationModule.forRoot(),
+    // Custom Modules
     BackToTopModule.forRoot(),
-    LoadingModule.forRoot(),
-    InputModule.forRoot(),
-    FileInputModule.forRoot(),
-    ErrorFormModule.forRoot(),
-    PictureModule.forRoot(),
-    CountDownTimerModule.forRoot(),
-    NgbDropdownModule
+    // 3rd Party Modules
+    NgbDropdownModule,
+    InfiniteScrollModule
   ],
   providers: [],
   bootstrap: [AppComponent]
