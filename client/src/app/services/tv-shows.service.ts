@@ -12,8 +12,12 @@ export class TvShowsService {
     private httpService: HttpService
   ) { }
 
-  getDiscover() {
-    return this.httpService.get(BASE_API_URL_TV_SHOWS_DISCOVER);
+  getDiscover(params: object = {}) {
+    return this.httpService.get(BASE_API_URL_TV_SHOWS_DISCOVER, {
+      params: {
+        ...params
+      }
+    });
   }
 
   getAiringToday(page: number) {

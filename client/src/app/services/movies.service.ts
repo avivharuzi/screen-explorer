@@ -12,8 +12,12 @@ export class MoviesService {
     private httpService: HttpService
   ) { }
 
-  getDiscover() {
-    return this.httpService.get(BASE_API_URL_MOVIES_DISCOVER);
+  getDiscover(params: object = {}) {
+    return this.httpService.get(BASE_API_URL_MOVIES_DISCOVER, {
+      params: {
+        ...params
+      }
+    });
   }
 
   getNowPlaying(page: number) {
