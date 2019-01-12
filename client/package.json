@@ -25,6 +25,7 @@
     "@angular/platform-browser-dynamic": "~7.0.0",
     "@angular/platform-server": "~7.0.0",
     "@angular/router": "~7.0.0",
+    "@ng-bootstrap/ng-bootstrap": "^4.0.1",
     "@nguniversal/module-map-ngfactory-loader": "~7.0.0",
     "autolinker": "^1.8.3",
     "compression": "^1.7.3",

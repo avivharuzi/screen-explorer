@@ -1,0 +1,57 @@
+<header class="mb-3">
+  <nav class="navbar navbar-expand-md navbar-light bg-light">
+    <div class="container">
+      <a class="navbar-brand" routerLink="/">
+        <img src="assets/logos/logo.png" width="30" height="30" class="d-inline-block align-top" alt="Cinema">
+        Cinema
+      </a>
+      <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarCollapse"
+        aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="navbar-collapse collapse" id="navbarCollapse">
+        <ul class="navbar-nav mr-auto">
+          <li ngbDropdown class="nav-item dropdown">
+            <a ngbDropdownToggle class="nav-link dropdown-toggle pointer" id="dropdownDiscover" data-toggle="dropdown" aria-haspopup="true"
+              aria-expanded="false">Discover</a>
+            <div ngbDropdownMenu class="dropdown-menu" aria-labelledby="dropdownDiscover">
+              <a class="dropdown-item" routerLink="/discover/movies">Movies</a>
+              <a class="dropdown-item" routerLink="/discover/tv-shows">TV Shows</a>
+            </div>
+          </li>
+          <li ngbDropdown class="nav-item dropdown">
+            <a ngbDropdownToggle class="nav-link dropdown-toggle pointer" id="dropdownMovies" data-toggle="dropdown" aria-haspopup="true"
+              aria-expanded="false">Movies</a>
+            <div ngbDropdownMenu class="dropdown-menu" aria-labelledby="dropdownMovies">
+              <a class="dropdown-item" routerLink="/movies/popular">Popular</a>
+              <a class="dropdown-item" routerLink="/movies/top-rated">Top Rated</a>
+              <a class="dropdown-item" routerLink="/movies/upcoming">Upcoming</a>
+              <a class="dropdown-item" routerLink="/movies/now-playing">Now Playing</a>
+            </div>
+          </li>
+          <li ngbDropdown class="nav-item dropdown">
+            <a ngbDropdownToggle class="nav-link dropdown-toggle pointer" id="dropdownTvShows" data-toggle="dropdown" aria-haspopup="true"
+              aria-expanded="false">TV Shows</a>
+            <div ngbDropdownMenu class="dropdown-menu" aria-labelledby="dropdownTvShows">
+              <a class="dropdown-item" routerLink="/tv-shows/popular">Popular</a>
+              <a class="dropdown-item" routerLink="/tv-shows/top-rated">Top Rated</a>
+              <a class="dropdown-item" routerLink="/tv-shows/on-tv">On TV</a>
+              <a class="dropdown-item" routerLink="/tv-shows/airing-today">Airing Today</a>
+            </div>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/people/popular">People</a>
+          </li>
+        </ul>
+        <form class="form-inline my-4 my-md-0">
+          <div class="input-group flex-nowrap">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="addon-wrapping"><i class="fa fa-search"></i></span>
+            </div>
+            <input type="text" class="form-control" placeholder="Search" aria-label="Search" aria-describedby="addon-wrapping">
+          </div>
+        </form>
+      </div>
+    </div>
+  </nav>
+</header>

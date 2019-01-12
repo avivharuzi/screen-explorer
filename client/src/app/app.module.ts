@@ -17,6 +17,8 @@ import { PictureModule } from './modules/picture/picture.module';
 import { CountDownTimerModule } from './modules/countdown-timer/countdown-timer.module';
 import { ErrorFormModule } from './modules/error-form/error-form.module';
 
+import { NgbDropdownModule } from '@ng-bootstrap/ng-bootstrap';
+
 // Components
 import { AppComponent } from './app.component';
 import { HomeComponent } from './pages/home/home.component';
@@ -34,7 +36,7 @@ import { TvShowsPopularComponent } from './pages/tv-shows/tv-shows-popular/tv-sh
 import { TvShowsTopRatedComponent } from './pages/tv-shows/tv-shows-top-rated/tv-shows-top-rated.component';
 import { TvShowsSeasonsComponent } from './pages/tv-shows/tv-shows-seasons/tv-shows-seasons.component';
 import { TvShowsSeasonsEpisodesComponent } from './pages/tv-shows/tv-shows-seasons/tv-shows-seasons-episodes/tv-shows-seasons-episodes.component';
-import { PeopleComponent } from './pages/people/people.component'
+import { PeopleComponent } from './pages/people/people.component';
 import { PeoplePopularComponent } from './pages/people/people-popular/people-popular.component';
 import { ErrorPageComponent } from './pages/error-page/error-page.component';
 
@@ -55,6 +57,7 @@ import { AutoLinkPipe } from './pipes/auto-link.pipe';
 // Directives
 import { DefaultImageDirective } from './directives/default-image.directive';
 import { ClipboardDirective } from './directives/clipboard.directive';
+import { HeaderComponent } from './components/base/header/header.component';
 
 @NgModule({
   declarations: [
@@ -90,7 +93,8 @@ import { ClipboardDirective } from './directives/clipboard.directive';
     TvShowsSeasonsComponent,
     TvShowsSeasonsEpisodesComponent,
     PeopleComponent,
-    PeoplePopularComponent
+    PeoplePopularComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'my-app' }),
@@ -107,7 +111,8 @@ import { ClipboardDirective } from './directives/clipboard.directive';
     FileInputModule.forRoot(),
     ErrorFormModule.forRoot(),
     PictureModule.forRoot(),
-    CountDownTimerModule.forRoot()
+    CountDownTimerModule.forRoot(),
+    NgbDropdownModule
   ],
   providers: [],
   bootstrap: [AppComponent]
