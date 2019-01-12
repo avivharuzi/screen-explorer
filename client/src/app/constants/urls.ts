@@ -5,6 +5,9 @@ const BASE_API_URL: string = 'http://localhost:3000/api/v1';
 export const DEFAULT_IMAGE_PATH: string = 'assets/images/defaults/default-image.png';
 export const LOADING_GIF_PATH: string = 'assets/images/tools/loading.gif';
 
+export const TMDB_BASE_IMAGE_URL_ORIGINAL = 'https://image.tmdb.org/t/p/original';
+export const TMDB_BASE_IMAGE_URL_W500 = 'https://image.tmdb.org/t/p/w500';
+
 // Movies
 export const BASE_API_URL_MOVIES: string = `${BASE_API_URL}/movie`;
 export const BASE_API_URL_MOVIES_DISCOVER: string = `${BASE_API_URL_MOVIES}/discover`;
