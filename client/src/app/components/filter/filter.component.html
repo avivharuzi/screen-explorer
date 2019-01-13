@@ -1,5 +1,5 @@
 <div class="row mb-3">
-  <div class="col-3">
+  <div class="col-4">
     <label for="year">Year</label>
     <select [(ngModel)]="year" id="year" class="custom-select">
       <option value="">None</option>
@@ -125,7 +125,7 @@
       <option value="1900">1900</option>
     </select>
   </div>
-  <div class="col-3">
+  <div class="col-4">
     <label for="sortBy">Sort By</label>
     <select [(ngModel)]="sortBy" id="sortBy" class="custom-select">
       <option value="popularity.desc" selected="selected">Popularity Descending</option>
@@ -138,9 +138,10 @@
       <option value="title.desc">Title (Z-A)</option>
     </select>
   </div>
-  <div class="col-3">
+  <div class="col-4">
     <label for="genres">Genres</label>
     <select [(ngModel)]="genres" class="custom-select" id="genres" placeholder="Filter by genres...">
+      <option value="">None</option>
       <option value="10759">Action & Adventure</option>
       <option value="16">Animation</option>
       <option value="35">Comedy</option>
@@ -159,11 +160,13 @@
       <option value="37">Western</option>
     </select>
   </div>
-  <div class="col-2">
+</div>
+<div class="row mb-3">
+  <div class="col-8">
     <label for="keywords">Keywords</label>
     <input type="text" [(ngModel)]="keywords" class="form-control" placeholder="Filter by keywords...">
   </div>
-  <div class="col-1">
+  <div class="col-4">
     <label for="go">Filter</label>
     <button class="btn btn-primary btn-block" (click)="onFilterClick()">Go</button>
   </div>
