@@ -90,7 +90,6 @@ class TmdbHandler {
     };
   }
 
-
   static getTvDiscoverQuery(query) {
     return {
       sort_by: sortTvOptions.includes(query.sort_by) ? query.sort_by : '',
