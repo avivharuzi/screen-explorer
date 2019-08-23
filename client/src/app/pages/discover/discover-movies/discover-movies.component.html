@@ -1,7 +1,0 @@
-<app-pagination-stats [page]="page - 1" [totalPages]="totalPages" [results]="results" [totalResults]="totalResults"></app-pagination-stats>
-<div class="container">
-  <app-filter (filterClick)="onFilterClick($event)"></app-filter>
-  <app-cards-list [cards]="movies" mediaType="movies"></app-cards-list>
-  <div infiniteScroll [infiniteScrollDistance]="0.5" [infiniteScrollThrottle]="50" (scrolled)="onScroll()"></div>
-  <app-loader *ngIf="isLoading"></app-loader>
-</div>

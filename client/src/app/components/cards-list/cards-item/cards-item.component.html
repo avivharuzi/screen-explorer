@@ -1,6 +1,0 @@
-<div *ngIf="card" class="image-box pointer" [routerLink]="'/' + mediaType + '/' + card?.id">
-  <img appDefaultImage [src]="card?.poster_path | tmdbImage" width="100%" height="auto" [alt]="card?.title">
-  <div class="image-box-overlay text-center">
-    <h4>{{ card?.title }} ({{ card?.release_date | date: 'yyyy' }})</h4>
-  </div>
-</div>
