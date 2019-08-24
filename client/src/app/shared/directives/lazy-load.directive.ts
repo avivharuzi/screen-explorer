@@ -18,7 +18,7 @@ export class LazyLoadDirective implements OnChanges {
     }
   }
 
-  private observeAndLazyLoadImages(lazyImage: Element) {
+  private observeAndLazyLoadImages(lazyImage: Element): void {
     const isIntersectionObserverSupported = window && 'IntersectionObserver' in window;
 
     if (isIntersectionObserverSupported) {
@@ -39,13 +39,11 @@ export class LazyLoadDirective implements OnChanges {
 
       this.lazyImageObserver.observe(lazyImage);
     } else {
-      // Since IntersectionObserver is not supported by the browser
-      // we will load all images right away
       this.setImageSrc(lazyImage);
     }
   }
 
-  private setImageSrc(image) {
+  private setImageSrc(image): void {
     image.src = this.src;
   }
 }
