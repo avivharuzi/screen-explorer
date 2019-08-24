@@ -13,7 +13,7 @@ export class LazyLoadDirective implements OnChanges {
   ) { }
 
   ngOnChanges(changes: SimpleChanges) {
-    if (changes.source) {
+    if (changes.src) {
       this.observeAndLazyLoadImages(this.elementRef.nativeElement);
     }
   }
