@@ -18,11 +18,11 @@ const routes: Routes = [
   { path: 'airing-today', component: TvAiringTodayComponent },
   { path: ':id', component: TvDetailComponent },
   { path: ':id/seasons/:season', component: TvSeasonComponent },
-  { path: ':id/seasons/:season/episodes/:episode', component: TvEpisodeComponent }
+  { path: ':id/seasons/:season/episodes/:episode', component: TvEpisodeComponent },
 ];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
 export class TvRoutingModule { }

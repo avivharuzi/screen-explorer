@@ -6,9 +6,7 @@ import { LazyLoadDirective } from './directives/lazy-load.directive';
 
 @NgModule({
   declarations: [ImagePipe, LazyLoadDirective],
-  imports: [
-    CommonModule
-  ],
-  exports: [ImagePipe, LazyLoadDirective]
+  imports: [CommonModule],
+  exports: [ImagePipe, LazyLoadDirective],
 })
 export class SharedModule { }

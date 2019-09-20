@@ -25,11 +25,11 @@ import { TvEpisodeComponent } from './components/tv-episode/tv-episode.component
     TvAiringTodayComponent,
     TvDetailComponent,
     TvSeasonComponent,
-    TvEpisodeComponent
+    TvEpisodeComponent,
   ],
   imports: [
     CommonModule,
-    TvRoutingModule
+    TvRoutingModule,
   ]
 })
 export class TvModule { }

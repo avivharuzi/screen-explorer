@@ -8,11 +8,11 @@ import { PeopleDetailComponent } from './components/people-detail/people-detail.
 const routes: Routes = [
   { path: '', component: PeopleListComponent },
   { path: 'popular', component: PeoplePopularComponent },
-  { path: ':id', component: PeopleDetailComponent }
+  { path: ':id', component: PeopleDetailComponent },
 ];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
 export class PeopleRoutingModule { }

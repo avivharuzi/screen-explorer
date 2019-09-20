@@ -14,11 +14,11 @@ const routes: Routes = [
   { path: 'top-rated', component: MovieTopRatedComponent },
   { path: 'upcoming', component: MovieUpcomingComponent },
   { path: 'now-playing', component: MovieNowPlayingComponent },
-  { path: ':id', component: MovieDetailComponent }
+  { path: ':id', component: MovieDetailComponent },
 ];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
 export class MoviesRoutingModule { }

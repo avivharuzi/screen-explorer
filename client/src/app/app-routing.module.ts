@@ -10,11 +10,11 @@ const routes: Routes = [
   { path: 'tv', loadChildren: () => import('./tv/tv.module').then(mod => mod.TvModule) },
   { path: 'people', loadChildren: () => import('./people/people.module').then(mod => mod.PeopleModule) },
   { path: '', redirectTo: '', pathMatch: 'full' },
-  { path: '**', component: NotFoundComponent }
+  { path: '**', component: NotFoundComponent },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules, scrollPositionRestoration: 'enabled' })],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
 export class AppRoutingModule { }

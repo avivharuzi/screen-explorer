@@ -10,10 +10,16 @@ import { PeoplePopularComponent } from './components/people-popular/people-popul
 import { PeopleDetailComponent } from './components/people-detail/people-detail.component';
 
 @NgModule({
-  declarations: [PeopleComponent, PeopleListComponent, PeopleItemComponent, PeoplePopularComponent, PeopleDetailComponent],
+  declarations: [
+    PeopleComponent,
+    PeopleListComponent,
+    PeopleItemComponent,
+    PeoplePopularComponent,
+    PeopleDetailComponent,
+  ],
   imports: [
     CommonModule,
-    PeopleRoutingModule
+    PeopleRoutingModule,
   ]
 })
 export class PeopleModule { }

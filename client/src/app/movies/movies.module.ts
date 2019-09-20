@@ -21,11 +21,11 @@ import { MovieDetailComponent } from './components/movie-detail/movie-detail.com
     MovieTopRatedComponent,
     MovieUpcomingComponent,
     MovieNowPlayingComponent,
-    MovieDetailComponent
+    MovieDetailComponent,
   ],
   imports: [
     CommonModule,
-    MoviesRoutingModule
-  ]
+    MoviesRoutingModule,
+  ],
 })
 export class MoviesModule { }
