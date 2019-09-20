@@ -33,3 +33,8 @@ body {
   margin: 0;
   font-family: Roboto, 'Helvetica Neue', sans-serif;
 }
+
+// Fix card header overflow for ellipsis effect.
+.mat-card-header-text {
+  overflow: hidden;
+}

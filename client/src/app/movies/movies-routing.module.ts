@@ -1,7 +1,8 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { MoviesComponent } from './movies.component';;
+import { MoviesComponent } from './movies.component';
+import { MovieListComponent } from './components/movie-list/movie-list.component';
 import { MoviePopularComponent } from './components/movie-popular/movie-popular.component';
 import { MovieTopRatedComponent } from './components/movie-top-rated/movie-top-rated.component';
 import { MovieUpcomingComponent } from './components/movie-upcoming/movie-upcoming.component';
@@ -9,12 +10,16 @@ import { MovieNowPlayingComponent } from './components/movie-now-playing/movie-n
 import { MovieDetailComponent } from './components/movie-detail/movie-detail.component';
 
 const routes: Routes = [
-  { path: '', component: MoviesComponent },
-  { path: 'popular', component: MoviePopularComponent },
-  { path: 'top-rated', component: MovieTopRatedComponent },
-  { path: 'upcoming', component: MovieUpcomingComponent },
-  { path: 'now-playing', component: MovieNowPlayingComponent },
-  { path: ':id', component: MovieDetailComponent },
+  {
+    path: '', component: MoviesComponent, children: [
+      { path: '', component: MovieListComponent },
+      { path: 'popular', component: MoviePopularComponent },
+      { path: 'top-rated', component: MovieTopRatedComponent },
+      { path: 'upcoming', component: MovieUpcomingComponent },
+      { path: 'now-playing', component: MovieNowPlayingComponent },
+      { path: ':id', component: MovieDetailComponent },
+    ],
+  },
 ];
 
 @NgModule({

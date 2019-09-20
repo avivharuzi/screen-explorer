@@ -8,13 +8,23 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
+import { MatRippleModule } from '@angular/material/core';
+import { MatCardModule } from '@angular/material/card';
+
+import { MainContainerComponent } from './components/main-container/main-container.component';
+import { CardComponent } from './components/card/card.component';
 
 import { ImagePipe } from './pipes/image.pipe';
+
 import { LazyLoadDirective } from './directives/lazy-load.directive';
-import { MainContainerComponent } from './components/main-container/main-container.component';
 
 @NgModule({
-  declarations: [ImagePipe, LazyLoadDirective, MainContainerComponent],
+  declarations: [
+    MainContainerComponent,
+    CardComponent,
+    ImagePipe,
+    LazyLoadDirective,
+  ],
   imports: [
     CommonModule,
     RouterModule,
@@ -24,7 +34,14 @@ import { MainContainerComponent } from './components/main-container/main-contain
     MatSidenavModule,
     MatMenuModule,
     MatListModule,
+    MatRippleModule,
+    MatCardModule,
   ],
-  exports: [ImagePipe, LazyLoadDirective, MainContainerComponent],
+  exports: [
+    MainContainerComponent,
+    CardComponent,
+    ImagePipe,
+    LazyLoadDirective,
+  ],
 })
 export class SharedModule { }
