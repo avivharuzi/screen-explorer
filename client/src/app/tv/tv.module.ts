@@ -1,6 +1,9 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
+import { MatPaginatorModule } from '@angular/material/paginator';
+
+import { SharedModule } from '../shared/shared.module';
 import { TvRoutingModule } from './tv-routing.module';
 
 import { TvComponent } from './tv.component';
@@ -13,6 +16,8 @@ import { TvAiringTodayComponent } from './components/tv-airing-today/tv-airing-t
 import { TvDetailComponent } from './components/tv-detail/tv-detail.component';
 import { TvSeasonComponent } from './components/tv-season/tv-season.component';
 import { TvEpisodeComponent } from './components/tv-episode/tv-episode.component';
+import { TvCardListComponent } from './shared/components/tv-card-list/tv-card-list.component';
+import { TvDynamicListComponent } from './shared/components/tv-dynamic-list/tv-dynamic-list.component';
 
 @NgModule({
   declarations: [
@@ -26,9 +31,13 @@ import { TvEpisodeComponent } from './components/tv-episode/tv-episode.component
     TvDetailComponent,
     TvSeasonComponent,
     TvEpisodeComponent,
+    TvCardListComponent,
+    TvDynamicListComponent,
   ],
   imports: [
     CommonModule,
+    MatPaginatorModule,
+    SharedModule,
     TvRoutingModule,
   ],
 })
