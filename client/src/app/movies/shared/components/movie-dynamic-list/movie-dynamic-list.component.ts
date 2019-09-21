@@ -1,5 +1,5 @@
-import { Component, OnInit, OnDestroy, Input, Inject, PLATFORM_ID } from '@angular/core';
-import { ActivatedRoute, Router, Params } from '@angular/router';
+import { Component, Inject, Input, OnDestroy, OnInit, PLATFORM_ID } from '@angular/core';
+import { ActivatedRoute, Params, Router } from '@angular/router';
 import { isPlatformBrowser } from '@angular/common';
 import { PageEvent } from '@angular/material/paginator';
 import { Subscription } from 'rxjs';
@@ -33,6 +33,7 @@ export class MovieDynamicListComponent implements OnInit, OnDestroy {
     @Inject(PLATFORM_ID) private platformId: string,
   ) {
     this.page = 1;
+    this.pageSize = 20;
   }
 
   ngOnInit() {
@@ -102,7 +103,6 @@ export class MovieDynamicListComponent implements OnInit, OnDestroy {
   private success(res: HttpResponsePagination<Movie>): void {
     this.movies = res.results;
     this.length = res.total_results;
-    this.pageSize = res.results.length;
     this.disabled = false;
 
     this.addPageToQuery();

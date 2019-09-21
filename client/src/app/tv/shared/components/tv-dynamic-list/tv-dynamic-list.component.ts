@@ -33,6 +33,7 @@ export class TvDynamicListComponent implements OnInit, OnDestroy {
     @Inject(PLATFORM_ID) private platformId: string,
   ) {
     this.page = 1;
+    this.pageSize = 20;
   }
 
   ngOnInit() {
@@ -102,7 +103,6 @@ export class TvDynamicListComponent implements OnInit, OnDestroy {
   private success(res: HttpResponsePagination<Tv>): void {
     this.tv = res.results;
     this.length = res.total_results;
-    this.pageSize = res.results.length;
     this.disabled = false;
 
     this.addPageToQuery();
