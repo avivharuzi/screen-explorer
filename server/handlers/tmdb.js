@@ -8,8 +8,8 @@ const apiDefaultRegion = process.env.TMDB_API_DEFAULT_REGION;
 const axiosInstance = axios.create({
   baseURL: apiUrl,
   params: {
-    api_key: apiKey
-  }
+    api_key: apiKey,
+  },
 });
 
 const sortMovieOptions = [
@@ -26,7 +26,7 @@ const sortMovieOptions = [
   'vote_average.asc',
   'vote_average.desc',
   'vote_count.asc',
-  'vote_count.desc'
+  'vote_count.desc',
 ];
 
 const sortTvOptions = [
@@ -34,7 +34,7 @@ const sortTvOptions = [
   'vote_average.asc',
   'first_air_date.desc',
   'popularity.desc',
-  'popularity.asc'
+  'popularity.asc',
 ];
 
 class TmdbHandler {
@@ -43,12 +43,12 @@ class TmdbHandler {
       language: query.language ? query.language : apiDefaultLanguage,
       page: query.page ? query.page : 1,
       region: query.region ? query.region : apiDefaultRegion,
-      ...extraQuery
+      ...extraQuery,
     };
 
     try {
       const body = await axiosInstance.get(uri, {
-        params: params
+        params: params,
       });
 
       res.send(body.data);
@@ -86,7 +86,7 @@ class TmdbHandler {
       'with_runtime.lte': query['with_runtime.lte'] ? query['with_runtime.lte'] : '',
       with_release_type: query.with_release_type ? query.with_release_type : '',
       with_original_language: query.with_original_language ? query.with_original_language : '',
-      without_keywords: query.without_keywords ? query.without_keywords : ''
+      without_keywords: query.without_keywords ? query.without_keywords : '',
     };
   }
 
@@ -110,7 +110,7 @@ class TmdbHandler {
       with_original_language: query.with_original_language ? query.with_original_language : '',
       without_keywords: query.without_keywords ? query.without_keywords : '',
       screened_theatrically: query.screened_theatrically ? query.screened_theatrically : '',
-      with_companies: query.with_companies ? query.with_companies : ''
+      with_companies: query.with_companies ? query.with_companies : '',
     };
   }
 }

@@ -9,7 +9,7 @@ router.get('/popular', (req, res) => {
 
 router.get('/:id', (req, res) => {
   TmdbHandler.send(res, `/person/${req.params.id}`, req.query, {
-    append_to_response: 'combined_credits,external_ids,images,tagged_images'
+    append_to_response: 'combined_credits,external_ids,images,tagged_images',
   });
 });
 

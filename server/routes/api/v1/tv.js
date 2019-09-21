@@ -27,7 +27,7 @@ router.get('/top-rated', (req, res) => {
 
 router.get('/:id', (req, res) => {
   TmdbHandler.send(res, `/tv/${req.params.id}`, req.query, {
-    append_to_response: 'videos,images,external_ids,credits,keywords'
+    append_to_response: 'videos,images,external_ids,credits,keywords',
   });
 });
 
@@ -37,13 +37,13 @@ router.get('/:id/similar', (req, res) => {
 
 router.get('/:id/season/:seasonNumber', (req, res) => {
   TmdbHandler.send(res, `/tv/${req.params.id}/season/${req.params.seasonNumber}`, req.query, {
-    append_to_response: 'credits,external_ids,images,videos'
+    append_to_response: 'credits,external_ids,images,videos',
   });
 });
 
 router.get('/:id/season/:seasonNumber/episode/:episodeNumber', (req, res) => {
   TmdbHandler.send(res, `/tv/${req.params.id}/season/${req.params.seasonNumber}/episode/${req.params.episodeNumber}`, req.query, {
-    append_to_response: 'credits,external_ids,images,videos'
+    append_to_response: 'credits,external_ids,images,videos',
   });
 });
 
