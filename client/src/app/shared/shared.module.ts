@@ -18,6 +18,7 @@ import { HeroComponent } from './components/hero/hero.component';
 import { ImagePipe } from './pipes/image.pipe';
 
 import { LazyLoadDirective } from './directives/lazy-load.directive';
+import { NoImageDirective } from './directives/no-image.directive';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { LazyLoadDirective } from './directives/lazy-load.directive';
     HeroComponent,
     ImagePipe,
     LazyLoadDirective,
+    NoImageDirective,
   ],
   imports: [
     CommonModule,
@@ -45,6 +47,7 @@ import { LazyLoadDirective } from './directives/lazy-load.directive';
     HeroComponent,
     ImagePipe,
     LazyLoadDirective,
+    NoImageDirective,
   ],
 })
 export class SharedModule {}
