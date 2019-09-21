@@ -27,7 +27,8 @@ router.get('/upcoming', (req, res) => {
 
 router.get('/:id', (req, res) => {
   TmdbHandler.send(res, `/movie/${req.params.id}`, req.query, {
-    append_to_response: 'videos,images,external_ids,credits,keywords'
+    append_to_response: 'videos,images,external_ids,credits,keywords,release_dates',
+    include_image_language: 'en,null'
   });
 });
 

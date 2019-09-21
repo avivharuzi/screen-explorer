@@ -16,7 +16,7 @@ interface Cast {
   adult: boolean;
   vote_average: number;
   release_date: string;
-  episode_count ?: number;
+  episode_count?: number;
   origin_country: string[];
   original_name: string;
   name: string;
@@ -42,7 +42,7 @@ interface Crew {
   adult: boolean;
   title: string;
   poster_path: string;
-  episode_count ?: number;
+  episode_count?: number;
   origin_country: any[];
   original_name: string;
   name: string;
@@ -55,7 +55,7 @@ interface CombinedCredits {
 }
 
 interface Profile {
-  iso_639_1 ?: any;
+  iso_639_1?: any;
   aspect_ratio: number;
   vote_count: number;
   height: number;
@@ -72,7 +72,7 @@ interface ExternalIds {
   freebase_id: string;
   instagram_id: string;
   tvrage_id: number;
-  twitter_id ?: any;
+  twitter_id?: any;
   freebase_mid: string;
   imdb_id: string;
   facebook_id: string;
@@ -96,7 +96,7 @@ interface Media {
 }
 
 interface Result {
-  iso_639_1 ?: any;
+  iso_639_1?: any;
   vote_count: number;
   media_type: string;
   file_path: string;
@@ -123,14 +123,14 @@ export interface PeopleDetail {
   combined_credits: CombinedCredits;
   profile_path: string;
   imdb_id: string;
-  deathday ?: any;
+  deathday?: any;
   images: Images;
   external_ids: ExternalIds;
   name: string;
   also_known_as: string[];
   biography: string;
   tagged_images: TaggedImages;
-  homepage ?: any;
+  homepage?: any;
   gender: number;
   adult: boolean;
   popularity: number;

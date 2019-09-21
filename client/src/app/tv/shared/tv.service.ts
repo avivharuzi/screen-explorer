@@ -11,33 +11,34 @@ import { Tv } from './tv.interface';
 import { TvDetail } from './tv-detail.interface';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class TvService {
   private readonly url = `${environment.baseApiUrl}/tv`;
 
   constructor(
-    private httpClient: HttpClient
-  ) { }
+    private httpClient: HttpClient,
+  ) {
+  }
 
   getDiscover(): Observable<HttpResponsePagination<Tv>> {
     return this.httpClient.get<HttpResponsePagination<Tv>>(`${this.url}/discover`);
   }
 
-  getAiringToday(): Observable<HttpResponsePagination<Tv>> {
-    return this.httpClient.get<HttpResponsePagination<Tv>>(`${this.url}/airing-today`);
+  getAiringToday(page: number): Observable<HttpResponsePagination<Tv>> {
+    return this.httpClient.get<HttpResponsePagination<Tv>>(`${this.url}/airing-today?page=${page}`);
   }
 
-  getOnTheAir(): Observable<HttpResponsePagination<Tv>> {
-    return this.httpClient.get<HttpResponsePagination<Tv>>(`${this.url}/on-the-air`);
+  getOnTheAir(page: number): Observable<HttpResponsePagination<Tv>> {
+    return this.httpClient.get<HttpResponsePagination<Tv>>(`${this.url}/on-the-air?page=${page}`);
   }
 
-  getPopular(): Observable<HttpResponsePagination<Tv>> {
-    return this.httpClient.get<HttpResponsePagination<Tv>>(`${this.url}/popular`);
+  getPopular(page: number): Observable<HttpResponsePagination<Tv>> {
+    return this.httpClient.get<HttpResponsePagination<Tv>>(`${this.url}/popular?page=${page}`);
   }
 
-  getTopRated(): Observable<HttpResponsePagination<Tv>> {
-    return this.httpClient.get<HttpResponsePagination<Tv>>(`${this.url}/top-rated`);
+  getTopRated(page: number): Observable<HttpResponsePagination<Tv>> {
+    return this.httpClient.get<HttpResponsePagination<Tv>>(`${this.url}/top-rated?page=${page}`);
   }
 
   getDetail(id: number): Observable<TvDetail> {

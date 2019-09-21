@@ -1,5 +1,5 @@
 export interface HttpResponsePagination<T> {
-  dates ?: {
+  dates?: {
     maximum: string;
     minimum: string;
   };

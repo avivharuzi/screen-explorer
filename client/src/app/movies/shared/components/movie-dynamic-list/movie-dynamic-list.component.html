@@ -1,0 +1,12 @@
+<div class="container-fluid pt-2">
+  <h1>{{ title }}</h1>
+  <app-movie-card-list [movies]="movies"></app-movie-card-list>
+</div>
+<mat-paginator [length]="length"
+               [pageSize]="pageSize"
+               (page)="onPage($event)"
+               [showFirstLastButtons]="true"
+               [disabled]="disabled"
+               [pageIndex]="getPageIndex()"
+>
+</mat-paginator>

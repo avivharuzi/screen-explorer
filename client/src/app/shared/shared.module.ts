@@ -13,6 +13,7 @@ import { MatCardModule } from '@angular/material/card';
 
 import { MainContainerComponent } from './components/main-container/main-container.component';
 import { CardComponent } from './components/card/card.component';
+import { HeroComponent } from './components/hero/hero.component';
 
 import { ImagePipe } from './pipes/image.pipe';
 
@@ -22,6 +23,7 @@ import { LazyLoadDirective } from './directives/lazy-load.directive';
   declarations: [
     MainContainerComponent,
     CardComponent,
+    HeroComponent,
     ImagePipe,
     LazyLoadDirective,
   ],
@@ -40,8 +42,9 @@ import { LazyLoadDirective } from './directives/lazy-load.directive';
   exports: [
     MainContainerComponent,
     CardComponent,
+    HeroComponent,
     ImagePipe,
     LazyLoadDirective,
   ],
 })
-export class SharedModule { }
+export class SharedModule {}

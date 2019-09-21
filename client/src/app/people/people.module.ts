@@ -20,6 +20,6 @@ import { PeopleDetailComponent } from './components/people-detail/people-detail.
   imports: [
     CommonModule,
     PeopleRoutingModule,
-  ]
+  ],
 })
-export class PeopleModule { }
+export class PeopleModule {}

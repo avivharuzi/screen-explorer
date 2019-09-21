@@ -30,6 +30,6 @@ import { TvEpisodeComponent } from './components/tv-episode/tv-episode.component
   imports: [
     CommonModule,
     TvRoutingModule,
-  ]
+  ],
 })
-export class TvModule { }
+export class TvModule {}

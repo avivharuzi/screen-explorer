@@ -9,17 +9,18 @@ import { People } from './people.interface';
 import { PeopleDetail } from './people-detail.interface';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class PeopleService {
   private readonly url = `${environment.baseApiUrl}/people`;
 
   constructor(
-    private httpClient: HttpClient
-  ) { }
+    private httpClient: HttpClient,
+  ) {
+  }
 
-  getPopular(): Observable<HttpResponsePagination<People>> {
-    return this.httpClient.get<HttpResponsePagination<People>>(`${this.url}/popular`);
+  getPopular(page: number): Observable<HttpResponsePagination<People>> {
+    return this.httpClient.get<HttpResponsePagination<People>>(`${this.url}/popular?page=${page}`);
   }
 
   getDetail(id: number): Observable<PeopleDetail> {

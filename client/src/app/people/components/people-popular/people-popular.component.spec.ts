@@ -8,9 +8,9 @@ describe('PeoplePopularComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ PeoplePopularComponent ]
+      declarations: [PeoplePopularComponent],
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

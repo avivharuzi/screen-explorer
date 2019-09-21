@@ -1,7 +1,7 @@
 import { Directive, ElementRef, Input, OnChanges, SimpleChanges } from '@angular/core';
 
 @Directive({
-  selector: '[appLazyLoad]'
+  selector: '[appLazyLoad]',
 })
 export class LazyLoadDirective implements OnChanges {
   @Input('appLazyLoad') src: string;
@@ -9,8 +9,9 @@ export class LazyLoadDirective implements OnChanges {
   private lazyImageObserver: IntersectionObserver;
 
   constructor(
-    private elementRef: ElementRef
-  ) { }
+    private elementRef: ElementRef,
+  ) {
+  }
 
   ngOnChanges(changes: SimpleChanges) {
     if (changes.src) {

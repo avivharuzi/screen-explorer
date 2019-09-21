@@ -1,0 +1,16 @@
+<div class="hero">
+  <div class="content p-3">
+    <h1>{{ title }}</h1>
+    <p>{{ overview }}</p>
+    <div>
+      <button mat-raised-button>
+        <mat-icon class="mr-2">play_arrow</mat-icon>
+        Watch Trailer
+      </button>
+    </div>
+  </div>
+  <div class="faded"></div>
+  <div class="backdrop">
+    <img [src]="image | image:'original'">
+  </div>
+</div>

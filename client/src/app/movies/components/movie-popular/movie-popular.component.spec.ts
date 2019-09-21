@@ -8,9 +8,9 @@ describe('MoviePopularComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ MoviePopularComponent ]
+      declarations: [MoviePopularComponent],
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

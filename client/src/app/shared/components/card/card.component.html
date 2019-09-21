@@ -1,7 +1,7 @@
 <mat-card matRipple>
   <img mat-card-image [src]="image | image" [alt]="title">
   <mat-card-header class="hidden">
-    <mat-card-title>{{ title }}</mat-card-title>
-    <mat-card-subtitle>{{ subtitle }}</mat-card-subtitle>
+    <mat-card-title [attr.title]="title">{{ title }}</mat-card-title>
+    <mat-card-subtitle [attr.title]="subtitle">{{ subtitle }}</mat-card-subtitle>
   </mat-card-header>
 </mat-card>

@@ -5,7 +5,7 @@
 export const environment = {
   production: false,
   baseApiUrl: 'http://localhost:8080/api/v1',
-  baseImagesUrl: 'https://image.tmdb.org/t/p'
+  baseImagesUrl: 'https://image.tmdb.org/t/p',
 };
 
 /*

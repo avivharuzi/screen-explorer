@@ -61,9 +61,9 @@ interface Credits {
 
 interface ExternalIds {
   freebase_mid: string;
-  freebase_id ?: any;
+  freebase_id?: any;
   tvdb_id: number;
-  tvrage_id ?: any;
+  tvrage_id?: any;
 }
 
 interface Images {

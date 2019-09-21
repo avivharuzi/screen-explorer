@@ -3,7 +3,7 @@ interface CreatedBy {
   credit_id: string;
   name: string;
   gender: number;
-  profile_path ?: any;
+  profile_path?: any;
 }
 
 interface Genre {
@@ -71,8 +71,8 @@ interface Images {
 
 interface ExternalIds {
   imdb_id: string;
-  freebase_mid ?: any;
-  freebase_id ?: any;
+  freebase_mid?: any;
+  freebase_id?: any;
   tvdb_id: number;
   tvrage_id: number;
   facebook_id: string;
@@ -127,7 +127,7 @@ export interface TvDetail {
   last_air_date: string;
   last_episode_to_air: LastEpisodeToAir;
   name: string;
-  next_episode_to_air ?: any;
+  next_episode_to_air?: any;
   networks: Network[];
   number_of_episodes: number;
   number_of_seasons: number;

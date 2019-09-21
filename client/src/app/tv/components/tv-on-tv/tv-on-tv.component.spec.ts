@@ -8,9 +8,9 @@ describe('TvOnTvComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ TvOnTvComponent ]
+      declarations: [TvOnTvComponent],
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

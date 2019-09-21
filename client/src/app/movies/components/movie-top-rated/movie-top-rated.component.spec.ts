@@ -8,9 +8,9 @@ describe('MovieTopRatedComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ MovieTopRatedComponent ]
+      declarations: [MovieTopRatedComponent],
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

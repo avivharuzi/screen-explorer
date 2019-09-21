@@ -57,7 +57,7 @@ interface Credits {
 interface ExternalIds {
   imdb_id: string;
   freebase_mid: string;
-  freebase_id ?: any;
+  freebase_id?: any;
   tvdb_id: number;
   tvrage_id: number;
 }
@@ -66,7 +66,7 @@ interface Still {
   aspect_ratio: number;
   file_path: string;
   height: number;
-  iso_639_1 ?: any;
+  iso_639_1?: any;
   vote_average: number;
   vote_count: number;
   width: number;

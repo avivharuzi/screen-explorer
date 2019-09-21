@@ -9,4 +9,4 @@ import { NotFoundComponent } from './components/not-found/not-found.component';
   imports: [CommonModule],
   exports: [HomeComponent, NotFoundComponent],
 })
-export class CoreModule { }
+export class CoreModule {}

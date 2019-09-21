@@ -8,9 +8,9 @@ describe('TvDetailComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ TvDetailComponent ]
+      declarations: [TvDetailComponent],
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {
