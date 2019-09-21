@@ -4,10 +4,12 @@ interface KnownFor {
   id: number;
   video: boolean;
   media_type: string;
+  name: string;
   title: string;
   popularity: number;
   poster_path: string;
   original_language: string;
+  original_name: string;
   original_title: string;
   genre_ids: number[];
   backdrop_path: string;
