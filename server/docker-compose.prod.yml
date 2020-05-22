@@ -1,0 +1,7 @@
+version: "3.7"
+
+services:
+  screen-explorer-server:
+    command: npm run start:prod
+    environment:
+      - NODE_ENV=production

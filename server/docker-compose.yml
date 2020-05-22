@@ -1,0 +1,12 @@
+version: "3.7"
+
+services:
+  screen-explorer-server:
+    container_name: screen-explorer-server
+    restart: always
+    init: true
+    build: ./
+    ports:
+      - ${SERVER_PORT:-8080}:${SERVER_PORT:-8080}
+    env_file:
+      - ./.env
