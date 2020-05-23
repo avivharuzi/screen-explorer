@@ -10,3 +10,9 @@ services:
       - ${SERVER_PORT:-8080}:${SERVER_PORT:-8080}
     env_file:
       - ./.env
+
+  screen-explorer-redis-server:
+    container_name: screen-explorer-redis-server
+    restart: always
+    init: true
+    image: redis:6.0.3
