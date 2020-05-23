@@ -1,8 +1,12 @@
-import { Application, Router } from 'express';
+import { Application } from 'express';
 
-const apiRouter: Router = Router();
+import TMDBRouter from './modules/TMDB/TMDBRouter';
 
 export default (app: Application): void => {
-  // Here will be all application routes.
-  app.use('/api', apiRouter);
+  app.use('/configurations', TMDBRouter.configurationRouter);
+  app.use('/movies', TMDBRouter.movieRouter);
+  app.use('/tv-shows', TMDBRouter.tvRouter);
+  app.use('/people', TMDBRouter.peopleRouter);
+  app.use('/trending', TMDBRouter.trendingRouter);
+  app.use('/search', TMDBRouter.searchRouter);
 };
