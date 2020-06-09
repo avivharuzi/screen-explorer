@@ -1,6 +1,6 @@
 # Screen Explorer
 
-Explore all the Movies and TV Series from TMDB API.
+Explore all the Movies and TV Shows from TMDB API.
 
 ## Tech
 
