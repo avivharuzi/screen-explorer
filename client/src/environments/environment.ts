@@ -3,8 +3,9 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false,
+  baseApiUrl: 'http://localhost:8080',
   defaultImagePath: 'assets/images/defaults/default-image.png',
+  production: false,
   tmdbImageBaseUrl: 'https://image.tmdb.org/t/p',
 };
 
