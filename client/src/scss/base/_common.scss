@@ -1,0 +1,19 @@
+@import './../abstracts';
+
+html, body {
+  font-family: $font-family-body;
+  font-weight: normal;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: $font-family-header;
+  font-weight: normal;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+#spotlight {
+  box-sizing: content-box;
+}
