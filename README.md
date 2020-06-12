@@ -26,4 +26,3 @@ api.screenexplorer.biz
 ## Website Languages
 
 * English (default)
-* Hebrew
