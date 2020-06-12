@@ -7,6 +7,8 @@ export const environment = {
   defaultImagePath: 'assets/images/defaults/default-image.png',
   production: false,
   tmdbImageBaseUrl: 'https://image.tmdb.org/t/p',
+  youtubeEmbedBaseUrl: 'https://www.youtube.com/embed',
+  youtubeImageBaseUrl: 'https://i.ytimg.com/vi',
 };
 
 /*
