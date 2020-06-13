@@ -1,6 +1,5 @@
 import { Request, Response, Router } from 'express';
 
-import config from '../../config';
 import { TMDB } from './TMDB';
 import { TMDBHandler } from './TMDBHandler';
 
@@ -74,7 +73,7 @@ movieRouter.get('/:id', async (req: Request, res: Response) => {
     // eslint-disable-next-line
     append_to_response: 'videos,images,external_ids,credits,keywords,release_dates',
     // eslint-disable-next-line
-    include_image_language: `${req.query.language ? req.query.language : config.tmdb.api.defaultLanguage},null`,
+    include_image_language: TMDB.getIncludeImageLanguageQueryParam(req.query),
   });
 });
 
@@ -115,6 +114,8 @@ tvRouter.get('/:id', async (req: Request, res: Response) => {
   await TMDBHandler.handleReq(req, res, `tv/${req.params.id}`, {
     // eslint-disable-next-line
     append_to_response: 'videos,images,external_ids,credits,keywords',
+    // eslint-disable-next-line
+    include_image_language: TMDB.getIncludeImageLanguageQueryParam(req.query),
   });
 });
 
@@ -126,6 +127,8 @@ tvRouter.get('/:id/season/:seasonNumber', async (req: Request, res: Response) =>
   await TMDBHandler.handleReq(req, res, `tv/${req.params.id}/season/${req.params.seasonNumber}`, {
     // eslint-disable-next-line
     append_to_response: 'credits,external_ids,images,videos',
+    // eslint-disable-next-line
+    include_image_language: TMDB.getIncludeImageLanguageQueryParam(req.query),
   });
 });
 
@@ -133,6 +136,8 @@ tvRouter.get('/:id/season/:seasonNumber/episode/:episodeNumber', async (req: Req
   await TMDBHandler.handleReq(req, res, `tv/${req.params.id}/season/${req.params.seasonNumber}/episode/${req.params.episodeNumber}`, {
     // eslint-disable-next-line
     append_to_response: 'credits,external_ids,images,videos',
+    // eslint-disable-next-line
+    include_image_language: TMDB.getIncludeImageLanguageQueryParam(req.query),
   });
 });
 

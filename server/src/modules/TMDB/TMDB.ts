@@ -148,4 +148,9 @@ export class TMDB {
       query: query.query ?? '',
     };
   }
+
+  // eslint-disable-next-line
+  static getIncludeImageLanguageQueryParam(query: { [key: string]: any }): string {
+    return `${query.language ?? config.tmdb.api.defaultLanguage},null`;
+  }
 }
