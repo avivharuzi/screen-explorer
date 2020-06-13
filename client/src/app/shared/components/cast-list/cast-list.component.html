@@ -1,0 +1,6 @@
+<div class="flex-horizontal">
+  <div class="col-6 col-sm-4 col-md-3 col-lg-2" *ngFor="let person of cast">
+    <app-card [title]="person.name" [subtitle]="person.character"
+              [poster]="person.profile_path | tmdbImage:'w342'"></app-card>
+  </div>
+</div>
