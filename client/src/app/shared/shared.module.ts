@@ -11,6 +11,7 @@ import { CastListComponent } from './components/cast-list/cast-list.component';
 import { ContainerComponent } from './components/container/container.component';
 import { CrewListComponent } from './components/crew-list/crew-list.component';
 import { DefaultImageDirective } from './directives/default-image.directive';
+import { FooterComponent } from './components/footer/footer.component';
 import { HeaderComponent } from './components/header/header.component';
 import { HeroComponent } from './components/hero/hero.component';
 import { ImageListComponent } from './components/image-list/image-list.component';
@@ -31,6 +32,7 @@ import { YouTubeImagePipe } from './pipes/you-tube-image.pipe';
     ContainerComponent,
     CrewListComponent,
     DefaultImageDirective,
+    FooterComponent,
     HeaderComponent,
     HeroComponent,
     ImageListComponent,
@@ -51,6 +53,7 @@ import { YouTubeImagePipe } from './pipes/you-tube-image.pipe';
     ContainerComponent,
     CrewListComponent,
     DefaultImageDirective,
+    FooterComponent,
     HeaderComponent,
     HeroComponent,
     ImageListComponent,
