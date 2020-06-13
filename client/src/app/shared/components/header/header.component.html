@@ -1,0 +1,73 @@
+<header>
+  <nav class="navbar navbar-expand-md navbar-light bg-light">
+    <div class="container">
+      <a class="navbar-brand" routerLink="/">
+        <!--suppress CheckImageSize -->
+        <img src="assets/logos/logo.png" width="30" height="30" class="d-inline-block align-top" alt="Screen Explorer"/>
+        Screen Explorer
+      </a>
+      <button
+        class="navbar-toggler collapsed"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarCollapse"
+        aria-controls="navbarCollapse"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+        (click)="toggleShow()"
+        [attr.aria-expanded]="isShow"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="navbar-collapse collapse" [class.show]="isShow" id="navbarCollapse">
+        <ul class="navbar-nav mr-auto">
+          <li dropdown class="nav-item dropdown">
+            <a
+              dropdownToggle
+              class="nav-link dropdown-toggle cursor-pointer"
+              id="dropdownMovies"
+              data-toggle="dropdown"
+              aria-haspopup="true"
+              aria-expanded="false"
+            >Movies</a
+            >
+            <div *dropdownMenu class="dropdown-menu" aria-labelledby="dropdownMovies">
+              <a class="dropdown-item" routerLink="/movies/popular">Popular</a>
+              <a class="dropdown-item" routerLink="/movies/top-rated">Top Rated</a>
+              <a class="dropdown-item" routerLink="/movies/upcoming">Upcoming</a>
+              <a class="dropdown-item" routerLink="/movies/now-playing">Now Playing</a>
+            </div>
+          </li>
+          <li dropdown class="nav-item dropdown">
+            <a
+              dropdownToggle
+              class="nav-link dropdown-toggle cursor-pointer"
+              id="dropdownTvShows"
+              data-toggle="dropdown"
+              aria-haspopup="true"
+              aria-expanded="false"
+            >TV Shows</a
+            >
+            <div *dropdownMenu class="dropdown-menu" aria-labelledby="dropdownTvShows">
+              <a class="dropdown-item" routerLink="/tv-shows/popular">Popular</a>
+              <a class="dropdown-item" routerLink="/tv-shows/top-rated">Top Rated</a>
+              <a class="dropdown-item" routerLink="/tv-shows/on-the-air">On TV</a>
+              <a class="dropdown-item" routerLink="/tv-shows/airing-today">Airing Today</a>
+            </div>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/people/popular">People</a>
+          </li>
+        </ul>
+        <form class="form-inline my-4 my-md-0">
+          <div class="input-group flex-nowrap">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="addon-wrapping"><i class="fa fa-search"></i></span>
+            </div>
+            <input type="text" class="form-control" placeholder="Search" aria-label="Search" aria-describedby="addon-wrapping"/>
+          </div>
+        </form>
+      </div>
+    </div>
+  </nav>
+</header>
