@@ -24,6 +24,14 @@ export class PersonDetailComponent implements OnInit {
         .getDetail(id)
         .pipe(
           map(res => {
+            if (res.combined_credits.cast && res.combined_credits.cast.length > 0) {
+              res.combined_credits.cast = res.combined_credits.cast.sort(this.personService.sortByDescDate);
+            }
+
+            if (res.combined_credits.crew && res.combined_credits.crew.length > 0) {
+              res.combined_credits.crew = res.combined_credits.crew.sort(this.personService.sortByDescDate);
+            }
+
             res.biography = res.biography.split('\n').join('<p></p>') || `We don\'t have a biography for ${res.name}.`;
             return res;
           })

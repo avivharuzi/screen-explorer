@@ -9,8 +9,7 @@ describe('TimelineItemComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [TimelineItemComponent],
-    })
-      .compileComponents();
+    }).compileComponents();
   }));
 
   beforeEach(() => {

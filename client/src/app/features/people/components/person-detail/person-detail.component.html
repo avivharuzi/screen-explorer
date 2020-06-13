@@ -9,7 +9,12 @@
   </app-hero>
   <div class="container mb-5">
     <tabset [justified]="true">
-      <tab id="overview" heading="Overview"> </tab>
+      <tab id="overview" heading="Overview">
+        <app-person-timeline-list
+          [cast]="personDetail.combined_credits.cast"
+          [crew]="personDetail.combined_credits.crew"
+        ></app-person-timeline-list>
+      </tab>
       <ng-container *ngIf="personDetail.images.profiles && personDetail.images.profiles.length > 0">
         <tab id="profiles" heading="Profiles">
           <section class="mt-5 mb-5">

@@ -8,9 +8,8 @@ describe('TimelineContainerComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ TimelineContainerComponent ]
-    })
-    .compileComponents();
+      declarations: [TimelineContainerComponent],
+    }).compileComponents();
   }));
 
   beforeEach(() => {

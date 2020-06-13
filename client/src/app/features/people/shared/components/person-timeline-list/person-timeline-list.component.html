@@ -1,0 +1,33 @@
+<div>
+  <ng-container *ngIf="cast && cast.length > 0">
+    <section class="mt-5 mb-5">
+      <app-section-title>Cast</app-section-title>
+      <app-timeline-container>
+        <app-timeline-item
+          *ngFor="let c of cast"
+          [date]="c.release_date || c.first_air_date"
+          [title]="c.title || c.original_title || c.name || c.original_name"
+          [titleLink]="getTitleLink(c.id, c.media_type)"
+          [poster]="c.poster_path | tmdbImage: 'w500'"
+          [asSubtitle]="c.character"
+          [subtitle]="getEpisodesSubtitle(c.episode_count)"
+        ></app-timeline-item>
+      </app-timeline-container>
+    </section>
+  </ng-container>
+  <ng-container *ngIf="crew && crew.length > 0">
+    <section class="mt-5 mb-5">
+      <app-section-title>Crew</app-section-title>
+      <app-timeline-container>
+        <app-timeline-item
+          *ngFor="let c of crew"
+          [date]="c.release_date || c.first_air_date"
+          [title]="c.title || c.original_title"
+          [titleLink]="getTitleLink(c.id, c.media_type)"
+          [poster]="c.poster_path | tmdbImage: 'w500'"
+          [asSubtitle]="c.job"
+        ></app-timeline-item>
+      </app-timeline-container>
+    </section>
+  </ng-container>
+</div>

@@ -74,5 +74,4 @@ import { YouTubeImagePipe } from './pipes/you-tube-image.pipe';
     YouTubeImagePipe,
   ],
 })
-export class SharedModule {
-}
+export class SharedModule {}

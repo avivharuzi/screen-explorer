@@ -10,6 +10,7 @@ import { PersonDynamicListComponent } from './shared/components/person-dynamic-l
 import { PersonItemComponent } from './shared/components/person-list/person-item/person-item.component';
 import { PersonListComponent } from './shared/components/person-list/person-list.component';
 import { PersonListPopularComponent } from './components/person-list-popular/person-list-popular.component';
+import { PersonTimelineListComponent } from './shared/components/person-timeline-list/person-timeline-list.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { PersonListPopularComponent } from './components/person-list-popular/per
     PersonItemComponent,
     PersonListComponent,
     PersonListPopularComponent,
+    PersonTimelineListComponent,
   ],
   imports: [CommonModule, PeopleRoutingModule, SharedModule, TabsModule.forRoot()],
 })
