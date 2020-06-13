@@ -1,0 +1,2 @@
+<app-card [title]="movie.title" [subtitle]="movie.release_date | date"
+          [poster]="movie.poster_path | tmdbImage:'w500'" [routerLink]="['/', 'movies', movie.id]"></app-card>

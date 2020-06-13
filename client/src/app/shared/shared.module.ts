@@ -5,7 +5,6 @@ import { ModalModule } from 'ngx-bootstrap/modal';
 import { NgModule } from '@angular/core';
 import { PaginationModule } from 'ngx-bootstrap/pagination';
 import { RouterModule } from '@angular/router';
-import { TabsModule } from 'ngx-bootstrap/tabs';
 
 import { CardComponent } from './components/card/card.component';
 import { CastListComponent } from './components/cast-list/cast-list.component';
@@ -50,7 +49,6 @@ import { YouTubeImagePipe } from './pipes/you-tube-image.pipe';
     ModalModule.forRoot(),
     PaginationModule.forRoot(),
     RouterModule,
-    TabsModule.forRoot(),
   ],
   exports: [
     CardComponent,
