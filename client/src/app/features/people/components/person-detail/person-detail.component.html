@@ -11,7 +11,7 @@
     <tabset [justified]="true">
       <tab id="overview" heading="Overview"> </tab>
       <ng-container *ngIf="personDetail.images.profiles && personDetail.images.profiles.length > 0">
-        <tab id="posters" heading="Posters">
+        <tab id="profiles" heading="Profiles">
           <section class="mt-5 mb-5">
             <app-image-list [images]="personDetail.images.profiles"></app-image-list>
           </section>
