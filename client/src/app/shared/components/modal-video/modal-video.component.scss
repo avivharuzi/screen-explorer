@@ -1,0 +1,21 @@
+@import './../../../../scss/abstracts';
+
+:host {
+  background: $color-black;
+}
+
+button {
+  &:focus {
+    outline: none;
+  }
+}
+
+.modal-header {
+  border: none;
+}
+
+.modal-body {
+  display: flex;
+  padding: 0;
+  height: 75vh;
+}
