@@ -1,0 +1,13 @@
+<ng-container>
+  <ng-content></ng-content>
+  <div class="d-flex justify-content-center mt-5 mb-5">
+    <ng-container *ngIf="totalItems > 0 && itemsPerPage > 0 && isReady">
+      <pagination
+        previousText="&lsaquo;" nextText="&rsaquo;" firstText="&laquo;" lastText="&raquo;"
+        [boundaryLinks]="true" [maxSize]="10"
+        [totalItems]="totalItems" [itemsPerPage]="itemsPerPage"
+        [(ngModel)]="page"
+        (pageChanged)="onPageChanged($event)"></pagination>
+    </ng-container>
+  </div>
+</ng-container>
