@@ -1,0 +1,6 @@
+<app-card
+  [title]="tvShow.name"
+  [subtitle]="tvShow.first_air_date | date"
+  [poster]="tvShow.poster_path | tmdbImage: 'w500'"
+  [routerLink]="['/', 'tv-shows', tvShow.id]"
+></app-card>

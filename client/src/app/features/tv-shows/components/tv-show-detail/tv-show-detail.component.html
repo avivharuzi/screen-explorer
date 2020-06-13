@@ -1,0 +1,62 @@
+<ng-container *ngIf="tvShowDetail">
+  <app-hero
+    [poster]="tvShowDetail.poster_path | tmdbImage: 'w500'"
+    [posterHref]="tvShowDetail.poster_path | tmdbImage: 'original'"
+    [backdrop]="tvShowDetail.backdrop_path | tmdbImage: 'original'"
+    [title]="tvShowDetail.name"
+    [subtitle]="'(' + (tvShowDetail.first_air_date | date: 'yyyy') + ')'"
+    [description]="tvShowDetail.overview"
+    descriptionLabel="Overview"
+    callToActionTitle="Play Trailer"
+    callToActionIcon="play"
+    (callToActionClicked)="onCallToActionClicked()"
+    [displayCallToAction]="hasVideo()"
+  ></app-hero>
+  <div class="container mb-5">
+    <tabset [justified]="true">
+      <tab id="overview" heading="Overview">
+        <ng-container *ngIf="tvShowDetail.credits.cast && tvShowDetail.credits.cast.length > 0">
+          <section class="mt-5 mb-5">
+            <app-section-title>Cast</app-section-title>
+            <app-cast-list [cast]="tvShowDetail.credits.cast"></app-cast-list>
+          </section>
+        </ng-container>
+        <ng-container *ngIf="tvShowDetail.credits.crew && tvShowDetail.credits.crew.length > 0">
+          <hr/>
+          <section class="mt-5 mb-5">
+            <app-section-title>Crew</app-section-title>
+            <app-crew-list [crew]="tvShowDetail.credits.crew"></app-crew-list>
+          </section>
+        </ng-container>
+        <ng-container *ngIf="similarTvShows && similarTvShows.length > 0">
+          <hr/>
+          <section class="mt-5 mb-5">
+            <app-section-title>Similar TV Shows</app-section-title>
+            <app-tv-show-list [tvShows]="similarTvShows"></app-tv-show-list>
+          </section>
+        </ng-container>
+      </tab>
+      <ng-container *ngIf="tvShowDetail.images.posters && tvShowDetail.images.posters.length > 0">
+        <tab id="posters" heading="Posters">
+          <section class="mt-5 mb-5">
+            <app-image-list [images]="tvShowDetail.images.posters"></app-image-list>
+          </section>
+        </tab>
+      </ng-container>
+      <ng-container *ngIf="tvShowDetail.images.backdrops && tvShowDetail.images.backdrops.length > 0">
+        <tab id="backdrops" heading="Backdrops">
+          <section class="mt-5 mb-5">
+            <app-image-list [images]="tvShowDetail.images.backdrops"></app-image-list>
+          </section>
+        </tab>
+      </ng-container>
+      <ng-container *ngIf="tvShowDetail.videos.results && tvShowDetail.videos.results.length > 0">
+        <tab id="videos" heading="Videos">
+          <section class="mt-5 mb-5">
+            <app-video-list [videos]="tvShowDetail.videos.results"></app-video-list>
+          </section>
+        </tab>
+      </ng-container>
+    </tabset>
+  </div>
+</ng-container>
