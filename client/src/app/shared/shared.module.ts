@@ -19,6 +19,8 @@ import { ModalVideoComponent } from './components/modal-video/modal-video.compon
 import { PaginatedListComponent } from './components/paginated-list/paginated-list.component';
 import { ReadMoreComponent } from './components/read-more/read-more.component';
 import { SectionTitleComponent } from './components/section-title/section-title.component';
+import { TimelineContainerComponent } from './components/timeline-container/timeline-container.component';
+import { TimelineItemComponent } from './components/timeline-item/timeline-item.component';
 import { TmdbImagePipe } from './pipes/tmdb-image.pipe';
 import { VideoComponent } from './components/video/video.component';
 import { VideoListComponent } from './components/video-list/video-list.component';
@@ -40,6 +42,8 @@ import { YouTubeImagePipe } from './pipes/you-tube-image.pipe';
     PaginatedListComponent,
     ReadMoreComponent,
     SectionTitleComponent,
+    TimelineContainerComponent,
+    TimelineItemComponent,
     TmdbImagePipe,
     VideoComponent,
     VideoListComponent,
@@ -61,6 +65,8 @@ import { YouTubeImagePipe } from './pipes/you-tube-image.pipe';
     PaginatedListComponent,
     ReadMoreComponent,
     SectionTitleComponent,
+    TimelineContainerComponent,
+    TimelineItemComponent,
     TmdbImagePipe,
     VideoComponent,
     VideoListComponent,
@@ -68,4 +74,5 @@ import { YouTubeImagePipe } from './pipes/you-tube-image.pipe';
     YouTubeImagePipe,
   ],
 })
-export class SharedModule {}
+export class SharedModule {
+}

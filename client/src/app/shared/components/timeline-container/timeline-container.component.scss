@@ -1,0 +1,14 @@
+:host ::ng-deep {
+  .timeline-container {
+    app-timeline-item {
+      &:first-of-type {
+        border: 0;
+      }
+
+      display: block;
+      padding: 1rem 0;
+      border: 0;
+      border-top: 0.05rem solid rgba(0, 0, 0, 0.1);
+    }
+  }
+}

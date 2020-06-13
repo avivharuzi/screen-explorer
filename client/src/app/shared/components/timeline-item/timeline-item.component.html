@@ -1,0 +1,10 @@
+<div class="d-flex align-items-center">
+  <div class="px-2 px-md-5" [class.hidden]="!date">{{ (date | date:'yyyy') || '0000' }}</div>
+  <div class="timeline-img cursor-pointer" [routerLink]="titleLink">
+    <img class="img-thumbnail" width="100" height="150" appDefaultImage [src]="poster" [alt]="title"/>
+  </div>
+  <div class="px-2 px-md-5"><a [routerLink]="titleLink">{{ title }}</a>
+    <ng-container *ngIf="subtitle"><span class="text-muted"> ({{ subtitle }})</span></ng-container>
+    <ng-container *ngIf="asSubtitle"> as <span class="text-muted">{{ asSubtitle }}</span></ng-container>
+  </div>
+</div>
