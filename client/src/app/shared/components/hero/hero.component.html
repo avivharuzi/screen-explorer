@@ -1,4 +1,4 @@
-<div class="hero" [style.background-image]="'url(' + backdrop + ')'">
+<div class="hero" [style.background-image]="'url(' + (backdrop || posterHref) + ')'">
   <div class="hero-filter">
     <div class="container py-5">
       <div class="row justify-content-center">
@@ -17,7 +17,9 @@
             <ng-content></ng-content>
             <div class="mb-4">
               <h4 class="mb-3">{{ descriptionLabel }}</h4>
-              <p class="hero-description">{{ description }}</p>
+              <p class="hero-description">
+                <app-read-more [text]="description"></app-read-more>
+              </p>
             </div>
             <div *ngIf="displayCallToAction && callToActionTitle && callToActionIcon">
               <button class="btn btn-outline-light" (click)="callToActionClicked.emit()"><i
