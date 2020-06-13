@@ -1,0 +1,8 @@
+@import './../../../../scss/abstracts';
+
+:host {
+  h4 {
+    display: inline-block;
+    border-bottom: 0.25rem solid $color-primary-500;
+  }
+}
