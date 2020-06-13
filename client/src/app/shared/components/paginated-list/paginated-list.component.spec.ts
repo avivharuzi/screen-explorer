@@ -9,8 +9,7 @@ describe('PaginatedListComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [PaginatedListComponent],
-    })
-      .compileComponents();
+    }).compileComponents();
   }));
 
   beforeEach(() => {

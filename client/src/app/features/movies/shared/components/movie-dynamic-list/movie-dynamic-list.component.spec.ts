@@ -9,8 +9,7 @@ describe('MovieDynamicListComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [MovieDynamicListComponent],
-    })
-      .compileComponents();
+    }).compileComponents();
   }));
 
   beforeEach(() => {

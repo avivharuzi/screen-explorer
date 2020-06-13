@@ -16,10 +16,7 @@ export class PersonDynamicListComponent {
   people: Person[];
   totalItems: number;
 
-  constructor(
-    private changeDetectorRef: ChangeDetectorRef,
-    private personService: PersonService,
-  ) {
+  constructor(private changeDetectorRef: ChangeDetectorRef, private personService: PersonService) {
     this.totalItems = 0;
   }
 

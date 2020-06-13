@@ -24,33 +24,38 @@ export class MovieDetailComponent implements OnInit {
     private activatedRoute: ActivatedRoute,
     private changeDetectorRef: ChangeDetectorRef,
     private movieService: MovieService,
-    private videoService: VideoService,
-  ) {
-  }
+    private videoService: VideoService
+  ) {}
 
   ngOnInit(): void {
     this.activatedRoute.params.subscribe(params => {
       const id = +params.id;
 
-      this.movieService.getDetail(id).pipe(
-        map(res => {
-          res.videos.results = this.videoService.getOnlyYouTubeVideos(res.videos.results);
-          this.playTrailerVideo = this.videoService.getYouTubeVideoTrailerOrFirstOne(res.videos.results);
-          return res;
-        }),
-      ).subscribe(res => {
-        this.movieDetail = res;
-        this.changeDetectorRef.detectChanges();
-      });
+      this.movieService
+        .getDetail(id)
+        .pipe(
+          map(res => {
+            res.videos.results = this.videoService.getOnlyYouTubeVideos(res.videos.results);
+            this.playTrailerVideo = this.videoService.getYouTubeVideoTrailerOrFirstOne(res.videos.results);
+            return res;
+          })
+        )
+        .subscribe(res => {
+          this.movieDetail = res;
+          this.changeDetectorRef.detectChanges();
+        });
 
-      this.movieService.getSimilar(id).pipe(
-        map(res => {
-          return res.results;
-        }),
-      ).subscribe(res => {
-        this.similarMovies = res;
-        this.changeDetectorRef.detectChanges();
-      });
+      this.movieService
+        .getSimilar(id)
+        .pipe(
+          map(res => {
+            return res.results;
+          })
+        )
+        .subscribe(res => {
+          this.similarMovies = res;
+          this.changeDetectorRef.detectChanges();
+        });
     });
   }
 

@@ -44,14 +44,7 @@ import { YouTubeImagePipe } from './pipes/you-tube-image.pipe';
     YouTubeIframeUrlPipe,
     YouTubeImagePipe,
   ],
-  imports: [
-    BsDropdownModule.forRoot(),
-    CommonModule,
-    FormsModule,
-    ModalModule.forRoot(),
-    PaginationModule.forRoot(),
-    RouterModule,
-  ],
+  imports: [BsDropdownModule.forRoot(), CommonModule, FormsModule, ModalModule.forRoot(), PaginationModule.forRoot(), RouterModule],
   exports: [
     CardComponent,
     CastListComponent,
@@ -72,5 +65,4 @@ import { YouTubeImagePipe } from './pipes/you-tube-image.pipe';
     YouTubeImagePipe,
   ],
 })
-export class SharedModule {
-}
+export class SharedModule {}

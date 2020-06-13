@@ -16,10 +16,7 @@ export class MovieDynamicListComponent {
   movies: Movie[];
   totalItems: number;
 
-  constructor(
-    private changeDetectorRef: ChangeDetectorRef,
-    private movieService: MovieService,
-  ) {
+  constructor(private changeDetectorRef: ChangeDetectorRef, private movieService: MovieService) {
     this.totalItems = 0;
   }
 

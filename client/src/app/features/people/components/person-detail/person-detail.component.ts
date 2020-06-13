@@ -14,23 +14,19 @@ import { ActivatedRoute } from '@angular/router';
 export class PersonDetailComponent implements OnInit {
   personDetail: PersonDetail;
 
-  constructor(
-    private activatedRoute: ActivatedRoute,
-    private personService: PersonService,
-    private changeDetectorRef: ChangeDetectorRef,
-  ) {
-  }
+  constructor(private activatedRoute: ActivatedRoute, private personService: PersonService, private changeDetectorRef: ChangeDetectorRef) {}
 
   ngOnInit(): void {
     this.activatedRoute.params.subscribe(params => {
       const id = +params.id;
 
-      this.personService.getDetail(id)
+      this.personService
+        .getDetail(id)
         .pipe(
           map(res => {
             res.biography = res.biography.split('\n').join('<p></p>') || `We don\'t have a biography for ${res.name}.`;
             return res;
-          }),
+          })
         )
         .subscribe(res => {
           this.personDetail = res;

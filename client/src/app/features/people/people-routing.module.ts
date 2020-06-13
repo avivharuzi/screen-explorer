@@ -7,7 +7,9 @@ import { PersonListPopularComponent } from './components/person-list-popular/per
 
 const routes: Routes = [
   {
-    path: '', component: PeopleComponent, children: [
+    path: '',
+    component: PeopleComponent,
+    children: [
       { path: 'popular', component: PersonListPopularComponent },
       { path: ':id', component: PersonDetailComponent },
       { path: '', redirectTo: 'popular', pathMatch: 'full' },
@@ -19,5 +21,4 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule],
 })
-export class PeopleRoutingModule {
-}
+export class PeopleRoutingModule {}

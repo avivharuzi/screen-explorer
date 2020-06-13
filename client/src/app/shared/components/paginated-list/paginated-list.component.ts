@@ -16,11 +16,7 @@ export class PaginatedListComponent implements OnInit {
   page: number;
   isReady: boolean;
 
-  constructor(
-    @Inject(PLATFORM_ID) private platformId: string,
-    private activatedRoute: ActivatedRoute,
-    private router: Router,
-  ) {
+  constructor(@Inject(PLATFORM_ID) private platformId: string, private activatedRoute: ActivatedRoute, private router: Router) {
     this.totalItems = 0;
     this.itemsPerPage = 20;
     this.pageClick = new EventEmitter<number>();
@@ -66,11 +62,13 @@ export class PaginatedListComponent implements OnInit {
   }
 
   private addPageToQuery(): void {
-    this.router.navigate([], {
-      queryParams: {
-        page: this.page,
-      },
-      queryParamsHandling: 'merge',
-    }).then();
+    this.router
+      .navigate([], {
+        queryParams: {
+          page: this.page,
+        },
+        queryParamsHandling: 'merge',
+      })
+      .then();
   }
 }

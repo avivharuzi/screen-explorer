@@ -14,10 +14,7 @@ import { MovieListType } from './movie-list-type.enum';
 export class MovieService {
   private readonly baseUrl = `${environment.baseApiUrl}/movies`;
 
-  constructor(
-    private httpClient: HttpClient,
-  ) {
-  }
+  constructor(private httpClient: HttpClient) {}
 
   getList(type: MovieListType, params = {}): Observable<HttpResponsePagination<Movie>> {
     return this.httpClient.get<HttpResponsePagination<Movie>>(`${this.baseUrl}/${type}`, { params });

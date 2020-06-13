@@ -8,9 +8,8 @@ describe('PersonDynamicListComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ PersonDynamicListComponent ]
-    })
-    .compileComponents();
+      declarations: [PersonDynamicListComponent],
+    }).compileComponents();
   }));
 
   beforeEach(() => {

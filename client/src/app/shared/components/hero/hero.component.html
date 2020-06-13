@@ -5,14 +5,16 @@
         <div class="col-12 col-sm-6 col-md-4">
           <div class="hero-poster">
             <a class="spotlight" [href]="posterHref">
-              <img class="rounded-lg" appDefaultImage [src]="poster" [alt]="title">
+              <img class="rounded-lg" appDefaultImage [src]="poster" [alt]="title" />
             </a>
           </div>
         </div>
         <div class="col-12 col-sm-6 col-md-8">
           <div class="text-white hero-content">
             <div class="mb-4 mt-4 mt-sm-0">
-              <h1>{{ title }} <span>{{ subtitle }}</span></h1>
+              <h1>
+                {{ title }} <span>{{ subtitle }}</span>
+              </h1>
             </div>
             <ng-content></ng-content>
             <div class="mb-4">
@@ -22,8 +24,8 @@
               </p>
             </div>
             <div *ngIf="displayCallToAction && callToActionTitle && callToActionIcon">
-              <button class="btn btn-outline-light" (click)="callToActionClicked.emit()"><i
-                [class]="'fas fa-' +  callToActionIcon + ' mr-2'"></i>{{ callToActionTitle }}
+              <button class="btn btn-outline-light" (click)="callToActionClicked.emit()">
+                <i [class]="'fas fa-' + callToActionIcon + ' mr-2'"></i>{{ callToActionTitle }}
               </button>
             </div>
           </div>

@@ -20,12 +20,6 @@ import { PersonListPopularComponent } from './components/person-list-popular/per
     PersonListComponent,
     PersonListPopularComponent,
   ],
-  imports: [
-    CommonModule,
-    PeopleRoutingModule,
-    SharedModule,
-    TabsModule.forRoot(),
-  ],
+  imports: [CommonModule, PeopleRoutingModule, SharedModule, TabsModule.forRoot()],
 })
-export class PeopleModule {
-}
+export class PeopleModule {}

@@ -26,12 +26,6 @@ import { SharedModule } from '../../shared/shared.module';
     MovieListUpcomingComponent,
     MoviesComponent,
   ],
-  imports: [
-    CommonModule,
-    MoviesRoutingModule,
-    SharedModule,
-    TabsModule.forRoot(),
-  ],
+  imports: [CommonModule, MoviesRoutingModule, SharedModule, TabsModule.forRoot()],
 })
-export class MoviesModule {
-}
+export class MoviesModule {}

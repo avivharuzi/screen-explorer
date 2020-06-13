@@ -1,3 +1,3 @@
 export enum YouTubeQuality {
-  HD = 'hq720'
+  HD = 'hq720',
 }

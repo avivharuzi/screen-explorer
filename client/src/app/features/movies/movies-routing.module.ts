@@ -10,7 +10,9 @@ import { MoviesComponent } from './movies.component';
 
 const routes: Routes = [
   {
-    path: '', component: MoviesComponent, children: [
+    path: '',
+    component: MoviesComponent,
+    children: [
       { path: 'popular', component: MovieListPopularComponent },
       { path: 'top-rated', component: MovieListTopRatedComponent },
       { path: 'upcoming', component: MovieListUpcomingComponent },
@@ -25,5 +27,4 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule],
 })
-export class MoviesRoutingModule {
-}
+export class MoviesRoutingModule {}

@@ -12,8 +12,5 @@ import { Video } from '../../shared/video';
 export class ModalVideoComponent {
   video: Video;
 
-  constructor(
-    public bsModalRef: BsModalRef,
-  ) {
-  }
+  constructor(public bsModalRef: BsModalRef) {}
 }

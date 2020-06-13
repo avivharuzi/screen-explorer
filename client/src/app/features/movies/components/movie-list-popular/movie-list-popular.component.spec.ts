@@ -9,8 +9,7 @@ describe('MovieListPopularComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [MovieListPopularComponent],
-    })
-      .compileComponents();
+    }).compileComponents();
   }));
 
   beforeEach(() => {

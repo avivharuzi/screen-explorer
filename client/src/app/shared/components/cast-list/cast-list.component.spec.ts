@@ -9,8 +9,7 @@ describe('CastListComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [CastListComponent],
-    })
-      .compileComponents();
+    }).compileComponents();
   }));
 
   beforeEach(() => {

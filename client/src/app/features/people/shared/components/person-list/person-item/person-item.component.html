@@ -1,2 +1,6 @@
-<app-card [title]="person.name" [subtitle]="person.known_for_department"
-          [poster]="person.profile_path | tmdbImage:'h632'" [routerLink]="['/', 'people', person.id]"></app-card>
+<app-card
+  [title]="person.name"
+  [subtitle]="person.known_for_department"
+  [poster]="person.profile_path | tmdbImage: 'h632'"
+  [routerLink]="['/', 'people', person.id]"
+></app-card>

@@ -7,10 +7,7 @@ import { environment } from '../../../environments/environment';
   name: 'youTubeIframeUrl',
 })
 export class YouTubeIframeUrlPipe implements PipeTransform {
-  constructor(
-    private domSanitizer: DomSanitizer,
-  ) {
-  }
+  constructor(private domSanitizer: DomSanitizer) {}
 
   transform(value: string): SafeResourceUrl {
     return this.domSanitizer.bypassSecurityTrustResourceUrl(`${environment.youtubeEmbedBaseUrl}/${value}`);

@@ -2,9 +2,14 @@
   <div class="row">
     <ng-container *ngFor="let image of images">
       <div class="col-6 col-md-4 mb-4">
-        <a class="spotlight" [href]="image.file_path | tmdbImage:'original'">
-          <img class="img-thumbnail" width="auto" height="auto" [alt]="image.width + 'x' + image.height"
-               [src]="image.file_path | tmdbImage:'w780'">
+        <a class="spotlight" [href]="image.file_path | tmdbImage: 'original'">
+          <img
+            class="img-thumbnail"
+            width="auto"
+            height="auto"
+            [alt]="image.width + 'x' + image.height"
+            [src]="image.file_path | tmdbImage: 'w780'"
+          />
         </a>
       </div>
     </ng-container>

@@ -9,8 +9,7 @@ describe('CrewListComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [CrewListComponent],
-    })
-      .compileComponents();
+    }).compileComponents();
   }));
 
   beforeEach(() => {

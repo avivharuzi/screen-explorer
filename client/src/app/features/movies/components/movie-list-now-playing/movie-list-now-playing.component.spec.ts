@@ -9,8 +9,7 @@ describe('MovieListNowPlayingComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [MovieListNowPlayingComponent],
-    })
-      .compileComponents();
+    }).compileComponents();
   }));
 
   beforeEach(() => {

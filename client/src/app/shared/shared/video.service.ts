@@ -12,8 +12,7 @@ import { VideoType } from './video-type.enum';
 export class VideoService {
   private bsModalRef: BsModalRef;
 
-  constructor(private bsModalService: BsModalService) {
-  }
+  constructor(private bsModalService: BsModalService) {}
 
   openModal(video: Video): void {
     const initialState = {
@@ -32,6 +31,6 @@ export class VideoService {
       return null;
     }
 
-    return videos.find((video) => video.site === VideoSite.YouTube && video.type === VideoType.Trailer) || videos[0];
+    return videos.find(video => video.site === VideoSite.YouTube && video.type === VideoType.Trailer) || videos[0];
   }
 }

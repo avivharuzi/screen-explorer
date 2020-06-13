@@ -14,10 +14,7 @@ import { PersonListType } from './person-list-type.enum';
 export class PersonService {
   private readonly baseUrl = `${environment.baseApiUrl}/people`;
 
-  constructor(
-    private httpClient: HttpClient,
-  ) {
-  }
+  constructor(private httpClient: HttpClient) {}
 
   getList(type: PersonListType, params = {}): Observable<HttpResponsePagination<Person>> {
     return this.httpClient.get<HttpResponsePagination<Person>>(`${this.baseUrl}/${type}`, { params });
