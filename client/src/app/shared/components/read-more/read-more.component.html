@@ -1,0 +1,6 @@
+<div>
+  <div [innerHTML]="currentText"></div>
+  <div *ngIf="!hideToggle" class="mt-2">
+    <a class="cursor-pointer" (click)="toggleView()"><b>Read {{ isCollapsed ? 'more' : 'less' }}</b></a>
+  </div>
+</div>

@@ -16,6 +16,7 @@ import { HeroComponent } from './components/hero/hero.component';
 import { ImageListComponent } from './components/image-list/image-list.component';
 import { ModalVideoComponent } from './components/modal-video/modal-video.component';
 import { PaginatedListComponent } from './components/paginated-list/paginated-list.component';
+import { ReadMoreComponent } from './components/read-more/read-more.component';
 import { SectionTitleComponent } from './components/section-title/section-title.component';
 import { TmdbImagePipe } from './pipes/tmdb-image.pipe';
 import { VideoComponent } from './components/video/video.component';
@@ -35,6 +36,7 @@ import { YouTubeImagePipe } from './pipes/you-tube-image.pipe';
     ImageListComponent,
     ModalVideoComponent,
     PaginatedListComponent,
+    ReadMoreComponent,
     SectionTitleComponent,
     TmdbImagePipe,
     VideoComponent,
@@ -61,6 +63,7 @@ import { YouTubeImagePipe } from './pipes/you-tube-image.pipe';
     ImageListComponent,
     ModalVideoComponent,
     PaginatedListComponent,
+    ReadMoreComponent,
     SectionTitleComponent,
     TmdbImagePipe,
     VideoComponent,
