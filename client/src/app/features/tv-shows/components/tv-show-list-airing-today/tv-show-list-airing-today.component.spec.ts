@@ -9,8 +9,7 @@ describe('TvShowListAiringTodayComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [TvShowListAiringTodayComponent],
-    })
-      .compileComponents();
+    }).compileComponents();
   }));
 
   beforeEach(() => {

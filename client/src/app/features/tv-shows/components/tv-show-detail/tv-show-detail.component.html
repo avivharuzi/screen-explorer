@@ -22,14 +22,14 @@
           </section>
         </ng-container>
         <ng-container *ngIf="tvShowDetail.credits.crew && tvShowDetail.credits.crew.length > 0">
-          <hr/>
+          <hr />
           <section class="mt-5 mb-5">
             <app-section-title>Crew</app-section-title>
             <app-crew-list [crew]="tvShowDetail.credits.crew"></app-crew-list>
           </section>
         </ng-container>
         <ng-container *ngIf="similarTvShows && similarTvShows.length > 0">
-          <hr/>
+          <hr />
           <section class="mt-5 mb-5">
             <app-section-title>Similar TV Shows</app-section-title>
             <app-tv-show-list [tvShows]="similarTvShows"></app-tv-show-list>

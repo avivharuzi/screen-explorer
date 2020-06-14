@@ -26,12 +26,6 @@ import { TvShowsRoutingModule } from './tv-shows-routing.module';
     TvShowListTopRatedComponent,
     TvShowsComponent,
   ],
-  imports: [
-    CommonModule,
-    SharedModule,
-    TabsModule.forRoot(),
-    TvShowsRoutingModule,
-  ],
+  imports: [CommonModule, SharedModule, TabsModule.forRoot(), TvShowsRoutingModule],
 })
-export class TvShowsModule {
-}
+export class TvShowsModule {}

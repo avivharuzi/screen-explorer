@@ -9,8 +9,7 @@ describe('TvShowListTopRatedComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [TvShowListTopRatedComponent],
-    })
-      .compileComponents();
+    }).compileComponents();
   }));
 
   beforeEach(() => {

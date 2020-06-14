@@ -24,9 +24,8 @@ export class TvShowDetailComponent implements OnInit {
     private activatedRoute: ActivatedRoute,
     private changeDetectorRef: ChangeDetectorRef,
     private tvShowService: TvShowService,
-    private videoService: VideoService,
-  ) {
-  }
+    private videoService: VideoService
+  ) {}
 
   ngOnInit(): void {
     this.activatedRoute.params.subscribe(params => {
@@ -39,7 +38,7 @@ export class TvShowDetailComponent implements OnInit {
             res.videos.results = this.videoService.getOnlyYouTubeVideos(res.videos.results);
             this.playTrailerVideo = this.videoService.getYouTubeVideoTrailerOrFirstOne(res.videos.results);
             return res;
-          }),
+          })
         )
         .subscribe(res => {
           this.tvShowDetail = res;
@@ -51,7 +50,7 @@ export class TvShowDetailComponent implements OnInit {
         .pipe(
           map(res => {
             return res.results;
-          }),
+          })
         )
         .subscribe(res => {
           this.similarTvShows = res;

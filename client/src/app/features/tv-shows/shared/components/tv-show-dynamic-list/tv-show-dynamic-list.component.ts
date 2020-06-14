@@ -16,11 +16,7 @@ export class TvShowDynamicListComponent {
   tvShows: TvShow[];
   totalItems: number;
 
-  constructor(
-    private changeDetectorRef: ChangeDetectorRef,
-    private tvShowService: TvShowService,
-  ) {
-  }
+  constructor(private changeDetectorRef: ChangeDetectorRef, private tvShowService: TvShowService) {}
 
   load(page: number): void {
     this.tvShowService.getList(this.listType, { page }).subscribe(res => {

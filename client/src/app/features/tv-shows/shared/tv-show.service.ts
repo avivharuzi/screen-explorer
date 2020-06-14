@@ -14,8 +14,7 @@ import { TvShowListType } from './tv-show-list-type.enum';
 export class TvShowService {
   private readonly baseUrl = `${environment.baseApiUrl}/tv-shows`;
 
-  constructor(private httpClient: HttpClient) {
-  }
+  constructor(private httpClient: HttpClient) {}
 
   getList(type: TvShowListType, params = {}): Observable<HttpResponsePagination<TvShow>> {
     return this.httpClient.get<HttpResponsePagination<TvShow>>(`${this.baseUrl}/${type}`, { params });

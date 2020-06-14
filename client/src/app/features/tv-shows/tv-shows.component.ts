@@ -6,5 +6,4 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
   styleUrls: ['./tv-shows.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class TvShowsComponent {
-}
+export class TvShowsComponent {}

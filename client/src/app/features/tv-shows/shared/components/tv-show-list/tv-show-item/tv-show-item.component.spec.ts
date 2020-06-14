@@ -8,9 +8,8 @@ describe('TvShowItemComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ TvShowItemComponent ]
-    })
-    .compileComponents();
+      declarations: [TvShowItemComponent],
+    }).compileComponents();
   }));
 
   beforeEach(() => {
