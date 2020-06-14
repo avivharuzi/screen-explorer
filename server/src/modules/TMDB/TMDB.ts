@@ -1,7 +1,10 @@
+import * as httpStatusCodes from 'http-status-codes';
 import got from 'got';
 
 import config from '../../config';
+import errors from '../../errors';
 import { Redis } from '../Shared/Redis';
+import { ResponseError } from '../Shared/ResponseError';
 
 export class TMDB {
   private static readonly SORT_MOVIE_OPTIONS = [
@@ -65,7 +68,18 @@ export class TMDB {
       // If there was an error in getting cache value do nothing...
     }
 
-    const { body } = await got(url, { searchParams });
+    let body;
+
+    try {
+      const res = await got(url, { searchParams });
+      body = res.body;
+    } catch (err) {
+      if (err.response.statusCode === httpStatusCodes.NOT_FOUND) {
+        throw new ResponseError(errors.notFound);
+      }
+
+      throw err;
+    }
 
     try {
       if (useCache) {
