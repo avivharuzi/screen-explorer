@@ -4,7 +4,7 @@
     [posterHref]="tvShowDetail.poster_path | tmdbImage: 'original'"
     [backdrop]="tvShowDetail.backdrop_path | tmdbImage: 'original'"
     [title]="tvShowDetail.name"
-    [subtitle]="'(' + (tvShowDetail.first_air_date | date: 'yyyy') + ')'"
+    [subtitle]="tvShowDetail.first_air_date ? '(' + (tvShowDetail.first_air_date | date: 'yyyy') + ')' : null"
     [description]="tvShowDetail.overview"
     descriptionLabel="Overview"
     callToActionTitle="Play Trailer"

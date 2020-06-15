@@ -4,7 +4,7 @@
     [posterHref]="movieDetail.poster_path | tmdbImage: 'original'"
     [backdrop]="movieDetail.backdrop_path | tmdbImage: 'original'"
     [title]="movieDetail.title"
-    [subtitle]="'(' + (movieDetail.release_date | date: 'yyyy') + ')'"
+    [subtitle]="movieDetail.release_date ? '(' + (movieDetail.release_date | date: 'yyyy') + ')' : null"
     [description]="movieDetail.overview"
     descriptionLabel="Overview"
     callToActionTitle="Play Trailer"
