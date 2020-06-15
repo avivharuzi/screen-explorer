@@ -35,3 +35,15 @@ h6 {
 .hidden {
   visibility: hidden;
 }
+
+.focus-outline-none {
+  &:focus {
+    outline: none;
+  }
+}
+
+.focus-shadow-none {
+  &:focus {
+    box-shadow: none;
+  }
+}

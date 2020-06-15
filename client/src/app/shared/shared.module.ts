@@ -14,9 +14,11 @@ import { DefaultImageDirective } from './directives/default-image.directive';
 import { FooterComponent } from './components/footer/footer.component';
 import { HeaderComponent } from './components/header/header.component';
 import { HeroComponent } from './components/hero/hero.component';
+import { HorizontalCardComponent } from './components/horizontal-card/horizontal-card.component';
 import { ImageListComponent } from './components/image-list/image-list.component';
 import { ModalVideoComponent } from './components/modal-video/modal-video.component';
 import { PaginatedListComponent } from './components/paginated-list/paginated-list.component';
+import { ParenthesisPipe } from './pipes/parenthesis.pipe';
 import { ReadMoreComponent } from './components/read-more/read-more.component';
 import { SectionTitleComponent } from './components/section-title/section-title.component';
 import { TimelineContainerComponent } from './components/timeline-container/timeline-container.component';
@@ -37,9 +39,11 @@ import { YouTubeImagePipe } from './pipes/you-tube-image.pipe';
     FooterComponent,
     HeaderComponent,
     HeroComponent,
+    HorizontalCardComponent,
     ImageListComponent,
     ModalVideoComponent,
     PaginatedListComponent,
+    ParenthesisPipe,
     ReadMoreComponent,
     SectionTitleComponent,
     TimelineContainerComponent,
@@ -60,9 +64,11 @@ import { YouTubeImagePipe } from './pipes/you-tube-image.pipe';
     FooterComponent,
     HeaderComponent,
     HeroComponent,
+    HorizontalCardComponent,
     ImageListComponent,
     ModalVideoComponent,
     PaginatedListComponent,
+    ParenthesisPipe,
     ReadMoreComponent,
     SectionTitleComponent,
     TimelineContainerComponent,
