@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, Input, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 
 @Component({
   selector: 'app-read-more',
@@ -6,7 +6,7 @@ import { ChangeDetectionStrategy, Component, Input, OnInit } from '@angular/core
   styleUrls: ['./read-more.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class ReadMoreComponent implements OnInit {
+export class ReadMoreComponent implements OnInit, OnChanges {
   @Input() maxLength: number;
   @Input() text: string;
 
@@ -14,7 +14,9 @@ export class ReadMoreComponent implements OnInit {
   hideToggle: boolean;
   isCollapsed: boolean;
 
-  constructor() {
+  constructor(
+    private changeDetectorRef: ChangeDetectorRef,
+  ) {
     this.maxLength = 1000;
     this.hideToggle = true;
     this.isCollapsed = true;
@@ -22,6 +24,13 @@ export class ReadMoreComponent implements OnInit {
 
   ngOnInit(): void {
     this.determineView();
+  }
+
+  ngOnChanges(changes: SimpleChanges): void {
+    if (changes.text && (changes.text.previousValue !== changes.text.currentValue)) {
+      this.determineView();
+      this.changeDetectorRef.detectChanges();
+    }
   }
 
   toggleView(): void {
