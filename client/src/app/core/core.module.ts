@@ -11,7 +11,10 @@ import { NotFoundInterceptor } from './shared/not-found.interceptor';
 import { SearchModule } from '../features/search/search.module';
 import { RouterModule } from '@angular/router';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
-
+import { TabsModule } from 'ngx-bootstrap/tabs';
+import { SharedModule } from '../shared/shared.module';
+import { TrendingsModule } from '../features/trendings/trendings.module';
+import { NgxGlideModule } from 'ngx-glide';
 
 @NgModule({
   declarations: [
@@ -25,7 +28,12 @@ import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
     HttpClientModule,
     SearchModule,
     RouterModule,
-    BsDropdownModule.forRoot()
+    BsDropdownModule.forRoot(),
+    TabsModule.forRoot(),
+    SharedModule,
+    TrendingsModule,
+    NgxGlideModule,
+
   ],
   providers: [
     {

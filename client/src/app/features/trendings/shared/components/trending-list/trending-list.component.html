@@ -1,0 +1,9 @@
+<div class="flex-horizontal">
+  <div class="col-6 col-sm-4 col-md-3 col-lg-2" *ngFor="let trending of trendings">
+    <app-card
+      [title]="trending.title || trending.original_title || trending.name || trending.original_name"
+      [subtitle]="((trending.release_date || trending.first_air_date) | date) || trending.known_for_department"
+      [poster]="trending.poster_path ? (trending.poster_path | tmdbImage:'w500') : (trending.profile_path) | tmdbImage:'h632'"
+    ></app-card>
+  </div>
+</div>

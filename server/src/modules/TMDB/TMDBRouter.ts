@@ -162,10 +162,10 @@ peopleRouter.get('/:id', async (req: Request, res: Response) => {
  * ===== Trending Router =====
  * ===========================
  */
-// media_type: 'all' | 'movie' | 'tv' | 'person'
-// time_window: 'all' | 'day'
-trendingRouter.get('/:media_type/:time_window', async (req: Request, res: Response) => {
-  await TMDBHandler.handleReq(req, res, `trending/${req.params.media_type}/${req.params.time_window}`);
+// mediaType: 'all' | 'movie' | 'tv' | 'person'
+// timeWindow: 'week' | 'day'
+trendingRouter.get('/:mediaType/:timeWindow', async (req: Request, res: Response) => {
+  await TMDBHandler.handleReq(req, res, `trending/${req.params.mediaType}/${req.params.timeWindow}`);
 });
 
 /**
