@@ -1,4 +1,3 @@
-import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { ModalModule } from 'ngx-bootstrap/modal';
@@ -11,8 +10,6 @@ import { CastListComponent } from './components/cast-list/cast-list.component';
 import { ContainerComponent } from './components/container/container.component';
 import { CrewListComponent } from './components/crew-list/crew-list.component';
 import { DefaultImageDirective } from './directives/default-image.directive';
-import { FooterComponent } from './components/footer/footer.component';
-import { HeaderComponent } from './components/header/header.component';
 import { HeroComponent } from './components/hero/hero.component';
 import { HorizontalCardComponent } from './components/horizontal-card/horizontal-card.component';
 import { ImageListComponent } from './components/image-list/image-list.component';
@@ -36,8 +33,6 @@ import { YouTubeImagePipe } from './pipes/you-tube-image.pipe';
     ContainerComponent,
     CrewListComponent,
     DefaultImageDirective,
-    FooterComponent,
-    HeaderComponent,
     HeroComponent,
     HorizontalCardComponent,
     ImageListComponent,
@@ -54,15 +49,13 @@ import { YouTubeImagePipe } from './pipes/you-tube-image.pipe';
     YouTubeIframeUrlPipe,
     YouTubeImagePipe,
   ],
-  imports: [BsDropdownModule.forRoot(), CommonModule, FormsModule, ModalModule.forRoot(), PaginationModule.forRoot(), RouterModule],
+  imports: [CommonModule, FormsModule, ModalModule.forRoot(), PaginationModule.forRoot(), RouterModule],
   exports: [
     CardComponent,
     CastListComponent,
     ContainerComponent,
     CrewListComponent,
     DefaultImageDirective,
-    FooterComponent,
-    HeaderComponent,
     HeroComponent,
     HorizontalCardComponent,
     ImageListComponent,

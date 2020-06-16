@@ -1,0 +1,20 @@
+<div class="search-container" [class.open]="isSearchContainerOpen" (keydown.escape)="toggleSearchContainerOpen()">
+  <div class="container-fluid">
+    <div class="d-flex justify-content-end p-3">
+      <button type="button" class="text-white close focus-outline-none" (click)="toggleSearchContainerOpen()">
+        <i class="fas fa-times"></i>
+      </button>
+    </div>
+    <div class="row mt-5">
+      <div class="col-12">
+        <!--suppress HtmlFormInputWithoutLabel -->
+        <input type="search" class="form-control" placeholder="Search for a movie, tv show, person..." #inputSearch
+               (keyup)="startSearching()">
+      </div>
+    </div>
+    <div class="mt-5">
+      <app-search-multi-list [movies]="movies" [tvShows]="tvShows"
+                             [people]="people" (itemClick)="onItemClick($event)"></app-search-multi-list>
+    </div>
+  </div>
+</div>

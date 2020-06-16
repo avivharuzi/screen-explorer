@@ -1,0 +1,31 @@
+<div class="row">
+  <div class="col-12 col-xl-4 col-lg-6 mb-5" *ngIf="movies && movies.length > 0">
+    <app-section-title>Movies</app-section-title>
+    <div class="row">
+      <div class="col-12 col-md-6 mb-3 cursor-pointer focus-outline-none" (click)="itemClick.emit(['/', 'movies', movie.id])"
+           *ngFor="let movie of movies">
+        <app-horizontal-card [title]="movie.title" [poster]="movie.poster_path | tmdbImage:'w500'"
+                             [subtitle]="movie.release_date | date:'yyyy' | parenthesis"></app-horizontal-card>
+      </div>
+    </div>
+  </div>
+  <div class="col-12 col-xl-4 col-lg-6 mb-5" *ngIf="tvShows && tvShows.length > 0">
+    <app-section-title>TV Shows</app-section-title>
+    <div class="row">
+      <div class="col-12 col-md-6 mb-3 cursor-pointer focus-outline-none" (click)="itemClick.emit(['/', 'tv-shows', tvShow.id])"
+           *ngFor="let tvShow of tvShows">
+        <app-horizontal-card [title]="tvShow.name" [poster]="tvShow.poster_path | tmdbImage:'w500'"
+                             [subtitle]="tvShow.first_air_date | date:'yyyy' | parenthesis"></app-horizontal-card>
+      </div>
+    </div>
+  </div>
+  <div class="col-12 col-xl-4 col-lg-6 mb-5" *ngIf="people && people.length > 0">
+    <app-section-title>People</app-section-title>
+    <div class="row">
+      <div class="col-12 col-md-6 mb-3 cursor-pointer focus-outline-none" (click)="itemClick.emit(['/', 'people', person.id])"
+           *ngFor="let person of people">
+        <app-horizontal-card [title]="person.name" [poster]="person.profile_path | tmdbImage:'w185'"></app-horizontal-card>
+      </div>
+    </div>
+  </div>
+</div>

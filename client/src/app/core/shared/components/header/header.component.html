@@ -1,0 +1,72 @@
+<ng-container>
+  <header>
+    <nav class="navbar navbar-expand-md navbar-light bg-light">
+      <div class="container">
+        <a class="navbar-brand" routerLink="/">
+          <!--suppress CheckImageSize -->
+          <img src="../../../../../assets/logos/logo.png" width="30" height="30" class="d-inline-block align-top" alt="Screen Explorer" />
+          <span class="ml-3">Screen Explorer</span>
+        </a>
+        <button
+          [class.collapsed]="!isShow"
+          class="navbar-toggler focus-outline-none"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarCollapse"
+          aria-controls="navbarCollapse"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+          (click)="toggleShow()"
+          [attr.aria-expanded]="isShow"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="navbar-collapse collapse" [class.show]="isShow" id="navbarCollapse">
+          <ul class="navbar-nav mr-auto">
+            <li dropdown class="nav-item dropdown">
+              <a
+                dropdownToggle
+                class="nav-link dropdown-toggle cursor-pointer"
+                id="dropdownMovies"
+                data-toggle="dropdown"
+                aria-haspopup="true"
+                aria-expanded="false"
+              >Movies</a
+              >
+              <div *dropdownMenu class="dropdown-menu" aria-labelledby="dropdownMovies">
+                <a class="dropdown-item" routerLink="/movies/popular">Popular</a>
+                <a class="dropdown-item" routerLink="/movies/top-rated">Top Rated</a>
+                <a class="dropdown-item" routerLink="/movies/upcoming">Upcoming</a>
+                <a class="dropdown-item" routerLink="/movies/now-playing">Now Playing</a>
+              </div>
+            </li>
+            <li dropdown class="nav-item dropdown">
+              <a
+                dropdownToggle
+                class="nav-link dropdown-toggle cursor-pointer"
+                id="dropdownTvShows"
+                data-toggle="dropdown"
+                aria-haspopup="true"
+                aria-expanded="false"
+              >TV Shows</a
+              >
+              <div *dropdownMenu class="dropdown-menu" aria-labelledby="dropdownTvShows">
+                <a class="dropdown-item" routerLink="/tv-shows/popular">Popular</a>
+                <a class="dropdown-item" routerLink="/tv-shows/top-rated">Top Rated</a>
+                <a class="dropdown-item" routerLink="/tv-shows/on-the-air">On TV</a>
+                <a class="dropdown-item" routerLink="/tv-shows/airing-today">Airing Today</a>
+              </div>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" routerLink="/people/popular">People</a>
+            </li>
+          </ul>
+          <div class="cursor-pointer" (click)="searchMultiFormComponent.toggleSearchContainerOpen()">
+            <button class="btn btn-default focus-shadow-none pl-0 pr-5 pl-md-5 pr-md-0"><i class="fa fa-search"></i></button>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
+  <app-search-multi-form #searchMultiFormComponent></app-search-multi-form>
+</ng-container>
