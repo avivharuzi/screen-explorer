@@ -9,7 +9,7 @@ import { NgxSeoService } from '@avivharuzi/ngx-seo';
 export class AppComponent implements OnInit {
   constructor(private ngxSeoService: NgxSeoService) {}
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.ngxSeoService.subscribe();
   }
 }
