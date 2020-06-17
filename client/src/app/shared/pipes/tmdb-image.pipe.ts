@@ -7,7 +7,7 @@ import { environment } from '../../../environments/environment';
   name: 'tmdbImage',
 })
 export class TmdbImagePipe implements PipeTransform {
-  transform(path: string, size: BackdropSize | LogoSize | PosterSize | ProfileSize | StillSize): any {
-    return `${environment.tmdbImageBaseUrl}/${size}${path}`;
+  transform(path: string, size: BackdropSize | LogoSize | PosterSize | ProfileSize | StillSize): string {
+    return path ? `${environment.tmdbImageBaseUrl}/${size}${path}` : environment.defaultImagePath;
   }
 }
