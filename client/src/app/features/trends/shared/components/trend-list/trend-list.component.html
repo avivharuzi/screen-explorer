@@ -4,6 +4,7 @@
       [title]="trend.title || trend.original_title || trend.name || trend.original_name"
       [subtitle]="(trend.release_date || trend.first_air_date | date) || trend.known_for_department"
       [poster]="trend.poster_path ? (trend.poster_path | tmdbImage: 'w500') : (trend.profile_path | tmdbImage: 'h632')"
+      [routerLink]="['/', trend.media_type | mediaTypeToRouteName, trend.id]"
     ></app-card>
   </div>
 </div>

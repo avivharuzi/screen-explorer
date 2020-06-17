@@ -2,5 +2,5 @@
   [title]="tvShow.name"
   [subtitle]="tvShow.first_air_date | date"
   [poster]="tvShow.poster_path | tmdbImage: 'w500'"
-  [routerLink]="['/', 'tv-shows', tvShow.id]"
+  [routerLink]="['/', APP_ROUTES.TV_SHOWS.self, tvShow.id]"
 ></app-card>

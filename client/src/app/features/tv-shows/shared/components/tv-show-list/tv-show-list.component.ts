@@ -10,4 +10,8 @@ import { TvShow } from '../../tv-show';
 })
 export class TvShowListComponent {
   @Input() tvShows: TvShow[];
+
+  trackByTvShow(index: number, tvShow: TvShow): number {
+    return tvShow.id || index;
+  }
 }

@@ -11,7 +11,7 @@ import { Trend } from '../../trend';
 export class TrendListComponent {
   @Input() trends: Trend[];
 
-  trackByTrend(index: number, trend: Trend) {
+  trackByTrend(index: number, trend: Trend): number {
     return trend.id || index;
   }
 }

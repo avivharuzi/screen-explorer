@@ -13,6 +13,7 @@ import { DefaultImageDirective } from './directives/default-image.directive';
 import { HeroComponent } from './components/hero/hero.component';
 import { HorizontalCardComponent } from './components/horizontal-card/horizontal-card.component';
 import { ImageListComponent } from './components/image-list/image-list.component';
+import { MediaTypeToRouteNamePipe } from './pipes/media-type-to-route-name.pipe';
 import { ModalVideoComponent } from './components/modal-video/modal-video.component';
 import { PaginatedListComponent } from './components/paginated-list/paginated-list.component';
 import { ParenthesisPipe } from './pipes/parenthesis.pipe';
@@ -36,6 +37,7 @@ import { YouTubeImagePipe } from './pipes/you-tube-image.pipe';
     HeroComponent,
     HorizontalCardComponent,
     ImageListComponent,
+    MediaTypeToRouteNamePipe,
     ModalVideoComponent,
     PaginatedListComponent,
     ParenthesisPipe,
@@ -59,6 +61,7 @@ import { YouTubeImagePipe } from './pipes/you-tube-image.pipe';
     HeroComponent,
     HorizontalCardComponent,
     ImageListComponent,
+    MediaTypeToRouteNamePipe,
     ModalVideoComponent,
     PaginatedListComponent,
     ParenthesisPipe,

@@ -1,6 +1,7 @@
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 
 import { Cast, Crew } from '../../shared/person-detail';
+import { APP_ROUTES } from '../../../../../app-routes';
 
 @Component({
   selector: 'app-person-timeline-list',
@@ -21,6 +22,6 @@ export class PersonTimelineListComponent {
   }
 
   getTitleLink(id: number, mediaType: string): (string | number)[] {
-    return ['/', `${mediaType === 'movie' ? 'movies' : 'tv-shows'}`, id];
+    return ['/', `${mediaType === 'movie' ? APP_ROUTES.MOVIES.self : APP_ROUTES.TV_SHOWS.self }`, id];
   }
 }

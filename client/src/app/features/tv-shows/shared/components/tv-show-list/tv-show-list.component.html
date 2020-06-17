@@ -1,5 +1,5 @@
 <div class="row">
-  <ng-container *ngFor="let tvShow of tvShows">
+  <ng-container *ngFor="let tvShow of tvShows; trackBy: trackByTvShow">
     <div class="col-6 col-md-3 mb-4">
       <app-tv-show-item [tvShow]="tvShow"></app-tv-show-item>
     </div>

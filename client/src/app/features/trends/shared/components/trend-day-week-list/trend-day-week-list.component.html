@@ -1,0 +1,15 @@
+<ng-container *ngIf="dayTrends || weekTrends">
+  <app-section-title>{{ title }}</app-section-title>
+  <tabset type="pills">
+    <ng-container *ngIf="dayTrends">
+      <tab heading="Today">
+        <app-trend-list [trends]="dayTrends"></app-trend-list>
+      </tab>
+    </ng-container>
+    <ng-container *ngIf="weekTrends">
+      <tab heading="This Week">
+        <app-trend-list [trends]="weekTrends"></app-trend-list>
+      </tab>
+    </ng-container>
+  </tabset>
+</ng-container>

@@ -1,5 +1,6 @@
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 
+import { APP_ROUTES } from '../../../../../../app-routes';
 import { TvShow } from '../../../tv-show';
 
 @Component({
@@ -10,4 +11,6 @@ import { TvShow } from '../../../tv-show';
 })
 export class TvShowItemComponent {
   @Input() tvShow: TvShow;
+
+  APP_ROUTES = APP_ROUTES;
 }

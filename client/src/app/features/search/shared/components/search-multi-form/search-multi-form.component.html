@@ -18,12 +18,17 @@
       </div>
     </div>
     <div class="mt-5">
-      <app-search-multi-list
-        [movies]="movies"
-        [tvShows]="tvShows"
-        [people]="people"
-        (itemClick)="onItemClick($event)"
-      ></app-search-multi-list>
+      <div class="row">
+        <div *ngIf="movies && movies.length > 0" class="col-12 col-xl-4 col-lg-6 mb-5">
+          <app-search-multi-list title="Movies" [searchMulti]="movies" (itemClick)="onItemClick($event)"></app-search-multi-list>
+        </div>
+        <div *ngIf="tvShows && tvShows.length > 0" class="col-12 col-xl-4 col-lg-6 mb-5">
+          <app-search-multi-list title="TV Shows" [searchMulti]="tvShows" (itemClick)="onItemClick($event)"></app-search-multi-list>
+        </div>
+        <div *ngIf="people && people.length > 0" class="col-12 col-xl-4 col-lg-6 mb-5">
+          <app-search-multi-list title="People" [searchMulti]="people" (itemClick)="onItemClick($event)"></app-search-multi-list>
+        </div>
+      </div>
     </div>
   </div>
 </div>

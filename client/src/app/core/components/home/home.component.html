@@ -6,7 +6,7 @@
           <div class="glide-item rounded-lg" *ngFor="let t of weekAll">
             <div class="glide-background-img" [style.background-image]="'url(' + (t.backdrop_path | tmdbImage: 'original') + ')'">
               <div class="glide-background-filter">
-                <div class="glide-content cursor-pointer">
+                <div class="glide-content cursor-pointer focus-outline-none" [routerLink]="['/', t.media_type | mediaTypeToRouteName, t.id]">
                   <h3>{{ t.title || t.name }}</h3>
                   <p>{{ t.release_date || t.first_air_date | date }}</p>
                 </div>
@@ -18,49 +18,13 @@
     </div>
 
     <div class="mb-5">
-      <app-section-title>Trend Movies</app-section-title>
-      <tabset type="pills">
-        <ng-container *ngIf="dayMovies$ | async as dayMovies">
-          <tab heading="Today">
-            <app-trend-list [trends]="dayMovies"></app-trend-list>
-          </tab>
-        </ng-container>
-        <ng-container *ngIf="weekMovies$ | async as weekMovies">
-          <tab heading="This Week">
-            <app-trend-list [trends]="weekMovies"></app-trend-list>
-          </tab>
-        </ng-container>
-      </tabset>
+      <app-trend-day-week-list title="Trend Movies" [dayTrends]="dayMovies$ | async" [weekTrends]="weekMovies$ | async"></app-trend-day-week-list>
     </div>
     <div class="mb-5">
-      <app-section-title>Trend TV Shows</app-section-title>
-      <tabset type="pills">
-        <ng-container *ngIf="dayTvShows$ | async as dayTvShows">
-          <tab heading="Today">
-            <app-trend-list [trends]="dayTvShows"></app-trend-list>
-          </tab>
-        </ng-container>
-        <ng-container *ngIf="weekTvShows$ | async as weekTvShows">
-          <tab heading="This Week">
-            <app-trend-list [trends]="weekTvShows"></app-trend-list>
-          </tab>
-        </ng-container>
-      </tabset>
+      <app-trend-day-week-list title="Trend TV Shows" [dayTrends]="dayTvShows$ | async" [weekTrends]="weekTvShows$ | async"></app-trend-day-week-list>
     </div>
     <div>
-      <app-section-title>Trend People</app-section-title>
-      <tabset type="pills">
-        <tab heading="Today">
-          <ng-container *ngIf="dayPeople$ | async as dayPeople">
-            <app-trend-list [trends]="dayPeople"></app-trend-list>
-          </ng-container>
-        </tab>
-        <tab heading="This Week">
-          <ng-container *ngIf="weekPeople$ | async as weekPeople">
-            <app-trend-list [trends]="weekPeople"></app-trend-list>
-          </ng-container>
-        </tab>
-      </tabset>
+      <app-trend-day-week-list title="Trend People" [dayTrends]="dayPeople$ | async" [weekTrends]="weekPeople$ | async"></app-trend-day-week-list>
     </div>
   </app-container>
 </ng-container>

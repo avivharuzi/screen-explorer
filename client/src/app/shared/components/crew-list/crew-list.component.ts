@@ -1,5 +1,6 @@
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 
+import { APP_ROUTES } from '../../../app-routes';
 import { Crew } from '../../shared/crew';
 
 @Component({
@@ -10,6 +11,8 @@ import { Crew } from '../../shared/crew';
 })
 export class CrewListComponent {
   @Input() crews: Crew[];
+
+  APP_ROUTES = APP_ROUTES;
 
   trackByCrew(index: number, crew: Crew): number {
     return crew.id || index;

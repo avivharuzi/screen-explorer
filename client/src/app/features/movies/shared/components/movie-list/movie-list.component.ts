@@ -10,4 +10,8 @@ import { Movie } from '../../movie';
 })
 export class MovieListComponent {
   @Input() movies: Movie[];
+
+  trackByMovie(index: number, movie: Movie): number {
+    return movie.id || index;
+  }
 }
