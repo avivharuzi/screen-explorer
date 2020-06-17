@@ -1,5 +1,5 @@
 <div class="flex-horizontal">
-  <div class="col-6 col-sm-4 col-md-3 col-lg-2" *ngFor="let person of crew">
+  <div class="col-6 col-sm-4 col-md-3 col-lg-2" *ngFor="let person of crews; trackBy: trackByCrew">
     <app-card
       [title]="person.name"
       [subtitle]="person.job"

@@ -1,9 +1,10 @@
 <div class="spotlight-group">
   <div class="row">
-    <ng-container *ngFor="let image of images">
+    <ng-container *ngFor="let image of images; trackBy: trackByImage">
       <div class="col-6 col-md-4 mb-4">
         <a class="spotlight" [href]="image.file_path | tmdbImage: 'original'">
           <img
+            appDefaultImage
             class="img-thumbnail"
             width="auto"
             height="auto"

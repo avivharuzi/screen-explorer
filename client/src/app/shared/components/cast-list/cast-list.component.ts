@@ -9,9 +9,9 @@ import { Cast } from '../../shared/cast';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class CastListComponent {
-  @Input() cast: Cast[];
+  @Input() casts: Cast[];
 
-  trackPerson(index, person) {
-    return person.id;
+  trackByCast(index: number, cast: Cast): number {
+    return cast.id || index;
   }
 }

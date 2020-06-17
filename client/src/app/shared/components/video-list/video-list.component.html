@@ -1,5 +1,5 @@
 <div class="row video-list">
-  <ng-container *ngFor="let video of videos">
+  <ng-container *ngFor="let video of videos; trackBy: trackByVideo">
     <div class="col-12 col-md-6 mb-4">
       <app-card (click)="openVideoModal(video)" [poster]="video.key | youTubeImage" [title]="video.name"></app-card>
     </div>

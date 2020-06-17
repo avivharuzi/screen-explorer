@@ -1,3 +1,5 @@
+@import './../../../../scss/abstracts';
+
 :host ::ng-deep {
   .timeline-container {
     app-timeline-item {
@@ -6,7 +8,7 @@
       }
 
       display: block;
-      padding: 1rem 0;
+      padding: $space-1 0;
       border: 0;
       border-top: 0.05rem solid rgba(0, 0, 0, 0.1);
     }

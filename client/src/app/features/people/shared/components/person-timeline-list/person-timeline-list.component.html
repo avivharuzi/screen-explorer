@@ -22,7 +22,7 @@
         <app-timeline-item
           *ngFor="let c of crew"
           [date]="c.release_date || c.first_air_date"
-          [title]="c.title || c.original_title"
+          [title]="c.title || c.original_title || c.name || c.original_name"
           [titleLink]="getTitleLink(c.id, c.media_type)"
           [poster]="c.poster_path | tmdbImage: 'w500'"
           [asSubtitle]="c.job"

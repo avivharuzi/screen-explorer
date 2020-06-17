@@ -1,10 +1,10 @@
 <div class="flex-horizontal">
-  <div class="col-6 col-sm-4 col-md-3 col-lg-2" *ngFor="let person of cast; trackBy: trackPerson">
+  <div class="col-6 col-sm-4 col-md-3 col-lg-2" *ngFor="let cast of casts; trackBy: trackByCast">
     <app-card
-      [title]="person.name"
-      [subtitle]="person.character"
-      [poster]="person.profile_path | tmdbImage: 'w342'"
-      [routerLink]="['/', 'people', person.id]"
+      [title]="cast.name"
+      [subtitle]="cast.character"
+      [poster]="cast.profile_path | tmdbImage: 'w342'"
+      [routerLink]="['/', 'people', cast.id]"
     ></app-card>
   </div>
 </div>

@@ -3,31 +3,29 @@
 :host ::ng-deep {
   .video-list {
     .card-img {
-      margin: 0 auto;
-      text-align: center;
-      position: relative;
       display: inline-block;
+      margin: 0 auto;
+      position: relative;
+      text-align: center;
     }
 
     .card-img:before {
-      font-family: $font-family-icon;
-      font-weight: 900;
-      content: '\f04b';
-      color: $color-white;
-      font-size: 1.5rem;
-      width: 5rem;
-      height: 5rem;
-      display: flex;
       align-items: center;
-      justify-content: center;
+      background: $color-black-transparent;
       border-radius: 50%;
-      background: rgba(0, 0, 0, 0.7);
-      position: absolute;
-      left: 50%;
-      top: 50%;
-      transform: translate(-50%, -50%);
-      z-index: 99;
+      color: $color-white;
+      content: '\f04b';
       cursor: pointer;
+      display: flex;
+      font-family: $font-family-icon;
+      font-size: 1.5rem;
+      font-weight: 900;
+      height: 5rem;
+      justify-content: center;
+      width: 5rem;
+      z-index: 1;
+
+      @include absolute-center();
     }
   }
 }

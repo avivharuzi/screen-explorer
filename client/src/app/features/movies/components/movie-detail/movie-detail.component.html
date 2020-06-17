@@ -18,14 +18,14 @@
         <ng-container *ngIf="movieDetail.credits.cast && movieDetail.credits.cast.length > 0">
           <section class="mt-5 mb-5">
             <app-section-title>Cast</app-section-title>
-            <app-cast-list [cast]="movieDetail.credits.cast"></app-cast-list>
+            <app-cast-list [casts]="movieDetail.credits.cast"></app-cast-list>
           </section>
         </ng-container>
         <ng-container *ngIf="movieDetail.credits.crew && movieDetail.credits.crew.length > 0">
           <hr />
           <section class="mt-5 mb-5">
             <app-section-title>Crew</app-section-title>
-            <app-crew-list [crew]="movieDetail.credits.crew"></app-crew-list>
+            <app-crew-list [crews]="movieDetail.credits.crew"></app-crew-list>
           </section>
         </ng-container>
         <ng-container *ngIf="similarMovies && similarMovies.length > 0">

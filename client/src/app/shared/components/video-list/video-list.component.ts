@@ -17,4 +17,8 @@ export class VideoListComponent {
   openVideoModal(video: Video): void {
     this.videoService.openModal(video);
   }
+
+  trackByVideo(index: number, video: Video): string | number {
+    return video.id || index;
+  }
 }

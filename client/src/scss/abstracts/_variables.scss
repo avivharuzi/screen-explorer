@@ -24,6 +24,17 @@ $color-primary-700: $color-red-700;
 $color-primary-800: $color-red-800;
 $color-primary-900: $color-red-900;
 
+$color-black-transparent: rgba(0, 0, 0, 0.75);
+
+$spacer: 1rem;
+
+$space-0: 0;
+$space-1: $spacer * 0.25; // 0.25rem
+$space-2: $spacer * 0.5; // 0.5rem
+$space-3: $spacer; // 1rem
+$space-4: $spacer * 1.5; // 1.5rem
+$space-5: $spacer * 3; // 3rem
+
 $font-family-roboto: 'Roboto', sans-serif;
 $font-family-sans-source-pro: 'Source Sans Pro', sans-serif;
 $font-family-font-awesome: 'Font Awesome 5 Free', sans-serif;

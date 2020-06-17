@@ -1,10 +1,4 @@
 :host {
-  .timeline-img {
-    &:focus {
-      outline: none;
-    }
-  }
-
   img {
     object-fit: cover;
     width: 100px;

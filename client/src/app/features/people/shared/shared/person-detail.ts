@@ -35,7 +35,9 @@ export interface Crew {
   id: number;
   job: string;
   media_type: string;
+  name: string;
   original_language: string;
+  original_name: string;
   original_title: string;
   overview: string;
   popularity: number;

@@ -9,5 +9,9 @@ import { Crew } from '../../shared/crew';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class CrewListComponent {
-  @Input() crew: Crew[];
+  @Input() crews: Crew[];
+
+  trackByCrew(index: number, crew: Crew): number {
+    return crew.id || index;
+  }
 }

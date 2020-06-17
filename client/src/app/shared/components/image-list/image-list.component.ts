@@ -12,4 +12,8 @@ import { Profile } from '../../shared/profile';
 })
 export class ImageListComponent {
   @Input() images: Backdrop[] | Poster[] | Profile[];
+
+  trackByImage(index: number): number {
+    return index;
+  }
 }

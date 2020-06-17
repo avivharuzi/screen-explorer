@@ -1,3 +1,5 @@
+@import './../../../../scss/abstracts';
+
 .hero {
   position: relative;
   background-position: center;
@@ -6,7 +8,7 @@
 
   .hero-filter {
     display: block;
-    background: rgba(0, 0, 0, 0.75);
+    background: $color-black-transparent;
   }
 
   .hero-poster {
