@@ -7,7 +7,7 @@ import { Redis } from '../Shared/Redis';
 import { ResponseError } from '../Shared/ResponseError';
 
 export class TMDB {
-  private static readonly SORT_MOVIE_OPTIONS = [
+  private static readonly SORT_MOVIE_OPTIONS: string[] = [
     'popularity.asc',
     'popularity.desc',
     'release_date.asc',
@@ -24,7 +24,7 @@ export class TMDB {
     'vote_count.desc',
   ];
 
-  private static readonly SORT_TV_OPTIONS = [
+  private static readonly SORT_TV_OPTIONS: string[] = [
     'vote_average.desc',
     'vote_average.asc',
     'first_air_date.desc',
