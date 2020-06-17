@@ -15,18 +15,13 @@ import { Trend } from './trend';
 export class TrendService {
   private readonly baseUrl = `${environment.baseApiUrl}/trends`;
 
-  constructor(
-    private httpClient: HttpClient,
-  ) {
-  }
+  constructor(private httpClient: HttpClient) {}
 
   getList(mediaType: MediaType, timeWindow: TimeWindow): Observable<HttpResponsePagination<Trend>> {
     return this.httpClient.get<HttpResponsePagination<Trend>>(`${this.baseUrl}/${mediaType}/${timeWindow}`);
   }
 
   getListOnlyResults(mediaType: MediaType, timeWindow: TimeWindow): Observable<Trend[]> {
-    return this.getList(mediaType, timeWindow).pipe(
-      map(res => res.results),
-    );
+    return this.getList(mediaType, timeWindow).pipe(map(res => res.results));
   }
 }

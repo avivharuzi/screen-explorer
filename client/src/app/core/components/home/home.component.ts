@@ -21,10 +21,7 @@ export class HomeComponent implements OnInit {
   dayPeople$: Observable<Trend[]>;
   weekPeople$: Observable<Trend[]>;
 
-  constructor(
-    private trendService: TrendService
-  ) {
-  }
+  constructor(private trendService: TrendService) {}
 
   ngOnInit(): void {
     this.weekAll$ = this.trendService.getListOnlyResults(MediaType.All, TimeWindow.Week);

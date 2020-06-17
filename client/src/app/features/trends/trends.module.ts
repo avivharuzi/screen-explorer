@@ -6,13 +6,7 @@ import { TrendListComponent } from './shared/components/trend-list/trend-list.co
 
 @NgModule({
   declarations: [TrendListComponent],
-  imports: [
-    CommonModule,
-    SharedModule,
-  ],
-  exports: [
-    TrendListComponent,
-  ],
+  imports: [CommonModule, SharedModule],
+  exports: [TrendListComponent],
 })
-export class TrendsModule {
-}
+export class TrendsModule {}

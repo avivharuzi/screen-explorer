@@ -22,11 +22,7 @@ export class SearchMultiFormComponent implements OnInit, OnDestroy {
 
   private query$: Subject<string>;
 
-  constructor(
-    private searchService: SearchService,
-    private changeDetectorRef: ChangeDetectorRef,
-    private router: Router,
-  ) {
+  constructor(private searchService: SearchService, private changeDetectorRef: ChangeDetectorRef, private router: Router) {
     this.isSearchContainerOpen = false;
     this.query$ = new Subject<string>();
   }
@@ -74,18 +70,21 @@ export class SearchMultiFormComponent implements OnInit, OnDestroy {
   }
 
   private subscribeToSearchResults() {
-    this.searchService.getMultiWithDelay(this.query$).pipe(
-      map(res => {
-        const results = res.results;
+    this.searchService
+      .getMultiWithDelay(this.query$)
+      .pipe(
+        map(res => {
+          const results = res.results;
 
-        this.movies = results.filter(result => result.media_type === MediaType.Movie);
-        this.tvShows = results.filter(result => result.media_type === MediaType.TV);
-        this.people = results.filter(result => result.media_type === MediaType.Person);
-        this.changeDetectorRef.detectChanges();
+          this.movies = results.filter(result => result.media_type === MediaType.Movie);
+          this.tvShows = results.filter(result => result.media_type === MediaType.TV);
+          this.people = results.filter(result => result.media_type === MediaType.Person);
+          this.changeDetectorRef.detectChanges();
 
-        return res;
-      }),
-    ).subscribe();
+          return res;
+        })
+      )
+      .subscribe();
   }
 
   private focusInputSearch(): void {

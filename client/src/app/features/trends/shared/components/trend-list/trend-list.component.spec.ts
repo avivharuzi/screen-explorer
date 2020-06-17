@@ -9,8 +9,7 @@ describe('TrendListComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [TrendListComponent],
-    })
-      .compileComponents();
+    }).compileComponents();
   }));
 
   beforeEach(() => {

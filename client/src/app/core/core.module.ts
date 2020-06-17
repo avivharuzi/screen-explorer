@@ -17,12 +17,7 @@ import { TrendsModule } from '../features/trends/trends.module';
 import { NgxGlideModule } from 'ngx-glide';
 
 @NgModule({
-  declarations: [
-    FooterComponent,
-    HeaderComponent,
-    HomeComponent,
-    NotFoundComponent,
-  ],
+  declarations: [FooterComponent, HeaderComponent, HomeComponent, NotFoundComponent],
   imports: [
     CommonModule,
     HttpClientModule,
@@ -33,7 +28,6 @@ import { NgxGlideModule } from 'ngx-glide';
     SharedModule,
     TrendsModule,
     NgxGlideModule,
-
   ],
   providers: [
     {
@@ -42,10 +36,6 @@ import { NgxGlideModule } from 'ngx-glide';
       useClass: NotFoundInterceptor,
     },
   ],
-  exports: [
-    FooterComponent,
-    HeaderComponent,
-  ],
+  exports: [FooterComponent, HeaderComponent],
 })
-export class CoreModule {
-}
+export class CoreModule {}

@@ -8,14 +8,7 @@ import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [SearchMultiListComponent, SearchMultiFormComponent],
-  imports: [
-    CommonModule,
-    SharedModule,
-    RouterModule
-  ],
-  exports: [
-    SearchMultiFormComponent,
-  ],
+  imports: [CommonModule, SharedModule, RouterModule],
+  exports: [SearchMultiFormComponent],
 })
-export class SearchModule {
-}
+export class SearchModule {}

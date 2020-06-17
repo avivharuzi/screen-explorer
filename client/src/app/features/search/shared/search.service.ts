@@ -13,14 +13,15 @@ import { debounceTime, distinctUntilChanged, switchMap } from 'rxjs/operators';
 export class SearchService {
   private readonly baseUrl = `${environment.baseApiUrl}/search`;
 
-  constructor(
-    private httpClient: HttpClient,
-  ) {
-  }
+  constructor(private httpClient: HttpClient) {}
 
-  getMulti(params: HttpParams | {
-    [param: string]: string | string[];
-  } = {}): Observable<HttpResponsePagination<SearchMulti>> {
+  getMulti(
+    params:
+      | HttpParams
+      | {
+          [param: string]: string | string[];
+        } = {}
+  ): Observable<HttpResponsePagination<SearchMulti>> {
     return this.httpClient.get<HttpResponsePagination<SearchMulti>>(`${this.baseUrl}/multi`, { params });
   }
 
@@ -28,7 +29,7 @@ export class SearchService {
     return query$.pipe(
       debounceTime(400),
       distinctUntilChanged(),
-      switchMap(query => this.getMulti({ query })),
+      switchMap(query => this.getMulti({ query }))
     );
   }
 }

@@ -14,9 +14,7 @@ export class ReadMoreComponent implements OnInit, OnChanges {
   hideToggle: boolean;
   isCollapsed: boolean;
 
-  constructor(
-    private changeDetectorRef: ChangeDetectorRef,
-  ) {
+  constructor(private changeDetectorRef: ChangeDetectorRef) {
     this.maxLength = 1000;
     this.hideToggle = true;
     this.isCollapsed = true;
@@ -27,7 +25,7 @@ export class ReadMoreComponent implements OnInit, OnChanges {
   }
 
   ngOnChanges(changes: SimpleChanges): void {
-    if (changes.text && (changes.text.previousValue !== changes.text.currentValue)) {
+    if (changes.text && changes.text.previousValue !== changes.text.currentValue) {
       this.determineView();
       this.changeDetectorRef.detectChanges();
     }

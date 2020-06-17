@@ -9,8 +9,7 @@ describe('HorizontalCardComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [HorizontalCardComponent],
-    })
-      .compileComponents();
+    }).compileComponents();
   }));
 
   beforeEach(() => {
