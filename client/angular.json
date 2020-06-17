@@ -24,7 +24,7 @@
             "tsConfig": "tsconfig.app.json",
             "aot": true,
             "assets": ["src/favicon.ico", "src/assets", "src/manifest.webmanifest", "src/robots.txt"],
-            "styles": ["node_modules/@fortawesome/fontawesome-free/css/all.css", "src/styles.scss"],
+            "styles": ["src/styles.scss"],
             "scripts": ["node_modules/spotlight.js/dist/spotlight.bundle.js"]
           },
           "configurations": {
@@ -85,7 +85,7 @@
             "tsConfig": "tsconfig.spec.json",
             "karmaConfig": "karma.conf.js",
             "assets": ["src/favicon.ico", "src/assets", "src/manifest.webmanifest", "src/robots.txt"],
-            "styles": ["node_modules/@fortawesome/fontawesome-free/css/all.css", "src/styles.scss"],
+            "styles": ["src/styles.scss"],
             "scripts": ["node_modules/spotlight.js/dist/spotlight.bundle.js"]
           }
         },

@@ -1,7 +1,7 @@
 {
-  "name": "screen-explorer-client",
-  "short_name": "screen-explorer-client",
-  "theme_color": "#1976d2",
+  "name": "Screen Explorer",
+  "short_name": "Screen Explorer",
+  "theme_color": "#ba2525",
   "background_color": "#fafafa",
   "display": "standalone",
   "scope": "./",
