@@ -1,6 +1,6 @@
 export enum MediaType {
+  All = 'all',
   Movie = 'movie',
-  TV = 'tv',
   Person = 'person',
-  All = 'all'
+  TV = 'tv',
 }

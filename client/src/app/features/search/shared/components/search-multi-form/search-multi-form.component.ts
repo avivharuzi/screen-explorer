@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, ChangeDetectorRef, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, ElementRef, OnDestroy, OnInit, ViewChild } from '@angular/core';
 import { map } from 'rxjs/operators';
 import { Router } from '@angular/router';
 import { Subject } from 'rxjs';
@@ -12,7 +12,7 @@ import { SearchService } from '../../search.service';
   styleUrls: ['./search-multi-form.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class SearchMultiFormComponent implements OnInit {
+export class SearchMultiFormComponent implements OnInit, OnDestroy {
   @ViewChild('inputSearch', { static: false }) inputSearchElementRef: ElementRef;
 
   isSearchContainerOpen: boolean;
@@ -33,6 +33,10 @@ export class SearchMultiFormComponent implements OnInit {
 
   ngOnInit(): void {
     this.subscribeToSearchResults();
+  }
+
+  ngOnDestroy(): void {
+    this.query$.unsubscribe();
   }
 
   startSearching(): void {

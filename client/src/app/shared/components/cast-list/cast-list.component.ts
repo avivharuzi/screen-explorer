@@ -10,4 +10,8 @@ import { Cast } from '../../shared/cast';
 })
 export class CastListComponent {
   @Input() cast: Cast[];
+
+  trackPerson(index, person) {
+    return person.id;
+  }
 }

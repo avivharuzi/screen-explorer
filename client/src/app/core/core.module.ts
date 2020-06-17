@@ -13,7 +13,7 @@ import { RouterModule } from '@angular/router';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { TabsModule } from 'ngx-bootstrap/tabs';
 import { SharedModule } from '../shared/shared.module';
-import { TrendingsModule } from '../features/trendings/trendings.module';
+import { TrendsModule } from '../features/trends/trends.module';
 import { NgxGlideModule } from 'ngx-glide';
 
 @NgModule({
@@ -31,7 +31,7 @@ import { NgxGlideModule } from 'ngx-glide';
     BsDropdownModule.forRoot(),
     TabsModule.forRoot(),
     SharedModule,
-    TrendingsModule,
+    TrendsModule,
     NgxGlideModule,
 
   ],

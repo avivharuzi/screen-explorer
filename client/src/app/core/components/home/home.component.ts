@@ -1,9 +1,9 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
-import { TrendingService } from '../../../features/trendings/shared/trending.service';
+import { TrendService } from '../../../features/trends/shared/trend.service';
 import { Observable } from 'rxjs';
-import { Trending } from '../../../features/trendings/shared/trending';
-import { MediaType } from '../../../features/trendings/shared/media-type.enum';
-import { TimeWindow } from '../../../features/trendings/shared/time-window.enum';
+import { Trend } from '../../../features/trends/shared/trend';
+import { MediaType } from '../../../features/trends/shared/media-type.enum';
+import { TimeWindow } from '../../../features/trends/shared/time-window.enum';
 
 @Component({
   selector: 'app-home',
@@ -12,27 +12,27 @@ import { TimeWindow } from '../../../features/trendings/shared/time-window.enum'
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class HomeComponent implements OnInit {
-  weekAll$: Observable<Trending[]>;
+  weekAll$: Observable<Trend[]>;
 
-  dayMovies$: Observable<Trending[]>;
-  weekMovies$: Observable<Trending[]>;
-  dayTvShows$: Observable<Trending[]>;
-  weekTvShows$: Observable<Trending[]>;
-  dayPeople$: Observable<Trending[]>;
-  weekPeople$: Observable<Trending[]>;
+  dayMovies$: Observable<Trend[]>;
+  weekMovies$: Observable<Trend[]>;
+  dayTvShows$: Observable<Trend[]>;
+  weekTvShows$: Observable<Trend[]>;
+  dayPeople$: Observable<Trend[]>;
+  weekPeople$: Observable<Trend[]>;
 
   constructor(
-    private trendingService: TrendingService
+    private trendService: TrendService
   ) {
   }
 
   ngOnInit(): void {
-    this.weekAll$ = this.trendingService.getListOnlyResults(MediaType.All, TimeWindow.Week);
-    this.dayMovies$ = this.trendingService.getListOnlyResults(MediaType.Movie, TimeWindow.Day);
-    this.weekMovies$ = this.trendingService.getListOnlyResults(MediaType.Movie, TimeWindow.Week);
-    this.dayTvShows$ = this.trendingService.getListOnlyResults(MediaType.TV, TimeWindow.Day);
-    this.weekTvShows$ = this.trendingService.getListOnlyResults(MediaType.TV, TimeWindow.Week);
-    this.dayPeople$ = this.trendingService.getListOnlyResults(MediaType.Person, TimeWindow.Day);
-    this.weekPeople$ = this.trendingService.getListOnlyResults(MediaType.Person, TimeWindow.Week);
+    this.weekAll$ = this.trendService.getListOnlyResults(MediaType.All, TimeWindow.Week);
+    this.dayMovies$ = this.trendService.getListOnlyResults(MediaType.Movie, TimeWindow.Day);
+    this.weekMovies$ = this.trendService.getListOnlyResults(MediaType.Movie, TimeWindow.Week);
+    this.dayTvShows$ = this.trendService.getListOnlyResults(MediaType.TV, TimeWindow.Day);
+    this.weekTvShows$ = this.trendService.getListOnlyResults(MediaType.TV, TimeWindow.Week);
+    this.dayPeople$ = this.trendService.getListOnlyResults(MediaType.Person, TimeWindow.Day);
+    this.weekPeople$ = this.trendService.getListOnlyResults(MediaType.Person, TimeWindow.Week);
   }
 }
