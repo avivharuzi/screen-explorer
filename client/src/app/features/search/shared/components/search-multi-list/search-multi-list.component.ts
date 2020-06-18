@@ -1,7 +1,7 @@
 import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output } from '@angular/core';
 
-import { MediaType, SearchMulti } from '../../search-multi';
-import { APP_ROUTES } from '../../../../../app-routes';
+import { MediaTypeToRouteNamePipe } from '../../../../../shared/pipes/media-type-to-route-name.pipe';
+import { SearchMulti } from '../../search-multi';
 
 @Component({
   selector: 'app-search-multi-list',
@@ -15,18 +15,13 @@ export class SearchMultiListComponent {
 
   @Output() itemClick: EventEmitter<(string | number)[]> = new EventEmitter<(string | number)[]>();
 
+  constructor(private mediaTypeToRouteNamePipe: MediaTypeToRouteNamePipe) {}
+
   trackBySearchMulti(index: number, searchMulti: SearchMulti): number {
     return searchMulti.id || index;
   }
 
-  getRoute(mediaType: MediaType): string {
-    switch (mediaType) {
-      case MediaType.Movie:
-        return APP_ROUTES.MOVIES.self;
-      case MediaType.TV:
-        return APP_ROUTES.TV_SHOWS.self;
-      case MediaType.Person:
-        return APP_ROUTES.PEOPLE.self;
-    }
+  onSearchSingleClick(searchSingle: SearchMulti): void {
+    this.itemClick.emit(['/', this.mediaTypeToRouteNamePipe.transform(searchSingle.media_type), searchSingle.id]);
   }
 }

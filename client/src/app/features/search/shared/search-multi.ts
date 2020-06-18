@@ -1,10 +1,5 @@
 import { KnownFor } from '../../../shared/shared/known-for';
-
-export enum MediaType {
-  Movie = 'movie',
-  Person = 'person',
-  TV = 'tv',
-}
+import { MediaType } from '../../../shared/shared/media-type.enum';
 
 export interface SearchMulti {
   adult: boolean;

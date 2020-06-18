@@ -27,10 +27,6 @@
     color: $color-white;
     border-bottom: 0.1rem solid $color-white;
     border-radius: 0;
-
-    &:focus {
-      box-shadow: none;
-    }
   }
 }
 

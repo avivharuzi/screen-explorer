@@ -1,3 +1,4 @@
+import { debounceTime, distinctUntilChanged, switchMap } from 'rxjs/operators';
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
@@ -5,7 +6,6 @@ import { Observable } from 'rxjs';
 import { environment } from '../../../../environments/environment';
 import { HttpResponsePagination } from '../../../shared/shared/http-response-pagination.interface';
 import { SearchMulti } from './search-multi';
-import { debounceTime, distinctUntilChanged, switchMap } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root',
@@ -25,7 +25,7 @@ export class SearchService {
     return this.httpClient.get<HttpResponsePagination<SearchMulti>>(`${this.baseUrl}/multi`, { params });
   }
 
-  getMultiWithDelay(query$: Observable<string>) {
+  getMultiWithDelay(query$: Observable<string>): Observable<HttpResponsePagination<SearchMulti>> {
     return query$.pipe(
       debounceTime(400),
       distinctUntilChanged(),

@@ -3,7 +3,8 @@ import { map } from 'rxjs/operators';
 import { Router } from '@angular/router';
 import { Subject } from 'rxjs';
 
-import { MediaType, SearchMulti } from '../../search-multi';
+import { MediaType } from '../../../../../shared/shared/media-type.enum';
+import { SearchMulti } from '../../search-multi';
 import { SearchService } from '../../search.service';
 
 @Component({
@@ -69,7 +70,7 @@ export class SearchMultiFormComponent implements OnInit, OnDestroy {
     this.inputSearchElementRef.nativeElement.value = inputSearchValue;
   }
 
-  private subscribeToSearchResults() {
+  private subscribeToSearchResults(): void {
     this.searchService
       .getMultiWithDelay(this.query$)
       .pipe(
