@@ -1,19 +1,19 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { TrendDayWeekListComponent } from './trend-day-week-list.component';
+import { TrendCarouselListComponent } from './trend-carousel-list.component';
 
-describe('TrendDayWeekListComponent', () => {
-  let component: TrendDayWeekListComponent;
-  let fixture: ComponentFixture<TrendDayWeekListComponent>;
+describe('TrendCarouselListComponent', () => {
+  let component: TrendCarouselListComponent;
+  let fixture: ComponentFixture<TrendCarouselListComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [TrendDayWeekListComponent],
+      declarations: [TrendCarouselListComponent],
     }).compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(TrendDayWeekListComponent);
+    fixture = TestBed.createComponent(TrendCarouselListComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

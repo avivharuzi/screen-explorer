@@ -4,7 +4,7 @@ import { APP_ROUTES } from '../../app-routes';
 import { MediaType } from '../shared/media-type.enum';
 
 @Pipe({
-  name: 'mediaTypeToRouteName'
+  name: 'mediaTypeToRouteName',
 })
 export class MediaTypeToRouteNamePipe implements PipeTransform {
   transform(value: string): string {

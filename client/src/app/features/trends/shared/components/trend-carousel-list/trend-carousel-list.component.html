@@ -1,0 +1,17 @@
+<ng-container *ngIf="trends && trends.length > 0">
+  <ngx-glide arrowLeftLabel="&lsaquo;" arrowRightLabel="&rsaquo;" [showBullets]="false" [autoplay]="3000" [showArrows]="true">
+    <div class="trend-carousel-item rounded-lg" *ngFor="let trend of trends; trackBy: trackByTrend">
+      <div class="trend-carousel-img" [style.background-image]="'url(' + (trend.backdrop_path | tmdbImage: 'original') + ')'">
+        <div class="trend-carousel-content-container">
+          <div
+            class="trend-carousel-content cursor-pointer focus-outline-none rounded-lg"
+            [routerLink]="['/', trend.media_type | mediaTypeToRouteName, trend.id]"
+          >
+            <h3>{{ trend.title || trend.name }}</h3>
+            <p>{{ trend.release_date || trend.first_air_date | date }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </ngx-glide>
+</ng-container>

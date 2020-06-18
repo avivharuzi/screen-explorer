@@ -7,57 +7,29 @@
           <img src="../../../../../assets/logos/logo.png" width="30" height="30" class="d-inline-block align-top" alt="Screen Explorer" />
           <span class="ml-3">Screen Explorer</span>
         </a>
-        <button
-          [class.collapsed]="!isShow"
-          class="navbar-toggler focus-outline-none"
-          type="button"
-          data-toggle="collapse"
-          data-target="#navbarCollapse"
-          aria-controls="navbarCollapse"
-          aria-label="Toggle navigation"
-          (click)="toggleShow()"
-          [attr.aria-expanded]="isShow"
-        >
+        <button class="navbar-toggler focus-outline-none" type="button" [class.collapsed]="!isShow" (click)="toggleShow()">
           <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarCollapse" [class.show]="isShow">
+        <div class="collapse navbar-collapse" [class.show]="isShow">
           <ul class="navbar-nav mr-auto">
             <li dropdown class="nav-item dropdown">
-              <a
-                dropdownToggle
-                class="nav-link dropdown-toggle cursor-pointer"
-                id="dropdownMovies"
-                data-toggle="dropdown"
-                aria-haspopup="true"
-                aria-expanded="false"
-                >Movies</a
-              >
-              <div *dropdownMenu class="dropdown-menu" aria-labelledby="dropdownMovies">
-                <a class="dropdown-item" routerLink="/movies/popular">Popular</a>
-                <a class="dropdown-item" routerLink="/movies/top-rated">Top Rated</a>
-                <a class="dropdown-item" routerLink="/movies/upcoming">Upcoming</a>
-                <a class="dropdown-item" routerLink="/movies/now-playing">Now Playing</a>
+              <a dropdownToggle class="nav-link dropdown-toggle cursor-pointer">Movies</a>
+              <div *dropdownMenu class="dropdown-menu">
+                <a *ngFor="let movieNavLink of MOVIE_NAV_LINKS" class="dropdown-item" [routerLink]="movieNavLink.route">{{
+                  movieNavLink.name
+                }}</a>
               </div>
             </li>
             <li dropdown class="nav-item dropdown">
-              <a
-                dropdownToggle
-                class="nav-link dropdown-toggle cursor-pointer"
-                id="dropdownTvShows"
-                data-toggle="dropdown"
-                aria-haspopup="true"
-                aria-expanded="false"
-                >TV Shows</a
-              >
-              <div *dropdownMenu class="dropdown-menu" aria-labelledby="dropdownTvShows">
-                <a class="dropdown-item" routerLink="/tv-shows/popular">Popular</a>
-                <a class="dropdown-item" routerLink="/tv-shows/top-rated">Top Rated</a>
-                <a class="dropdown-item" routerLink="/tv-shows/on-the-air">On TV</a>
-                <a class="dropdown-item" routerLink="/tv-shows/airing-today">Airing Today</a>
+              <a dropdownToggle class="nav-link dropdown-toggle cursor-pointer">TV Shows</a>
+              <div *dropdownMenu class="dropdown-menu">
+                <a *ngFor="let tvShowNavLink of TV_SHOW_NAV_LINKS" class="dropdown-item" [routerLink]="tvShowNavLink.route">{{
+                  tvShowNavLink.name
+                }}</a>
               </div>
             </li>
             <li class="nav-item">
-              <a class="nav-link" routerLink="/people/popular">People</a>
+              <a class="nav-link" [routerLink]="PERSON_NAV_LINK.route">{{ PERSON_NAV_LINK.name }}</a>
             </li>
           </ul>
           <div class="cursor-pointer" (click)="searchMultiFormComponent.toggleSearchContainerOpen()">

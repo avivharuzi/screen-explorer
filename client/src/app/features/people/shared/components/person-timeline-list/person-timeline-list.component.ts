@@ -22,6 +22,6 @@ export class PersonTimelineListComponent {
   }
 
   getTitleLink(id: number, mediaType: string): (string | number)[] {
-    return ['/', `${mediaType === 'movie' ? APP_ROUTES.MOVIES.self : APP_ROUTES.TV_SHOWS.self }`, id];
+    return ['/', `${mediaType === 'movie' ? APP_ROUTES.MOVIES.self : APP_ROUTES.TV_SHOWS.self}`, id];
   }
 }

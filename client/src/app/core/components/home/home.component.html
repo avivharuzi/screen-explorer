@@ -1,30 +1,28 @@
 <ng-container>
   <app-container>
     <div class="mb-5">
-      <ng-container *ngIf="weekAll$ | async as weekAll">
-        <ngx-glide [showBullets]="false" [autoplay]="3000" [showArrows]="true" arrowLeftLabel="&lsaquo;" arrowRightLabel="&rsaquo;">
-          <div class="glide-item rounded-lg" *ngFor="let t of weekAll">
-            <div class="glide-background-img" [style.background-image]="'url(' + (t.backdrop_path | tmdbImage: 'original') + ')'">
-              <div class="glide-background-filter">
-                <div class="glide-content cursor-pointer focus-outline-none" [routerLink]="['/', t.media_type | mediaTypeToRouteName, t.id]">
-                  <h3>{{ t.title || t.name }}</h3>
-                  <p>{{ t.release_date || t.first_air_date | date }}</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </ngx-glide>
-      </ng-container>
-    </div>
-
-    <div class="mb-5">
-      <app-trend-day-week-list title="Trend Movies" [dayTrends]="dayMovies$ | async" [weekTrends]="weekMovies$ | async"></app-trend-day-week-list>
+      <app-trend-carousel-list [trends]="weekAll$ | async"></app-trend-carousel-list>
     </div>
     <div class="mb-5">
-      <app-trend-day-week-list title="Trend TV Shows" [dayTrends]="dayTvShows$ | async" [weekTrends]="weekTvShows$ | async"></app-trend-day-week-list>
+      <app-trend-day-week-list
+        title="Trend Movies"
+        [dayTrends]="dayMovies$ | async"
+        [weekTrends]="weekMovies$ | async"
+      ></app-trend-day-week-list>
+    </div>
+    <div class="mb-5">
+      <app-trend-day-week-list
+        title="Trend TV Shows"
+        [dayTrends]="dayTvShows$ | async"
+        [weekTrends]="weekTvShows$ | async"
+      ></app-trend-day-week-list>
     </div>
     <div>
-      <app-trend-day-week-list title="Trend People" [dayTrends]="dayPeople$ | async" [weekTrends]="weekPeople$ | async"></app-trend-day-week-list>
+      <app-trend-day-week-list
+        title="Trend People"
+        [dayTrends]="dayPeople$ | async"
+        [weekTrends]="weekPeople$ | async"
+      ></app-trend-day-week-list>
     </div>
   </app-container>
 </ng-container>

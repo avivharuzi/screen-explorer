@@ -10,7 +10,8 @@
   }
 
   .page-not-found-content {
+    background-color: $color-black-transparent;
+
     @include absolute-center();
-    background: rgb(0, 0, 0, 0.7);
   }
 }

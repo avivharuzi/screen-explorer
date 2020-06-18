@@ -1,9 +1,10 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
-import { TrendService } from '../../../features/trends/shared/trend.service';
 import { Observable } from 'rxjs';
-import { Trend } from '../../../features/trends/shared/trend';
+
 import { MediaType } from '../../../features/trends/shared/media-type.enum';
 import { TimeWindow } from '../../../features/trends/shared/time-window.enum';
+import { Trend } from '../../../features/trends/shared/trend';
+import { TrendService } from '../../../features/trends/shared/trend.service';
 
 @Component({
   selector: 'app-home',

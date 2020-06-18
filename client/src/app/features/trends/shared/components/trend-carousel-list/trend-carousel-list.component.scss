@@ -1,0 +1,26 @@
+@import './../../../../../../scss/abstracts';
+
+.trend-carousel-item {
+  height: 50vh;
+
+  .trend-carousel-img {
+    width: 100%;
+    height: inherit;
+    background-size: cover;
+    background-position: center center;
+
+    .trend-carousel-content-container {
+      @include wh-full();
+      position: relative;
+
+      .trend-carousel-content {
+        @include absolute-center();
+        background-color: $color-black-transparent;
+        color: $color-white;
+        padding: $space-5;
+        white-space: normal;
+        text-align: center;
+      }
+    }
+  }
+}

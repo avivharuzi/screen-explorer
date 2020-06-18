@@ -21,7 +21,7 @@ $grays: (
   '600': $gray-600,
   '700': $gray-700,
   '800': $gray-800,
-  '900': $gray-900
+  '900': $gray-900,
 );
 
 $red: $color-red-500;
@@ -32,7 +32,7 @@ $colors: (
   'yellow': $yellow,
   'white': $white,
   'gray': $gray-600,
-  'gray-dark': $gray-800
+  'gray-dark': $gray-800,
 );
 
 $primary: $color-primary-500;
@@ -44,7 +44,7 @@ $theme-colors: (
   'primary': $primary,
   'secondary': $secondary,
   'light': $light,
-  'dark': $dark
+  'dark': $dark,
 );
 
 $enable-responsive-font-sizes: true;
