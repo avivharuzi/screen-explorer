@@ -4,6 +4,7 @@ import { NgModule } from '@angular/core';
 import { NgxSeoModule } from '@avivharuzi/ngx-seo';
 import { ServiceWorkerModule } from '@angular/service-worker';
 
+import { APP_SEO } from './app-seo';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { CoreModule } from './core/core.module';
@@ -18,7 +19,7 @@ import { environment } from '../environments/environment';
     CoreModule,
     NgxSeoModule.forRoot(),
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
-    NgxSeoModule.forRoot({ preserve: false }),
+    NgxSeoModule.forRoot({ preserve: false, titleSuffixAfter: ` - ${APP_SEO.HOME.title}` }),
   ],
   providers: [],
   bootstrap: [AppComponent],

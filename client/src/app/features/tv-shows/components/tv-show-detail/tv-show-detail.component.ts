@@ -1,6 +1,7 @@
 import { ActivatedRoute } from '@angular/router';
 import { ChangeDetectionStrategy, ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { map } from 'rxjs/operators';
+import { NgxSeoService } from '@avivharuzi/ngx-seo';
 
 import { TvShow } from '../../shared/tv-show';
 import { TvShowDetail } from '../../shared/tv-show-detail';
@@ -23,10 +24,12 @@ export class TvShowDetailComponent implements OnInit {
   constructor(
     private activatedRoute: ActivatedRoute,
     private changeDetectorRef: ChangeDetectorRef,
+    private ngxSeoService: NgxSeoService,
     private tvShowService: TvShowService,
     private videoService: VideoService
   ) {}
 
+  // noinspection DuplicatedCode
   ngOnInit(): void {
     this.activatedRoute.params.subscribe(params => {
       const id = +params.id;
@@ -35,6 +38,8 @@ export class TvShowDetailComponent implements OnInit {
         .getDetail(id)
         .pipe(
           map(res => {
+            this.ngxSeoService.setTitle(res.name); // Set tv show name...
+
             res.videos.results = this.videoService.getOnlyYouTubeVideos(res.videos.results);
             this.playTrailerVideo = this.videoService.getYouTubeVideoTrailerOrFirstOne(res.videos.results);
             return res;

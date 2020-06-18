@@ -1,6 +1,8 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
+import { Title } from '@angular/platform-browser';
 
+import { APP_SEO } from '../../../app-seo';
 import { MediaTypeList } from '../../../features/trends/shared/media-type-list.enum';
 import { TimeWindow } from '../../../features/trends/shared/time-window.enum';
 import { Trend } from '../../../features/trends/shared/trend';
@@ -22,9 +24,11 @@ export class HomeComponent implements OnInit {
   dayPeople$: Observable<Trend[]>;
   weekPeople$: Observable<Trend[]>;
 
-  constructor(private trendService: TrendService) {}
+  constructor(private titleService: Title, private trendService: TrendService) {}
 
   ngOnInit(): void {
+    this.titleService.setTitle(APP_SEO.HOME.title);
+
     this.weekAll$ = this.trendService.getListOnlyResults(MediaTypeList.All, TimeWindow.Week);
     this.dayMovies$ = this.trendService.getListOnlyResults(MediaTypeList.Movie, TimeWindow.Day);
     this.weekMovies$ = this.trendService.getListOnlyResults(MediaTypeList.Movie, TimeWindow.Week);

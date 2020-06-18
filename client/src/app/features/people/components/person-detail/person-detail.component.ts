@@ -1,5 +1,6 @@
 import { ChangeDetectionStrategy, ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { map } from 'rxjs/operators';
+import { NgxSeoService } from '@avivharuzi/ngx-seo';
 
 import { PersonDetail } from '../../shared/shared/person-detail';
 import { PersonService } from '../../shared/shared/person.service';
@@ -14,7 +15,12 @@ import { ActivatedRoute } from '@angular/router';
 export class PersonDetailComponent implements OnInit {
   personDetail: PersonDetail;
 
-  constructor(private activatedRoute: ActivatedRoute, private personService: PersonService, private changeDetectorRef: ChangeDetectorRef) {}
+  constructor(
+    private activatedRoute: ActivatedRoute,
+    private changeDetectorRef: ChangeDetectorRef,
+    private ngxSeoService: NgxSeoService,
+    private personService: PersonService
+  ) {}
 
   ngOnInit(): void {
     this.activatedRoute.params.subscribe(params => {
@@ -24,6 +30,8 @@ export class PersonDetailComponent implements OnInit {
         .getDetail(id)
         .pipe(
           map(res => {
+            this.ngxSeoService.setTitle(res.name); // Set person name...
+
             if (res.combined_credits.cast && res.combined_credits.cast.length > 0) {
               res.combined_credits.cast = res.combined_credits.cast.sort(this.personService.sortByDescDate);
             }

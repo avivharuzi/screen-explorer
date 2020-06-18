@@ -7,6 +7,7 @@ import { MovieListNowPlayingComponent } from './components/movie-list-now-playin
 import { MovieListPopularComponent } from './components/movie-list-popular/movie-list-popular.component';
 import { MovieListTopRatedComponent } from './components/movie-list-top-rated/movie-list-top-rated.component';
 import { MovieListUpcomingComponent } from './components/movie-list-upcoming/movie-list-upcoming.component';
+import { MOVIES_SEO } from './movies-seo';
 import { MoviesComponent } from './movies.component';
 
 const routes: Routes = [
@@ -14,10 +15,10 @@ const routes: Routes = [
     path: '',
     component: MoviesComponent,
     children: [
-      { path: APP_ROUTES.MOVIES.children.POPULAR, component: MovieListPopularComponent },
-      { path: APP_ROUTES.MOVIES.children.TOP_RATED, component: MovieListTopRatedComponent },
-      { path: APP_ROUTES.MOVIES.children.UPCOMING, component: MovieListUpcomingComponent },
-      { path: APP_ROUTES.MOVIES.children.NOW_PLAYING, component: MovieListNowPlayingComponent },
+      { path: APP_ROUTES.MOVIES.children.POPULAR, component: MovieListPopularComponent, data: { seo: MOVIES_SEO.POPULAR } },
+      { path: APP_ROUTES.MOVIES.children.TOP_RATED, component: MovieListTopRatedComponent, data: { seo: MOVIES_SEO.TOP_RATED } },
+      { path: APP_ROUTES.MOVIES.children.UPCOMING, component: MovieListUpcomingComponent, data: { seo: MOVIES_SEO.UPCOMING } },
+      { path: APP_ROUTES.MOVIES.children.NOW_PLAYING, component: MovieListNowPlayingComponent, data: { seo: MOVIES_SEO.NOW_PLAYING } },
       { path: ':id', component: MovieDetailComponent },
       { path: '', redirectTo: 'popular', pathMatch: 'full' },
     ],
