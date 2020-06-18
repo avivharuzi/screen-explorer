@@ -14,14 +14,13 @@
           data-toggle="collapse"
           data-target="#navbarCollapse"
           aria-controls="navbarCollapse"
-          aria-expanded="false"
           aria-label="Toggle navigation"
           (click)="toggleShow()"
           [attr.aria-expanded]="isShow"
         >
           <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="navbar-collapse collapse" [class.show]="isShow" id="navbarCollapse">
+        <div class="collapse navbar-collapse" id="navbarCollapse" [class.show]="isShow">
           <ul class="navbar-nav mr-auto">
             <li dropdown class="nav-item dropdown">
               <a
