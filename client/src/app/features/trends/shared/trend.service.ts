@@ -5,7 +5,7 @@ import { Observable } from 'rxjs';
 
 import { environment } from '../../../../environments/environment';
 import { HttpResponsePagination } from '../../../shared/shared/http-response-pagination.interface';
-import { MediaType } from './media-type.enum';
+import { MediaTypeList } from './media-type-list.enum';
 import { TimeWindow } from './time-window.enum';
 import { Trend } from './trend';
 
@@ -17,11 +17,11 @@ export class TrendService {
 
   constructor(private httpClient: HttpClient) {}
 
-  getList(mediaType: MediaType, timeWindow: TimeWindow): Observable<HttpResponsePagination<Trend>> {
-    return this.httpClient.get<HttpResponsePagination<Trend>>(`${this.baseUrl}/${mediaType}/${timeWindow}`);
+  getList(mediaTypeList: MediaTypeList, timeWindow: TimeWindow): Observable<HttpResponsePagination<Trend>> {
+    return this.httpClient.get<HttpResponsePagination<Trend>>(`${this.baseUrl}/${mediaTypeList}/${timeWindow}`);
   }
 
-  getListOnlyResults(mediaType: MediaType, timeWindow: TimeWindow): Observable<Trend[]> {
-    return this.getList(mediaType, timeWindow).pipe(map(res => res.results));
+  getListOnlyResults(mediaTypeList: MediaTypeList, timeWindow: TimeWindow): Observable<Trend[]> {
+    return this.getList(mediaTypeList, timeWindow).pipe(map(res => res.results));
   }
 }

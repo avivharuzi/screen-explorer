@@ -1,4 +1,5 @@
 import { KnownFor } from '../../../shared/shared/known-for';
+import { MediaType } from '../../../shared/shared/media-type.enum';
 
 export interface Trend {
   adult: boolean;
@@ -9,7 +10,7 @@ export interface Trend {
   id: number;
   known_for: KnownFor[];
   known_for_department: string;
-  media_type: string;
+  media_type: MediaType;
   name: string;
   origin_country: string[];
   original_language: string;

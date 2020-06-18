@@ -1,5 +1,7 @@
+@import './../../../../../../scss/abstracts';
+
 :host ::ng-deep {
   .nav.nav-pills {
-    margin-bottom: 1.5rem;
+    margin-bottom: $space-4;
   }
 }

@@ -4,7 +4,7 @@
       <div class="trend-carousel-img" [style.background-image]="'url(' + (trend.backdrop_path | tmdbImage: 'original') + ')'">
         <div class="trend-carousel-content-container">
           <div
-            class="trend-carousel-content cursor-pointer focus-outline-none rounded-lg"
+            class="trend-carousel-content cursor-pointer focus-outline-none rounded-lg text-center"
             [routerLink]="['/', trend.media_type | mediaTypeToRouteName, trend.id]"
           >
             <h3>{{ trend.title || trend.name }}</h3>

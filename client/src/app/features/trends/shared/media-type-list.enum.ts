@@ -1,4 +1,4 @@
-export enum MediaType {
+export enum MediaTypeList {
   All = 'all',
   Movie = 'movie',
   Person = 'person',

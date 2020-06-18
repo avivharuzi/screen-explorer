@@ -1,7 +1,7 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 
-import { MediaType } from '../../../features/trends/shared/media-type.enum';
+import { MediaTypeList } from '../../../features/trends/shared/media-type-list.enum';
 import { TimeWindow } from '../../../features/trends/shared/time-window.enum';
 import { Trend } from '../../../features/trends/shared/trend';
 import { TrendService } from '../../../features/trends/shared/trend.service';
@@ -25,12 +25,12 @@ export class HomeComponent implements OnInit {
   constructor(private trendService: TrendService) {}
 
   ngOnInit(): void {
-    this.weekAll$ = this.trendService.getListOnlyResults(MediaType.All, TimeWindow.Week);
-    this.dayMovies$ = this.trendService.getListOnlyResults(MediaType.Movie, TimeWindow.Day);
-    this.weekMovies$ = this.trendService.getListOnlyResults(MediaType.Movie, TimeWindow.Week);
-    this.dayTvShows$ = this.trendService.getListOnlyResults(MediaType.TV, TimeWindow.Day);
-    this.weekTvShows$ = this.trendService.getListOnlyResults(MediaType.TV, TimeWindow.Week);
-    this.dayPeople$ = this.trendService.getListOnlyResults(MediaType.Person, TimeWindow.Day);
-    this.weekPeople$ = this.trendService.getListOnlyResults(MediaType.Person, TimeWindow.Week);
+    this.weekAll$ = this.trendService.getListOnlyResults(MediaTypeList.All, TimeWindow.Week);
+    this.dayMovies$ = this.trendService.getListOnlyResults(MediaTypeList.Movie, TimeWindow.Day);
+    this.weekMovies$ = this.trendService.getListOnlyResults(MediaTypeList.Movie, TimeWindow.Week);
+    this.dayTvShows$ = this.trendService.getListOnlyResults(MediaTypeList.TV, TimeWindow.Day);
+    this.weekTvShows$ = this.trendService.getListOnlyResults(MediaTypeList.TV, TimeWindow.Week);
+    this.dayPeople$ = this.trendService.getListOnlyResults(MediaTypeList.Person, TimeWindow.Day);
+    this.weekPeople$ = this.trendService.getListOnlyResults(MediaTypeList.Person, TimeWindow.Week);
   }
 }
