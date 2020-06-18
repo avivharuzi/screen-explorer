@@ -1,3 +1,63 @@
 @import './../../abstracts';
 
-$primary: $color-primary-500 !default;
+$white: $color-white;
+$gray-100: $color-neutral-50;
+$gray-200: $color-neutral-100;
+$gray-300: $color-neutral-200;
+$gray-400: $color-neutral-300;
+$gray-500: $color-neutral-400;
+$gray-600: $color-neutral-500;
+$gray-700: $color-neutral-600;
+$gray-800: $color-neutral-700;
+$gray-900: $color-neutral-800;
+$black: $color-black;
+
+$grays: ();
+$grays: map-merge(
+    (
+      '100': $gray-100,
+      '200': $gray-200,
+      '300': $gray-300,
+      '400': $gray-400,
+      '500': $gray-500,
+      '600': $gray-600,
+      '700': $gray-700,
+      '800': $gray-800,
+      '900': $gray-900
+    ),
+    $grays
+);
+
+$red: $color-red-500;
+$yellow: $color-yellow-500;
+
+$colors: ();
+$colors: map-merge(
+    (
+      'red': $red,
+      'yellow': $yellow,
+      'white': $white,
+      'gray': $gray-600,
+      'gray-dark': $gray-800
+    ),
+    $colors
+);
+
+$primary: $color-primary-500;
+$secondary: $color-secondary-500;
+$light: $gray-100;
+$dark: $gray-800;
+
+$theme-colors: ();
+// stylelint-disable-next-line scss/dollar-variable-default
+$theme-colors: map-merge(
+    (
+      'primary': $primary,
+      'secondary': $secondary,
+      'light': $light,
+      'dark': $dark
+    ),
+    $theme-colors
+);
+
+$enable-responsive-font-sizes: true;

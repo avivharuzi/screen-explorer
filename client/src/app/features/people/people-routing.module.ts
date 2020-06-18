@@ -11,7 +11,7 @@ const routes: Routes = [
     path: '',
     component: PeopleComponent,
     children: [
-      { path: APP_ROUTES.PEOPLE.self, component: PersonListPopularComponent },
+      { path: APP_ROUTES.PEOPLE.children.POPULAR, component: PersonListPopularComponent },
       { path: ':id', component: PersonDetailComponent },
       { path: '', redirectTo: 'popular', pathMatch: 'full' },
     ],

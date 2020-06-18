@@ -1,6 +1,8 @@
+@import './../abstracts';
+
 @media (min-width: 1200px) {
   .modal-video {
     max-width: 100%;
-    padding: 3rem;
+    padding: $space-5;
   }
 }
