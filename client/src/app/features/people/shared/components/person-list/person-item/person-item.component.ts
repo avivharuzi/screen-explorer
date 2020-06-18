@@ -1,5 +1,6 @@
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 
+import { APP_ROUTES } from '../../../../../../app-routes';
 import { Person } from '../../../shared/person';
 
 @Component({
@@ -10,4 +11,6 @@ import { Person } from '../../../shared/person';
 })
 export class PersonItemComponent {
   @Input() person: Person;
+
+  APP_ROUTES = APP_ROUTES;
 }

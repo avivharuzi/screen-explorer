@@ -2,5 +2,5 @@
   [title]="movie.title"
   [subtitle]="movie.release_date | date"
   [poster]="movie.poster_path | tmdbImage: 'w500'"
-  [routerLink]="['/', 'movies', movie.id]"
+  [routerLink]="['/', APP_ROUTES.MOVIES.self, movie.id]"
 ></app-card>

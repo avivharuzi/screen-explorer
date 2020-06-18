@@ -4,10 +4,10 @@
       <app-section-title>Cast</app-section-title>
       <app-timeline-container>
         <app-timeline-item
-          *ngFor="let c of cast"
+          *ngFor="let c of cast; trackBy: trackByC"
           [date]="c.release_date || c.first_air_date"
           [title]="c.title || c.original_title || c.name || c.original_name"
-          [titleLink]="getTitleLink(c.id, c.media_type)"
+          [titleLink]="['/', c.media_type | mediaTypeToRouteName, c.id]"
           [poster]="c.poster_path | tmdbImage: 'w500'"
           [asSubtitle]="c.character"
           [subtitle]="getEpisodesSubtitle(c.episode_count)"
@@ -20,10 +20,10 @@
       <app-section-title>Crew</app-section-title>
       <app-timeline-container>
         <app-timeline-item
-          *ngFor="let c of crew"
+          *ngFor="let c of crew; trackBy: trackByC"
           [date]="c.release_date || c.first_air_date"
           [title]="c.title || c.original_title || c.name || c.original_name"
-          [titleLink]="getTitleLink(c.id, c.media_type)"
+          [titleLink]="['/', c.media_type | mediaTypeToRouteName, c.id]"
           [poster]="c.poster_path | tmdbImage: 'w500'"
           [asSubtitle]="c.job"
         ></app-timeline-item>

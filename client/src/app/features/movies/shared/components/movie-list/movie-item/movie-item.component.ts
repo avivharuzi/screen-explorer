@@ -1,5 +1,6 @@
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 
+import { APP_ROUTES } from '../../../../../../app-routes';
 import { Movie } from '../../../movie';
 
 @Component({
@@ -10,4 +11,6 @@ import { Movie } from '../../../movie';
 })
 export class MovieItemComponent {
   @Input() movie: Movie;
+
+  APP_ROUTES = APP_ROUTES;
 }
