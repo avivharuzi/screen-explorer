@@ -13,7 +13,7 @@ export class DefaultImageDirective {
   src: string;
 
   @HostListener('error')
-  onError() {
+  onError(): void {
     this.src = this.appDefaultImage ? this.appDefaultImage : environment.defaultImagePath;
   }
 }
