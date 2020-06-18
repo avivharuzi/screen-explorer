@@ -5,6 +5,8 @@
 @import '~bootstrap/scss/variables';
 @import '~bootstrap/scss/mixins';
 
+$theme-colors: map-remove($theme-colors, 'success', 'info', 'warning', 'danger'); // Remove unused theme colors.
+
 // Optional.
 @import '~bootstrap/scss/root';
 @import '~bootstrap/scss/reboot';
