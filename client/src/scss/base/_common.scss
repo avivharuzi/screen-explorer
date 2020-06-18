@@ -11,6 +11,10 @@ body {
   }
 }
 
+body {
+  padding-top: 56px; // Because of navbar is fixed top.
+}
+
 h1,
 h2,
 h3,
