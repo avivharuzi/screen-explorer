@@ -11,7 +11,14 @@
     callToActionIcon="play"
     (callToActionClicked)="onCallToActionClicked()"
     [displayCallToAction]="hasVideo()"
-  ></app-hero>
+  >
+    <div class="mb-3">
+      <app-rating [rate]="tvShowDetail.vote_average" [votes]="tvShowDetail.vote_count"></app-rating>
+    </div>
+    <div class="mb-4" *ngIf="tvShowDetail.genres && tvShowDetail.genres.length > 0">
+      <app-genre-list [genres]="tvShowDetail.genres"></app-genre-list>
+    </div>
+  </app-hero>
   <div class="container mb-5">
     <tabset [justified]="true">
       <tab id="overview" heading="Overview">

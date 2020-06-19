@@ -1,0 +1,20 @@
+@import './../../../../scss/abstracts';
+
+:host ::ng-deep {
+  rating > span {
+    &:focus {
+      outline: none;
+    }
+  }
+}
+
+.rating {
+  .far.fa-star,
+  .fas.fa-star {
+    color: $color-yellow-500;
+  }
+
+  .rating-content {
+    font-weight: 300;
+  }
+}
