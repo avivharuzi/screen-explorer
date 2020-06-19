@@ -13,10 +13,14 @@
     [displayCallToAction]="hasVideo()"
   >
     <div class="mb-3">
-      <app-rating [rate]="tvShowDetail.vote_average" [votes]="tvShowDetail.vote_count"></app-rating>
+      <app-hero-stats
+        [date]="tvShowDetail.first_air_date"
+        [genres]="tvShowDetail.genres"
+        [runtime]="(tvShowDetail?.episode_run_time)[0]"
+      ></app-hero-stats>
     </div>
-    <div class="mb-4" *ngIf="tvShowDetail.genres && tvShowDetail.genres.length > 0">
-      <app-genre-list [genres]="tvShowDetail.genres"></app-genre-list>
+    <div class="mb-4">
+      <app-rating [rate]="tvShowDetail.vote_average" [votes]="tvShowDetail.vote_count"></app-rating>
     </div>
   </app-hero>
   <div class="container mb-5">

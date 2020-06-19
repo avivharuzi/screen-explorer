@@ -13,9 +13,11 @@ import { CrewListComponent } from './components/crew-list/crew-list.component';
 import { DefaultImageDirective } from './directives/default-image.directive';
 import { GenreListComponent } from './components/genre-list/genre-list.component';
 import { HeroComponent } from './components/hero/hero.component';
+import { HeroStatsComponent } from './components/hero-stats/hero-stats.component';
 import { HorizontalCardComponent } from './components/horizontal-card/horizontal-card.component';
 import { ImageListComponent } from './components/image-list/image-list.component';
 import { MediaTypeToRouteNamePipe } from './pipes/media-type-to-route-name.pipe';
+import { MinutesToHoursPipe } from './pipes/minutes-to-hours.pipe';
 import { ModalVideoComponent } from './components/modal-video/modal-video.component';
 import { PaginatedListComponent } from './components/paginated-list/paginated-list.component';
 import { ParenthesisPipe } from './pipes/parenthesis.pipe';
@@ -39,9 +41,11 @@ import { YouTubeImagePipe } from './pipes/you-tube-image.pipe';
     DefaultImageDirective,
     GenreListComponent,
     HeroComponent,
+    HeroStatsComponent,
     HorizontalCardComponent,
     ImageListComponent,
     MediaTypeToRouteNamePipe,
+    MinutesToHoursPipe,
     ModalVideoComponent,
     PaginatedListComponent,
     ParenthesisPipe,
@@ -65,9 +69,11 @@ import { YouTubeImagePipe } from './pipes/you-tube-image.pipe';
     DefaultImageDirective,
     GenreListComponent,
     HeroComponent,
+    HeroStatsComponent,
     HorizontalCardComponent,
     ImageListComponent,
     MediaTypeToRouteNamePipe,
+    MinutesToHoursPipe,
     ModalVideoComponent,
     PaginatedListComponent,
     ParenthesisPipe,

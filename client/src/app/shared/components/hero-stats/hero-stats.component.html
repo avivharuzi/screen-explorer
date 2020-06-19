@@ -1,0 +1,11 @@
+<div class="d-flex flex-wrap">
+  <div class="mb-2 mb-md-0 mr-4">
+    <span><i class="far fa-calendar-alt mr-2"></i>{{ date | date }}</span>
+  </div>
+  <div class="mb-2 mb-md-0 mr-4" *ngIf="genres && genres.length > 0">
+    <app-genre-list [genres]="genres"></app-genre-list>
+  </div>
+  <div class="mb-2 mb-md-0">
+    <span><i class="fas fa-clock mr-2"></i>{{ runtime || 0 | minutesToHours }}</span>
+  </div>
+</div>
