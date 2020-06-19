@@ -1,29 +1,41 @@
 @font-face {
   font-family: 'Roboto';
+  //noinspection CssUnknownTarget
   src: url('~assets/fonts/Roboto/Roboto-Light.ttf') format('truetype');
   font-weight: 300;
 }
 
 @font-face {
   font-family: 'Roboto';
+  //noinspection CssUnknownTarget
   src: url('~assets/fonts/Roboto/Roboto-Regular.ttf') format('truetype');
   font-weight: 400;
 }
 
 @font-face {
   font-family: 'Roboto';
+  //noinspection CssUnknownTarget
   src: url('~assets/fonts/Roboto/Roboto-Bold.ttf') format('truetype');
   font-weight: 700;
 }
 
 @font-face {
   font-family: 'Source Sans Pro';
+  //noinspection CssUnknownTarget
+  src: url('~assets/fonts/SourceSansPro/SourceSansPro-Light.ttf') format('truetype');
+  font-weight: 300;
+}
+
+@font-face {
+  font-family: 'Source Sans Pro';
+  //noinspection CssUnknownTarget
   src: url('~assets/fonts/SourceSansPro/SourceSansPro-Regular.ttf') format('truetype');
   font-weight: 400;
 }
 
 @font-face {
   font-family: 'Source Sans Pro';
+  //noinspection CssUnknownTarget
   src: url('~assets/fonts/SourceSansPro/SourceSansPro-Bold.ttf') format('truetype');
   font-weight: 700;
 }
