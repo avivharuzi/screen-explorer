@@ -15,6 +15,9 @@ export const APP_ROUTES = {
       TOP_RATED: 'top-rated',
       ON_THE_AIR: 'on-the-air',
       AIRING_TODAY: 'airing-today',
+      DETAIL: {
+        SEASONS: 'seasons',
+      },
     },
   },
   PEOPLE: {

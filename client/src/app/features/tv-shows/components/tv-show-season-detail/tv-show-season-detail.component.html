@@ -1,0 +1,23 @@
+<ng-container *ngIf="tvShowSeasonDetail">
+  <div class="mt-3 mb-5">
+    <div class="bg-light rounded-lg p-3">
+      <div class="d-flex justify-content-between">
+        <app-section-title>{{ tvShowSeasonDetail.name }}</app-section-title>
+        <span class="align-self-start badge badge-dark"
+          >{{ tvShowSeasonDetail.episodes.length }} {{ tvShowSeasonDetail.episodes.length > 1 ? 'episodes' : 'episode' }}</span
+        >
+      </div>
+      <p>{{ tvShowSeasonDetail.overview }}</p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12 col-md-6 mb-3" *ngFor="let episode of tvShowSeasonDetail.episodes; trackBy: trackByEpisode">
+      <app-card
+        [title]="(episode.episode_number | episodeNumber) + ' - ' + episode.name"
+        [poster]="episode.still_path | tmdbImage: 'original'"
+        [subtitle]="episode.overview"
+        [footer]="episode.air_date | date"
+      ></app-card>
+    </div>
+  </div>
+</ng-container>

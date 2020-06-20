@@ -9,6 +9,7 @@ import { TvShowListOnTheAirComponent } from './components/tv-show-list-on-the-ai
 import { TvShowListPopularComponent } from './components/tv-show-list-popular/tv-show-list-popular.component';
 import { TvShowListTopRatedComponent } from './components/tv-show-list-top-rated/tv-show-list-top-rated.component';
 import { TvShowsComponent } from './tv-shows.component';
+import { TvShowSeasonDetailComponent } from './components/tv-show-season-detail/tv-show-season-detail.component';
 
 const routes: Routes = [
   {
@@ -23,7 +24,11 @@ const routes: Routes = [
         component: TvShowListAiringTodayComponent,
         data: { seo: TV_SHOWS_SEO.AIRING_TODAY },
       },
-      { path: ':id', component: TvShowDetailComponent },
+      {
+        path: ':id',
+        component: TvShowDetailComponent,
+        children: [{ path: 'seasons/:seasonNumber', component: TvShowSeasonDetailComponent }],
+      },
       { path: '', redirectTo: 'popular', pathMatch: 'full' },
     ],
   },

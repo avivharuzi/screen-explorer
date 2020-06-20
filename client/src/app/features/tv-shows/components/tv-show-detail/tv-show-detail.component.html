@@ -24,7 +24,7 @@
     </div>
   </app-hero>
   <div class="container mb-5">
-    <tabset [justified]="true">
+    <tabset #staticTabs [justified]="true">
       <tab id="overview" heading="Overview">
         <ng-container *ngIf="tvShowDetail.credits.cast && tvShowDetail.credits.cast.length > 0">
           <section class="mt-5 mb-5">
@@ -47,6 +47,25 @@
           </section>
         </ng-container>
       </tab>
+      <ng-container *ngIf="tvShowDetail.seasons && tvShowDetail.seasons.length > 0">
+        <tab id="episodes" heading="Episodes" (deselect)="onSeasonsTabDeselect()">
+          <section class="mt-5 mb-5">
+            <div class="row">
+              <div class="col-12 col-md-6">
+                <div class="form-group">
+                  <select class="form-control" id="season" aria-label="Select Season" [(ngModel)]="seasonId" (change)="onSeasonSelect()">
+                    <option value="" selected disabled>Select Season</option>
+                    <option [value]="season.id" *ngFor="let season of tvShowDetail.seasons; trackBy: trackBySeason">{{
+                      season.name
+                    }}</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+            <router-outlet></router-outlet>
+          </section>
+        </tab>
+      </ng-container>
       <ng-container *ngIf="tvShowDetail.images.posters && tvShowDetail.images.posters.length > 0">
         <tab id="posters" heading="Posters">
           <section class="mt-5 mb-5">

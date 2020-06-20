@@ -1,4 +1,5 @@
 import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
 import { TabsModule } from 'ngx-bootstrap/tabs';
 
@@ -12,6 +13,7 @@ import { TvShowListOnTheAirComponent } from './components/tv-show-list-on-the-ai
 import { TvShowListPopularComponent } from './components/tv-show-list-popular/tv-show-list-popular.component';
 import { TvShowListTopRatedComponent } from './components/tv-show-list-top-rated/tv-show-list-top-rated.component';
 import { TvShowsComponent } from './tv-shows.component';
+import { TvShowSeasonDetailComponent } from './components/tv-show-season-detail/tv-show-season-detail.component';
 import { TvShowsRoutingModule } from './tv-shows-routing.module';
 
 @NgModule({
@@ -25,7 +27,8 @@ import { TvShowsRoutingModule } from './tv-shows-routing.module';
     TvShowListPopularComponent,
     TvShowListTopRatedComponent,
     TvShowsComponent,
+    TvShowSeasonDetailComponent,
   ],
-  imports: [CommonModule, SharedModule, TabsModule.forRoot(), TvShowsRoutingModule],
+  imports: [CommonModule, FormsModule, SharedModule, TabsModule.forRoot(), TvShowsRoutingModule],
 })
 export class TvShowsModule {}

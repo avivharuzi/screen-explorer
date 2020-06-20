@@ -74,7 +74,7 @@ export class HeaderComponent implements OnInit {
 
   handleRouterEvents(): void {
     this.router.events.subscribe(event => {
-      if (event instanceof NavigationEnd) {
+      if (event instanceof NavigationEnd && this.isShow) {
         this.isShow = false; // Close the the menu when router changed, for example when clicking on one of the nav links.
       }
     });

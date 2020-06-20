@@ -7,6 +7,7 @@ import { HttpResponsePagination } from '../../../shared/shared/http-response-pag
 import { TvShow } from './tv-show';
 import { TvShowDetail } from './tv-show-detail';
 import { TvShowListType } from './tv-show-list-type.enum';
+import { TvShowSeasonDetail } from './tv-show-season-detail';
 
 @Injectable({
   providedIn: 'root',
@@ -26,5 +27,9 @@ export class TvShowService {
 
   getSimilar(id: number): Observable<HttpResponsePagination<TvShow>> {
     return this.httpClient.get<HttpResponsePagination<TvShow>>(`${this.baseUrl}/${id}/similar`);
+  }
+
+  getSeasonDetail(id: number, seasonNumber: number): Observable<TvShowSeasonDetail> {
+    return this.httpClient.get<TvShowSeasonDetail>(`${this.baseUrl}/${id}/seasons/${seasonNumber}`);
   }
 }
