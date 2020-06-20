@@ -123,7 +123,7 @@ tvShowsRouter.get('/:id/similar', async (req: Request, res: Response) => {
   await TMDBHandler.handleReq(req, res, `tv/${req.params.id}/similar`);
 });
 
-tvShowsRouter.get('/:id/season/:seasonNumber', async (req: Request, res: Response) => {
+tvShowsRouter.get('/:id/seasons/:seasonNumber', async (req: Request, res: Response) => {
   await TMDBHandler.handleReq(req, res, `tv/${req.params.id}/season/${req.params.seasonNumber}`, {
     // eslint-disable-next-line
     append_to_response: 'credits,external_ids,images,videos',
@@ -132,7 +132,7 @@ tvShowsRouter.get('/:id/season/:seasonNumber', async (req: Request, res: Respons
   });
 });
 
-tvShowsRouter.get('/:id/season/:seasonNumber/episode/:episodeNumber', async (req: Request, res: Response) => {
+tvShowsRouter.get('/:id/seasons/:seasonNumber/episodes/:episodeNumber', async (req: Request, res: Response) => {
   await TMDBHandler.handleReq(req, res, `tv/${req.params.id}/season/${req.params.seasonNumber}/episode/${req.params.episodeNumber}`, {
     // eslint-disable-next-line
     append_to_response: 'credits,external_ids,images,videos',
