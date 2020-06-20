@@ -1,7 +1,7 @@
 <div class="d-flex align-items-center">
   <div class="px-2 px-md-5" [class.hidden]="!date">{{ (date | date: 'yyyy') || '0000' }}</div>
   <div class="timeline-img focus-outline-none cursor-pointer" [routerLink]="titleLink">
-    <img appDefaultImage class="img-thumbnail" [src]="poster" [alt]="title" />
+    <img appDefaultImage class="img-thumbnail" loading="lazy" [src]="poster" [alt]="title" />
   </div>
   <div class="px-2 px-md-5">
     <a [routerLink]="titleLink">{{ title }}</a>
