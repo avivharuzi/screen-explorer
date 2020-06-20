@@ -1,5 +1,5 @@
 export const environment = {
-  baseApiUrl: 'http://localhost:8080',
+  baseApiUrl: 'https://api.screenexplorer.biz',
   defaultImagePath: 'assets/images/defaults/default-image.png',
   production: true,
   tmdbImageBaseUrl: 'https://image.tmdb.org/t/p',
