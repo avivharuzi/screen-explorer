@@ -19,6 +19,7 @@ const routes: Routes = [
   imports: [
     RouterModule.forRoot(routes, {
       initialNavigation: 'enabled',
+      paramsInheritanceStrategy: 'always',
       preloadingStrategy: PreloadAllModules,
       scrollPositionRestoration: 'enabled',
     }),
