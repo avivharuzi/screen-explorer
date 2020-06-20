@@ -1,17 +1,17 @@
 <div class="search-container" [class.open]="isSearchContainerOpen" (keydown.escape)="toggleSearchContainerOpen()">
   <div class="container-fluid">
     <div class="d-flex justify-content-end p-3">
-      <button type="button" class="text-white close focus-outline-none" (click)="toggleSearchContainerOpen()">
+      <button type="button" class="text-white close focus-outline-none" aria-label="Close" (click)="toggleSearchContainerOpen()">
         <i class="fas fa-times"></i>
       </button>
     </div>
     <div class="row mt-5">
       <div class="col-12">
-        <!--suppress HtmlFormInputWithoutLabel -->
         <input
           type="search"
           class="form-control focus-shadow-none"
           placeholder="Search for a movie, tv show, person..."
+          aria-label="Search"
           #inputSearch
           (keyup)="startSearching()"
         />

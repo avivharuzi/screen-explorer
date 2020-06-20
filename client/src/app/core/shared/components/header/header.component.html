@@ -7,7 +7,7 @@
           <img src="../../../../../assets/logos/logo.png" width="30" height="30" class="d-inline-block align-top" alt="Screen Explorer" />
           <span class="ml-3">Screen Explorer</span>
         </a>
-        <button class="navbar-toggler focus-outline-none" type="button" [class.collapsed]="!isShow" (click)="toggleShow()">
+        <button class="navbar-toggler focus-outline-none" type="button" aria-label="Navbar Toggler" [class.collapsed]="!isShow" (click)="toggleShow()">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" [class.show]="isShow">
@@ -33,7 +33,7 @@
             </li>
           </ul>
           <div class="cursor-pointer" (click)="searchMultiFormComponent.toggleSearchContainerOpen()">
-            <button class="btn btn-default focus-shadow-none pl-0 pr-5 pl-md-5 pr-md-0"><i class="fa fa-search"></i></button>
+            <button class="btn btn-default focus-shadow-none pl-0 pr-5 pl-md-5 pr-md-0" aria-label="Search"><i class="fa fa-search"></i></button>
           </div>
         </div>
       </div>
