@@ -11,6 +11,7 @@ import { CastListComponent } from './components/cast-list/cast-list.component';
 import { ContainerComponent } from './components/container/container.component';
 import { CrewListComponent } from './components/crew-list/crew-list.component';
 import { DefaultImageDirective } from './directives/default-image.directive';
+import { EpisodeNumberPipe } from './pipes/episode-number.pipe';
 import { GenreListComponent } from './components/genre-list/genre-list.component';
 import { HeroComponent } from './components/hero/hero.component';
 import { HeroStatsComponent } from './components/hero-stats/hero-stats.component';
@@ -39,6 +40,7 @@ import { YouTubeImagePipe } from './pipes/you-tube-image.pipe';
     ContainerComponent,
     CrewListComponent,
     DefaultImageDirective,
+    EpisodeNumberPipe,
     GenreListComponent,
     HeroComponent,
     HeroStatsComponent,
@@ -67,6 +69,7 @@ import { YouTubeImagePipe } from './pipes/you-tube-image.pipe';
     ContainerComponent,
     CrewListComponent,
     DefaultImageDirective,
+    EpisodeNumberPipe,
     GenreListComponent,
     HeroComponent,
     HeroStatsComponent,
