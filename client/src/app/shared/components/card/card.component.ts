@@ -7,6 +7,7 @@ import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class CardComponent {
+  @Input() footer: string;
   @Input() poster: string;
   @Input() subtitle: string;
   @Input() title: string;
