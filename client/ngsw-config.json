@@ -1,6 +1,17 @@
 {
   "$schema": "./node_modules/@angular/service-worker/config/schema.json",
   "index": "/index.html",
+  "dataGroups": [
+    {
+      "name": "api",
+      "urls": ["https://api.screenexplorer.biz/**"],
+      "cacheConfig": {
+        "strategy": "performance",
+        "maxSize": 100,
+        "maxAge": "3d"
+      }
+    }
+  ],
   "assetGroups": [
     {
       "name": "app",
@@ -15,6 +26,14 @@
       "updateMode": "prefetch",
       "resources": {
         "files": ["/assets/**", "/*.(eot|svg|cur|jpg|png|webp|gif|otf|ttf|woff|woff2|ani)"]
+      }
+    },
+    {
+      "name": "external-images",
+      "installMode": "lazy",
+      "updateMode": "prefetch",
+      "resources": {
+        "files": ["https://image.tmdb.org/t/p/**", "https://i.ytimg.com/vi/**"]
       }
     }
   ]
