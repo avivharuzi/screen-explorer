@@ -1,5 +1,5 @@
 import { ActivatedRoute, Params, Router } from '@angular/router';
-import { ChangeDetectionStrategy, Component, EventEmitter, Inject, Input, OnInit, Output, PLATFORM_ID } from '@angular/core';
+import { ChangeDetectionStrategy, Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-paginated-list',
@@ -16,7 +16,7 @@ export class PaginatedListComponent implements OnInit {
   page: number;
   isReady: boolean;
 
-  constructor(@Inject(PLATFORM_ID) private platformId: string, private activatedRoute: ActivatedRoute, private router: Router) {
+  constructor(private activatedRoute: ActivatedRoute, private router: Router) {
     this.totalItems = 0;
     this.itemsPerPage = 20;
     this.pageClick = new EventEmitter<number>();

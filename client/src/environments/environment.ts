@@ -4,6 +4,7 @@
 
 export const environment = {
   baseApiUrl: 'http://localhost:8080',
+  baseApiUrlSsr: '',
   defaultImagePath: 'assets/images/defaults/default-image.png',
   production: false,
   tmdbImageBaseUrl: 'https://image.tmdb.org/t/p',
