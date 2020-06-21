@@ -11,6 +11,10 @@ services:
       - "443:443"
     volumes:
       - ./docker/nginx/conf.d:/etc/nginx/conf.d
+      - ./docker/dh-param/dhparam-2048.pem:/etc/ssl/certs/dhparam-2048.pem
+      - /docker-volumes/etc/letsencrypt/live/screenexplorer.biz/fullchain.pem:/etc/letsencrypt/live/screenexplorer.biz/fullchain.pem
+      - /docker-volumes/etc/letsencrypt/live/screenexplorer.biz/privkey.pem:/etc/letsencrypt/live/screenexplorer.biz/privkey.pem
+      - /docker-volumes/data/letsencrypt:/data/letsencrypt
     depends_on:
       - screen-explorer-server-api
       - screen-explorer-client
