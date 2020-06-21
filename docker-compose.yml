@@ -54,9 +54,11 @@ services:
     build:
       context: ./client
       dockerfile: Dockerfile
+    depends_on:
+      - screen-explorer-server-api
     networks:
       - screen-explorer-network
 
 networks:
   screen-explorer-network:
-    driver: overlay
+    driver: bridge
