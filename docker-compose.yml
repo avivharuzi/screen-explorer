@@ -15,6 +15,7 @@ services:
       - /docker-volumes/etc/letsencrypt/live/screenexplorer.biz/fullchain.pem:/etc/letsencrypt/live/screenexplorer.biz/fullchain.pem
       - /docker-volumes/etc/letsencrypt/live/screenexplorer.biz/privkey.pem:/etc/letsencrypt/live/screenexplorer.biz/privkey.pem
       - /docker-volumes/data/letsencrypt:/data/letsencrypt
+      - /docker-volumes/var/log/nginx:/var/log/nginx
     depends_on:
       - screen-explorer-server-api
       - screen-explorer-client
