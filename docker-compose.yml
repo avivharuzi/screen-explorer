@@ -10,10 +10,12 @@ services:
       - "80:80"
       - "443:443"
     volumes:
-      - ./docker/nginx:/etc/nginx/conf.d
+      - ./docker/nginx/conf.d:/etc/nginx/conf.d
     depends_on:
       - screen-explorer-server-api
       - screen-explorer-client
+    networks:
+      - screen-explorer-network
 
   screen-explorer-server-api:
     container_name: screen-explorer-server-api
@@ -29,12 +31,16 @@ services:
       - ./server/.env
     environment:
       - NODE_ENV=production
+    networks:
+      - screen-explorer-network
 
   screen-explorer-redis:
     container_name: screen-explorer-redis
     restart: always
     init: true
     image: redis:6.0.3
+    networks:
+      - screen-explorer-network
 
   screen-explorer-client:
     container_name: screen-explorer-client
@@ -43,3 +49,9 @@ services:
     build:
       context: ./client
       dockerfile: Dockerfile
+    networks:
+      - screen-explorer-network
+
+networks:
+  screen-explorer-network:
+    driver: bridge
