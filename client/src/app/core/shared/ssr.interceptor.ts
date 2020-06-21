@@ -11,7 +11,7 @@ export class SsrInterceptor implements HttpInterceptor {
 
   intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
     if (environment.production && isPlatformServer(this.platformId) && request.url.includes(environment.baseApiUrl)) {
-      request = request.clone({ url: request.url.replace(environment.baseApiUrl, environment.baseApiUrlSsr) });
+      request = request.clone({ url: request.urlWithParams.replace(environment.baseApiUrl, environment.baseApiUrlSsr) });
     }
 
     return next.handle(request);
