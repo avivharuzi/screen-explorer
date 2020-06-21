@@ -1,0 +1,45 @@
+version: "3.7"
+
+services:
+  screen-explorer-nginx:
+    container_name: screen-explorer-nginx
+    restart: always
+    init: true
+    image: nginx:1.19.0
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./docker/nginx:/etc/nginx/conf.d
+    depends_on:
+      - screen-explorer-server-api
+      - screen-explorer-client
+
+  screen-explorer-server-api:
+    container_name: screen-explorer-server-api
+    restart: always
+    init: true
+    build:
+      context: ./server
+      dockerfile: Dockerfile
+    depends_on:
+      - screen-explorer-redis
+    command: npm run start:prod
+    env_file:
+      - ./server/.env
+    environment:
+      - NODE_ENV=production
+
+  screen-explorer-redis:
+    container_name: screen-explorer-redis
+    restart: always
+    init: true
+    image: redis:6.0.3
+
+  screen-explorer-client:
+    container_name: screen-explorer-client
+    restart: always
+    init: true
+    build:
+      context: ./client
+      dockerfile: Dockerfile
