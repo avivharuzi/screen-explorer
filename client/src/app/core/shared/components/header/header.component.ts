@@ -47,7 +47,7 @@ export class HeaderComponent implements OnInit {
     },
     {
       route: ['/', APP_ROUTES.TV_SHOWS.self, APP_ROUTES.TV_SHOWS.children.ON_THE_AIR],
-      name: 'On TV',
+      name: 'On The Air',
     },
     {
       route: ['/', APP_ROUTES.TV_SHOWS.self, APP_ROUTES.TV_SHOWS.children.AIRING_TODAY],
