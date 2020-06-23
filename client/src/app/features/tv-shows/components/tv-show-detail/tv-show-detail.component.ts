@@ -29,7 +29,7 @@ export class TvShowDetailComponent implements OnInit {
   private playTrailerVideo: Video;
 
   constructor(
-    @Inject(PLATFORM_ID) private platformId: Object,
+    @Inject(PLATFORM_ID) private platformId: object,
     private activatedRoute: ActivatedRoute,
     private changeDetectorRef: ChangeDetectorRef,
     private ngxSeoService: NgxSeoService,

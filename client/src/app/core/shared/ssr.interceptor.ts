@@ -7,7 +7,7 @@ import { environment } from '../../../environments/environment';
 
 @Injectable()
 export class SsrInterceptor implements HttpInterceptor {
-  constructor(@Inject(PLATFORM_ID) private platformId: Object) {}
+  constructor(@Inject(PLATFORM_ID) private platformId: object) {}
 
   intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
     if (environment.production && isPlatformServer(this.platformId) && request.url.includes(environment.baseApiUrl)) {
