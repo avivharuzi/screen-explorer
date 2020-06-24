@@ -14,8 +14,8 @@
       position: relative;
 
       .trend-carousel-content {
-        @include absolute-center();
-        background-color: $color-black-transparent;
+        @include absolute-center-bottom();
+        background-image: $color-black-transparent-linear;
         color: $color-white;
         padding: $space-5;
         white-space: normal;

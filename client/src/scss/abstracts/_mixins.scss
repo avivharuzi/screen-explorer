@@ -31,6 +31,20 @@
   left: $left;
 }
 
+@mixin absolute-center-top() {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, 0);
+}
+
+@mixin absolute-center-bottom() {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%, 0);
+}
+
 @mixin absolute-center($horizontal: true, $vertical: true) {
   position: absolute;
   @if ($horizontal and $vertical) {
