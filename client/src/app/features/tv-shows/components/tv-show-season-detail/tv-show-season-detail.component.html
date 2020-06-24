@@ -14,7 +14,7 @@
     <div class="col-12 col-md-6 mb-3" *ngFor="let episode of tvShowSeasonDetail.episodes; trackBy: trackByEpisode">
       <app-card
         [title]="(episode.episode_number | episodeNumber) + ' - ' + episode.name"
-        [poster]="episode.still_path | tmdbImage: 'original'"
+        [poster]="episode.still_path | tmdbImage: 'w780'"
         [subtitle]="episode.overview"
         [footer]="episode.air_date | date"
       ></app-card>
