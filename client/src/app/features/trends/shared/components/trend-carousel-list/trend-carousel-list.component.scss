@@ -16,6 +16,8 @@
       .trend-carousel-content {
         @include absolute-center-bottom();
         background-image: $color-black-transparent-linear;
+        border-top-left-radius: 0 !important;
+        border-top-right-radius: 0 !important;
         color: $color-white;
         padding: $space-5;
         white-space: normal;
