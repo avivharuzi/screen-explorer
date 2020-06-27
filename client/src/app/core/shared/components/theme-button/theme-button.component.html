@@ -1,0 +1,5 @@
+<div class="mr-0 mr-md-3 mb-2 mb-md-0" *ngIf="theme$ | async as theme">
+  <button class="btn btn-light" aria-label="Theme" (click)="changeTheme(theme === Theme.Light ? Theme.Dark : Theme.Light)">
+    <i [class]="'fa fa-' + (theme === Theme.Light ? 'moon' : 'sun')"></i>
+  </button>
+</div>

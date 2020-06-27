@@ -13,10 +13,11 @@ import { NotFoundInterceptor } from './shared/not-found.interceptor';
 import { SearchModule } from '../features/search/search.module';
 import { SharedModule } from '../shared/shared.module';
 import { SsrInterceptor } from './shared/ssr.interceptor';
+import { ThemeButtonComponent } from './shared/components/theme-button/theme-button.component';
 import { TrendsModule } from '../features/trends/trends.module';
 
 @NgModule({
-  declarations: [FooterComponent, HeaderComponent, HomeComponent, NotFoundComponent],
+  declarations: [FooterComponent, HeaderComponent, HomeComponent, NotFoundComponent, ThemeButtonComponent],
   imports: [BsDropdownModule.forRoot(), CommonModule, HttpClientModule, RouterModule, SearchModule, SharedModule, TrendsModule],
   providers: [
     {
