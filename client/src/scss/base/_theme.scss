@@ -1,0 +1,167 @@
+@import './../abstracts';
+
+body {
+  &.theme-light {
+    background-color: $color-white !important;
+    transition: all 0.5s ease;
+  }
+
+  &.theme-dark {
+    background-color: $color-gray-900 !important;
+    color: $color-white !important;
+
+    nav {
+      &.navbar,
+      .dropdown-menu {
+        background-color: $color-gray-700 !important;
+
+        .dropdown-item {
+          color: $color-gray-50 !important;
+
+          &:hover {
+            color: $color-gray-400 !important;
+            background-color: $color-gray-800 !important;
+          }
+        }
+      }
+
+      .navbar-brand {
+        color: $color-white !important;
+      }
+
+      .navbar-toggler-icon {
+        background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'%3e%3cpath stroke='rgb(999, 999, 999)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
+      }
+
+      .search-button {
+        color: $color-white !important;
+        background-color: $color-gray-700 !important;
+        border-color: $color-gray-700 !important;
+
+        &:focus {
+          background-color: #3b362f !important;
+          border-color: #343029 !important;
+          box-shadow: 0 0 0 0.2rem rgba(106, 101, 93, 0.5) !important;
+        }
+
+        &:hover {
+          background-color: #3b362f !important;
+          border-color: #343029 !important;
+        }
+      }
+
+      .nav-link {
+        color: $color-gray-50 !important;
+
+        &:hover {
+          color: $color-gray-400 !important;
+        }
+      }
+    }
+
+    .card {
+      background-color: $color-gray-700 !important;
+      border: none;
+    }
+
+    .text-muted {
+      color: $color-gray-300 !important;
+    }
+
+    footer {
+      background-color: $color-gray-700 !important;
+
+      a {
+        color: $color-gray-300;
+
+        &:hover {
+          color: $color-gray-500;
+        }
+      }
+    }
+
+    .nav-pills {
+      .nav-item {
+        a {
+          color: $color-gray-300 !important;
+
+          &:hover {
+            color: $color-gray-500 !important;
+          }
+
+          &.active {
+            color: $color-white !important;
+          }
+        }
+      }
+    }
+
+    .page-item {
+      .page-link {
+        color: $color-white;
+        background-color: $color-gray-700 !important;
+        border: 1px solid $color-gray-700 !important;
+
+        &:hover {
+          color: $color-gray-50;
+          background-color: $color-gray-800 !important;
+        }
+      }
+
+      &.active {
+        .page-link {
+          background-color: $color-primary-500 !important;
+        }
+      }
+
+      &.disabled {
+        .page-link {
+          color: $color-gray-500 !important;
+        }
+      }
+    }
+
+    .img-thumbnail {
+      background-color: $color-gray-800;
+      border: 1px solid $color-gray-600;
+    }
+
+    .form-control {
+      color: $color-gray-300;
+      background-color: $color-gray-800;
+      border: 1px solid $color-gray-600;
+    }
+
+    app-tv-show-season-detail {
+      .bg-light {
+        background-color: $color-gray-700 !important;
+      }
+
+      .badge-dark {
+        color: $color-gray-800 !important;
+        background-color: $color-gray-50 !important;
+      }
+    }
+
+    .nav-tabs {
+      a.nav-link {
+        color: $color-gray-300 !important;
+
+        &.active {
+          color: $color-white !important;
+          background-color: $color-gray-700 !important;
+
+          &:hover {
+            color: $color-white !important;
+          }
+        }
+
+        &:hover {
+          color: $color-gray-500 !important;
+        }
+      }
+    }
+
+    transition: all 0.3s ease;
+  }
+}
