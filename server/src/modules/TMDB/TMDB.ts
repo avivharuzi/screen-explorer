@@ -72,7 +72,7 @@ export class TMDB {
 
     try {
       const res = await got(url, { searchParams });
-      body = res.body;
+      body = JSON.parse(res.body);
     } catch (err) {
       if (err.response.statusCode === httpStatusCodes.NOT_FOUND) {
         throw new ResponseError(errors.notFound);
