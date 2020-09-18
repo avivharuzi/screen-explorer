@@ -14,7 +14,7 @@ services:
       - ./docker/dh-param/dhparam-2048.pem:/etc/ssl/certs/dhparam-2048.pem
       - /docker-volumes/etc/letsencrypt/live/screenexplorer.biz/fullchain.pem:/etc/letsencrypt/live/screenexplorer.biz/fullchain.pem
       - /docker-volumes/etc/letsencrypt/live/screenexplorer.biz/privkey.pem:/etc/letsencrypt/live/screenexplorer.biz/privkey.pem
-      - /docker-volumes/data/letsencrypt:/data/letsencrypt
+      - /docker-volumes/data/letsencrypt:/usr/share/nginx/html
       - /docker-volumes/var/log/nginx:/var/log/nginx
     depends_on:
       - screen-explorer-server-api
