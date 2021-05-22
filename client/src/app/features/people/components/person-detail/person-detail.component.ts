@@ -1,4 +1,9 @@
-import { ChangeDetectionStrategy, ChangeDetectorRef, Component, OnInit } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  ChangeDetectorRef,
+  Component,
+  OnInit,
+} from '@angular/core';
 import { map } from 'rxjs/operators';
 import { NgxSeoService } from '@avivharuzi/ngx-seo';
 
@@ -32,15 +37,27 @@ export class PersonDetailComponent implements OnInit {
           map(res => {
             this.ngxSeoService.setTitle(res.name); // Set person name...
 
-            if (res.combined_credits.cast && res.combined_credits.cast.length > 0) {
-              res.combined_credits.cast = res.combined_credits.cast.sort(this.personService.sortByDescDate);
+            if (
+              res.combined_credits.cast &&
+              res.combined_credits.cast.length > 0
+            ) {
+              res.combined_credits.cast = res.combined_credits.cast.sort(
+                this.personService.sortByDescDate
+              );
             }
 
-            if (res.combined_credits.crew && res.combined_credits.crew.length > 0) {
-              res.combined_credits.crew = res.combined_credits.crew.sort(this.personService.sortByDescDate);
+            if (
+              res.combined_credits.crew &&
+              res.combined_credits.crew.length > 0
+            ) {
+              res.combined_credits.crew = res.combined_credits.crew.sort(
+                this.personService.sortByDescDate
+              );
             }
 
-            res.biography = res.biography.split('\n').join('<p></p>') || `We don\'t have a biography for ${res.name}.`;
+            res.biography =
+              res.biography.split('\n').join('<p></p>') ||
+              `We don\'t have a biography for ${res.name}.`;
             return res;
           })
         )

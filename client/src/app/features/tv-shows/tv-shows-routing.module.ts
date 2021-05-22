@@ -16,9 +16,21 @@ const routes: Routes = [
     path: '',
     component: TvShowsComponent,
     children: [
-      { path: APP_ROUTES.TV_SHOWS.children.POPULAR, component: TvShowListPopularComponent, data: { seo: TV_SHOWS_SEO.POPULAR } },
-      { path: APP_ROUTES.TV_SHOWS.children.TOP_RATED, component: TvShowListTopRatedComponent, data: { seo: TV_SHOWS_SEO.TOP_RATED } },
-      { path: APP_ROUTES.TV_SHOWS.children.ON_THE_AIR, component: TvShowListOnTheAirComponent, data: { seo: TV_SHOWS_SEO.ON_THE_AIR } },
+      {
+        path: APP_ROUTES.TV_SHOWS.children.POPULAR,
+        component: TvShowListPopularComponent,
+        data: { seo: TV_SHOWS_SEO.POPULAR },
+      },
+      {
+        path: APP_ROUTES.TV_SHOWS.children.TOP_RATED,
+        component: TvShowListTopRatedComponent,
+        data: { seo: TV_SHOWS_SEO.TOP_RATED },
+      },
+      {
+        path: APP_ROUTES.TV_SHOWS.children.ON_THE_AIR,
+        component: TvShowListOnTheAirComponent,
+        data: { seo: TV_SHOWS_SEO.ON_THE_AIR },
+      },
       {
         path: APP_ROUTES.TV_SHOWS.children.AIRING_TODAY,
         component: TvShowListAiringTodayComponent,
@@ -27,7 +39,12 @@ const routes: Routes = [
       {
         path: ':id',
         component: TvShowDetailComponent,
-        children: [{ path: 'seasons/:seasonNumber', component: TvShowSeasonDetailComponent }],
+        children: [
+          {
+            path: 'seasons/:seasonNumber',
+            component: TvShowSeasonDetailComponent,
+          },
+        ],
       },
       { path: '', redirectTo: 'popular', pathMatch: 'full' },
     ],

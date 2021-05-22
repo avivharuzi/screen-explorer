@@ -1,9 +1,15 @@
 <div class="rating">
-  <rating [max]="10" [readonly]="true" [(ngModel)]="rate" [customTemplate]="starsTemplate"></rating>
+  <rating
+    [max]="10"
+    [readonly]="true"
+    [(ngModel)]="rate"
+    [customTemplate]="starsTemplate"
+  ></rating>
   <ng-template #starsTemplate let-i="index" let-v="value">
     <span><i [class]="(i < v ? 'fas' : 'far') + ' fa-star'"></i></span>
   </ng-template>
   <span class="rating-content ml-2"
-    >{{ rate }}/10 <ng-container *ngIf="votes >= 0">({{ votes }} votes)</ng-container></span
+    >{{ rate }}/10
+    <ng-container *ngIf="votes >= 0">({{ votes }} votes)</ng-container></span
   >
 </div>

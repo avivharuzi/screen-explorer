@@ -10,8 +10,18 @@ import { TrendDayWeekListComponent } from './shared/components/trend-day-week-li
 import { TrendListComponent } from './shared/components/trend-list/trend-list.component';
 
 @NgModule({
-  declarations: [TrendCarouselListComponent, TrendDayWeekListComponent, TrendListComponent],
-  imports: [CommonModule, NgxGlideModule, RouterModule, SharedModule, TabsModule.forRoot()],
+  declarations: [
+    TrendCarouselListComponent,
+    TrendDayWeekListComponent,
+    TrendListComponent,
+  ],
+  imports: [
+    CommonModule,
+    NgxGlideModule,
+    RouterModule,
+    SharedModule,
+    TabsModule.forRoot(),
+  ],
   exports: [TrendCarouselListComponent, TrendDayWeekListComponent],
 })
 export class TrendsModule {}

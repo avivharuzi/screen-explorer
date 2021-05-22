@@ -62,7 +62,14 @@ import { YouTubeImagePipe } from './pipes/you-tube-image.pipe';
     YouTubeIframeUrlPipe,
     YouTubeImagePipe,
   ],
-  imports: [CommonModule, FormsModule, ModalModule.forRoot(), PaginationModule.forRoot(), RatingModule.forRoot(), RouterModule],
+  imports: [
+    CommonModule,
+    FormsModule,
+    ModalModule.forRoot(),
+    PaginationModule.forRoot(),
+    RatingModule.forRoot(),
+    RouterModule,
+  ],
   exports: [
     CardComponent,
     CastListComponent,

@@ -22,10 +22,15 @@ export class SearchService {
           [param: string]: string | string[];
         } = {}
   ): Observable<HttpResponsePagination<SearchMulti>> {
-    return this.httpClient.get<HttpResponsePagination<SearchMulti>>(`${this.baseUrl}/multi`, { params });
+    return this.httpClient.get<HttpResponsePagination<SearchMulti>>(
+      `${this.baseUrl}/multi`,
+      { params }
+    );
   }
 
-  getMultiWithDelay(query$: Observable<string>): Observable<HttpResponsePagination<SearchMulti>> {
+  getMultiWithDelay(
+    query$: Observable<string>
+  ): Observable<HttpResponsePagination<SearchMulti>> {
     return query$.pipe(
       debounceTime(400),
       distinctUntilChanged(),

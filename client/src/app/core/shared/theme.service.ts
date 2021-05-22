@@ -1,6 +1,12 @@
 import { BehaviorSubject, Observable } from 'rxjs';
 import { DOCUMENT, isPlatformBrowser } from '@angular/common';
-import { Inject, Injectable, PLATFORM_ID, Renderer2, RendererFactory2 } from '@angular/core';
+import {
+  Inject,
+  Injectable,
+  PLATFORM_ID,
+  Renderer2,
+  RendererFactory2,
+} from '@angular/core';
 
 import { Theme } from './theme.enum';
 
@@ -24,9 +30,13 @@ export class ThemeService {
 
   initTheme(): void {
     this.theme = new BehaviorSubject<Theme>(null);
-    const themeFromLocalStorage = isPlatformBrowser(this.platformId) ? localStorage.getItem(this.THEME_KEY) : null;
+    const themeFromLocalStorage = isPlatformBrowser(this.platformId)
+      ? localStorage.getItem(this.THEME_KEY)
+      : null;
     // @ts-ignore
-    const theme: Theme = Object.values(Theme).includes(themeFromLocalStorage) ? themeFromLocalStorage : Theme.Light;
+    const theme: Theme = Object.values(Theme).includes(themeFromLocalStorage)
+      ? themeFromLocalStorage
+      : Theme.Light;
     this.setTheme(theme);
   }
 

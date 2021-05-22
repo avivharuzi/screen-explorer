@@ -17,11 +17,21 @@ export class TrendService {
 
   constructor(private httpClient: HttpClient) {}
 
-  getList(mediaTypeList: MediaTypeList, timeWindow: TimeWindow): Observable<HttpResponsePagination<Trend>> {
-    return this.httpClient.get<HttpResponsePagination<Trend>>(`${this.baseUrl}/${mediaTypeList}/${timeWindow}`);
+  getList(
+    mediaTypeList: MediaTypeList,
+    timeWindow: TimeWindow
+  ): Observable<HttpResponsePagination<Trend>> {
+    return this.httpClient.get<HttpResponsePagination<Trend>>(
+      `${this.baseUrl}/${mediaTypeList}/${timeWindow}`
+    );
   }
 
-  getListOnlyResults(mediaTypeList: MediaTypeList, timeWindow: TimeWindow): Observable<Trend[]> {
-    return this.getList(mediaTypeList, timeWindow).pipe(map(res => res.results));
+  getListOnlyResults(
+    mediaTypeList: MediaTypeList,
+    timeWindow: TimeWindow
+  ): Observable<Trend[]> {
+    return this.getList(mediaTypeList, timeWindow).pipe(
+      map(res => res.results)
+    );
   }
 }

@@ -1,4 +1,12 @@
-import { ChangeDetectionStrategy, ChangeDetectorRef, Component, ElementRef, OnDestroy, OnInit, ViewChild } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  ChangeDetectorRef,
+  Component,
+  ElementRef,
+  OnDestroy,
+  OnInit,
+  ViewChild,
+} from '@angular/core';
 import { map } from 'rxjs/operators';
 import { Router } from '@angular/router';
 import { Subject } from 'rxjs';
@@ -14,7 +22,8 @@ import { SearchService } from '../../search.service';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class SearchMultiFormComponent implements OnInit, OnDestroy {
-  @ViewChild('inputSearch', { static: false }) inputSearchElementRef: ElementRef;
+  @ViewChild('inputSearch', { static: false })
+  inputSearchElementRef: ElementRef;
 
   isSearchContainerOpen: boolean;
   movies: SearchMulti[];
@@ -23,7 +32,11 @@ export class SearchMultiFormComponent implements OnInit, OnDestroy {
 
   private query$: Subject<string>;
 
-  constructor(private searchService: SearchService, private changeDetectorRef: ChangeDetectorRef, private router: Router) {
+  constructor(
+    private searchService: SearchService,
+    private changeDetectorRef: ChangeDetectorRef,
+    private router: Router
+  ) {
     this.isSearchContainerOpen = false;
     this.query$ = new Subject<string>();
   }
@@ -77,9 +90,15 @@ export class SearchMultiFormComponent implements OnInit, OnDestroy {
         map(res => {
           const results = res.results;
 
-          this.movies = results.filter(result => result.media_type === MediaType.Movie);
-          this.tvShows = results.filter(result => result.media_type === MediaType.TV);
-          this.people = results.filter(result => result.media_type === MediaType.Person);
+          this.movies = results.filter(
+            result => result.media_type === MediaType.Movie
+          );
+          this.tvShows = results.filter(
+            result => result.media_type === MediaType.TV
+          );
+          this.people = results.filter(
+            result => result.media_type === MediaType.Person
+          );
           this.changeDetectorRef.detectChanges();
 
           return res;

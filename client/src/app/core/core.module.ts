@@ -17,8 +17,22 @@ import { ThemeButtonComponent } from './shared/components/theme-button/theme-but
 import { TrendsModule } from '../features/trends/trends.module';
 
 @NgModule({
-  declarations: [FooterComponent, HeaderComponent, HomeComponent, NotFoundComponent, ThemeButtonComponent],
-  imports: [BsDropdownModule.forRoot(), CommonModule, HttpClientModule, RouterModule, SearchModule, SharedModule, TrendsModule],
+  declarations: [
+    FooterComponent,
+    HeaderComponent,
+    HomeComponent,
+    NotFoundComponent,
+    ThemeButtonComponent,
+  ],
+  imports: [
+    BsDropdownModule.forRoot(),
+    CommonModule,
+    HttpClientModule,
+    RouterModule,
+    SearchModule,
+    SharedModule,
+    TrendsModule,
+  ],
   providers: [
     {
       multi: true,

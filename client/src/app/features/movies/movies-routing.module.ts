@@ -15,10 +15,26 @@ const routes: Routes = [
     path: '',
     component: MoviesComponent,
     children: [
-      { path: APP_ROUTES.MOVIES.children.POPULAR, component: MovieListPopularComponent, data: { seo: MOVIES_SEO.POPULAR } },
-      { path: APP_ROUTES.MOVIES.children.TOP_RATED, component: MovieListTopRatedComponent, data: { seo: MOVIES_SEO.TOP_RATED } },
-      { path: APP_ROUTES.MOVIES.children.UPCOMING, component: MovieListUpcomingComponent, data: { seo: MOVIES_SEO.UPCOMING } },
-      { path: APP_ROUTES.MOVIES.children.NOW_PLAYING, component: MovieListNowPlayingComponent, data: { seo: MOVIES_SEO.NOW_PLAYING } },
+      {
+        path: APP_ROUTES.MOVIES.children.POPULAR,
+        component: MovieListPopularComponent,
+        data: { seo: MOVIES_SEO.POPULAR },
+      },
+      {
+        path: APP_ROUTES.MOVIES.children.TOP_RATED,
+        component: MovieListTopRatedComponent,
+        data: { seo: MOVIES_SEO.TOP_RATED },
+      },
+      {
+        path: APP_ROUTES.MOVIES.children.UPCOMING,
+        component: MovieListUpcomingComponent,
+        data: { seo: MOVIES_SEO.UPCOMING },
+      },
+      {
+        path: APP_ROUTES.MOVIES.children.NOW_PLAYING,
+        component: MovieListNowPlayingComponent,
+        data: { seo: MOVIES_SEO.NOW_PLAYING },
+      },
       { path: ':id', component: MovieDetailComponent },
       { path: '', redirectTo: 'popular', pathMatch: 'full' },
     ],

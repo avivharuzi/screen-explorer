@@ -10,7 +10,8 @@ describe('NotFoundInterceptor', () => {
   );
 
   it('should be created', () => {
-    const interceptor: NotFoundInterceptor = TestBed.inject(NotFoundInterceptor);
+    const interceptor: NotFoundInterceptor =
+      TestBed.inject(NotFoundInterceptor);
     expect(interceptor).toBeTruthy();
   });
 });

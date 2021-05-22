@@ -7,11 +7,22 @@
       *ngFor="let searchSingle of searchMulti; trackBy: trackBySearchMulti"
     >
       <app-horizontal-card
-        [title]="searchSingle.title || searchSingle.original_title || searchSingle.name || searchSingle.original_name"
-        [poster]="
-          searchSingle.poster_path ? (searchSingle.poster_path | tmdbImage: 'w342') : (searchSingle.profile_path | tmdbImage: 'w185')
+        [title]="
+          searchSingle.title ||
+          searchSingle.original_title ||
+          searchSingle.name ||
+          searchSingle.original_name
         "
-        [subtitle]="searchSingle.release_date || searchSingle.first_air_date | date: 'yyyy' | parenthesis"
+        [poster]="
+          searchSingle.poster_path
+            ? (searchSingle.poster_path | tmdbImage: 'w342')
+            : (searchSingle.profile_path | tmdbImage: 'w185')
+        "
+        [subtitle]="
+          searchSingle.release_date || searchSingle.first_air_date
+            | date: 'yyyy'
+            | parenthesis
+        "
       ></app-horizontal-card>
     </div>
   </div>

@@ -16,8 +16,14 @@ export class PersonService {
 
   constructor(private httpClient: HttpClient) {}
 
-  getList(type: PersonListType, params = {}): Observable<HttpResponsePagination<Person>> {
-    return this.httpClient.get<HttpResponsePagination<Person>>(`${this.baseUrl}/${type}`, { params });
+  getList(
+    type: PersonListType,
+    params = {}
+  ): Observable<HttpResponsePagination<Person>> {
+    return this.httpClient.get<HttpResponsePagination<Person>>(
+      `${this.baseUrl}/${type}`,
+      { params }
+    );
   }
 
   getDetail(id: number): Observable<PersonDetail> {

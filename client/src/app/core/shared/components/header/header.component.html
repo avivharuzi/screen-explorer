@@ -26,27 +26,42 @@
         <div class="collapse navbar-collapse" [class.show]="isShow">
           <ul class="navbar-nav mr-auto">
             <li dropdown class="nav-item dropdown">
-              <a dropdownToggle class="nav-link dropdown-toggle cursor-pointer">Movies</a>
+              <a dropdownToggle class="nav-link dropdown-toggle cursor-pointer"
+                >Movies</a
+              >
               <div *dropdownMenu class="dropdown-menu">
-                <a *ngFor="let movieNavLink of MOVIE_NAV_LINKS" class="dropdown-item" [routerLink]="movieNavLink.route">{{
-                  movieNavLink.name
-                }}</a>
+                <a
+                  *ngFor="let movieNavLink of MOVIE_NAV_LINKS"
+                  class="dropdown-item"
+                  [routerLink]="movieNavLink.route"
+                  >{{ movieNavLink.name }}</a
+                >
               </div>
             </li>
             <li dropdown class="nav-item dropdown">
-              <a dropdownToggle class="nav-link dropdown-toggle cursor-pointer">TV Shows</a>
+              <a dropdownToggle class="nav-link dropdown-toggle cursor-pointer"
+                >TV Shows</a
+              >
               <div *dropdownMenu class="dropdown-menu">
-                <a *ngFor="let tvShowNavLink of TV_SHOW_NAV_LINKS" class="dropdown-item" [routerLink]="tvShowNavLink.route">{{
-                  tvShowNavLink.name
-                }}</a>
+                <a
+                  *ngFor="let tvShowNavLink of TV_SHOW_NAV_LINKS"
+                  class="dropdown-item"
+                  [routerLink]="tvShowNavLink.route"
+                  >{{ tvShowNavLink.name }}</a
+                >
               </div>
             </li>
             <li class="nav-item">
-              <a class="nav-link" [routerLink]="PERSON_NAV_LINK.route">{{ PERSON_NAV_LINK.name }}</a>
+              <a class="nav-link" [routerLink]="PERSON_NAV_LINK.route">{{
+                PERSON_NAV_LINK.name
+              }}</a>
             </li>
           </ul>
           <app-theme-button></app-theme-button>
-          <div class="cursor-pointer" (click)="searchMultiFormComponent.toggleSearchContainerOpen()">
+          <div
+            class="cursor-pointer"
+            (click)="searchMultiFormComponent.toggleSearchContainerOpen()"
+          >
             <button class="btn btn-light search-button" aria-label="Search">
               <i class="fa fa-search"></i>
             </button>

@@ -1,7 +1,16 @@
-<div class="search-container" [class.open]="isSearchContainerOpen" (keydown.escape)="toggleSearchContainerOpen()">
+<div
+  class="search-container"
+  [class.open]="isSearchContainerOpen"
+  (keydown.escape)="toggleSearchContainerOpen()"
+>
   <div class="container-fluid">
     <div class="d-flex justify-content-end p-3">
-      <button type="button" class="text-white close focus-outline-none" aria-label="Close" (click)="toggleSearchContainerOpen()">
+      <button
+        type="button"
+        class="text-white close focus-outline-none"
+        aria-label="Close"
+        (click)="toggleSearchContainerOpen()"
+      >
         <i class="fas fa-times"></i>
       </button>
     </div>
@@ -19,14 +28,35 @@
     </div>
     <div class="mt-5">
       <div class="row">
-        <div *ngIf="movies && movies.length > 0" class="col-12 col-xl-4 col-lg-6 mb-5">
-          <app-search-multi-list title="Movies" [searchMulti]="movies" (itemClick)="onItemClick($event)"></app-search-multi-list>
+        <div
+          *ngIf="movies && movies.length > 0"
+          class="col-12 col-xl-4 col-lg-6 mb-5"
+        >
+          <app-search-multi-list
+            title="Movies"
+            [searchMulti]="movies"
+            (itemClick)="onItemClick($event)"
+          ></app-search-multi-list>
         </div>
-        <div *ngIf="tvShows && tvShows.length > 0" class="col-12 col-xl-4 col-lg-6 mb-5">
-          <app-search-multi-list title="TV Shows" [searchMulti]="tvShows" (itemClick)="onItemClick($event)"></app-search-multi-list>
+        <div
+          *ngIf="tvShows && tvShows.length > 0"
+          class="col-12 col-xl-4 col-lg-6 mb-5"
+        >
+          <app-search-multi-list
+            title="TV Shows"
+            [searchMulti]="tvShows"
+            (itemClick)="onItemClick($event)"
+          ></app-search-multi-list>
         </div>
-        <div *ngIf="people && people.length > 0" class="col-12 col-xl-4 col-lg-6 mb-5">
-          <app-search-multi-list title="People" [searchMulti]="people" (itemClick)="onItemClick($event)"></app-search-multi-list>
+        <div
+          *ngIf="people && people.length > 0"
+          class="col-12 col-xl-4 col-lg-6 mb-5"
+        >
+          <app-search-multi-list
+            title="People"
+            [searchMulti]="people"
+            (itemClick)="onItemClick($event)"
+          ></app-search-multi-list>
         </div>
       </div>
     </div>

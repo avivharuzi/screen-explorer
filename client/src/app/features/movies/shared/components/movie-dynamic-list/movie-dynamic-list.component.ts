@@ -1,4 +1,9 @@
-import { ChangeDetectionStrategy, ChangeDetectorRef, Component, Input } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  ChangeDetectorRef,
+  Component,
+  Input,
+} from '@angular/core';
 
 import { Movie } from '../../movie';
 import { MovieListType } from '../../movie-list-type.enum';
@@ -16,7 +21,10 @@ export class MovieDynamicListComponent {
   movies: Movie[];
   totalItems: number;
 
-  constructor(private changeDetectorRef: ChangeDetectorRef, private movieService: MovieService) {
+  constructor(
+    private changeDetectorRef: ChangeDetectorRef,
+    private movieService: MovieService
+  ) {
     this.totalItems = 0;
   }
 

@@ -9,6 +9,7 @@ export interface Cast {
   first_air_date: string;
   genre_ids: number[];
   id: number;
+  job?: string;
   media_type: string;
   name: string;
   origin_country: string[];
@@ -28,7 +29,9 @@ export interface Cast {
 export interface Crew {
   adult: boolean;
   backdrop_path: string;
+  character?: string;
   credit_id: string;
+  episode_count?: number;
   department: string;
   first_air_date: string;
   genre_ids: number[];

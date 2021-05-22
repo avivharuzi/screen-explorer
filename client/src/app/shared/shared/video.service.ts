@@ -19,7 +19,10 @@ export class VideoService {
       video,
     };
 
-    this.bsModalRef = this.bsModalService.show(ModalVideoComponent, { initialState, class: 'modal-video' });
+    this.bsModalRef = this.bsModalService.show(ModalVideoComponent, {
+      initialState,
+      class: 'modal-video',
+    });
   }
 
   getOnlyYouTubeVideos(videos: Video[]): Video[] {
@@ -31,6 +34,11 @@ export class VideoService {
       return null;
     }
 
-    return videos.find(video => video.site === VideoSite.YouTube && video.type === VideoType.Trailer) || videos[0];
+    return (
+      videos.find(
+        video =>
+          video.site === VideoSite.YouTube && video.type === VideoType.Trailer
+      ) || videos[0]
+    );
   }
 }

@@ -1,5 +1,13 @@
 import { ActivatedRoute, Router } from '@angular/router';
-import { ChangeDetectionStrategy, ChangeDetectorRef, Component, Inject, OnInit, PLATFORM_ID, ViewChild } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  ChangeDetectorRef,
+  Component,
+  Inject,
+  OnInit,
+  PLATFORM_ID,
+  ViewChild,
+} from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
 import { map } from 'rxjs/operators';
 import { NgxSeoService } from '@avivharuzi/ngx-seo';
@@ -51,8 +59,13 @@ export class TvShowDetailComponent implements OnInit {
           map(res => {
             this.ngxSeoService.setTitle(res.name); // Set tv show name...
 
-            res.videos.results = this.videoService.getOnlyYouTubeVideos(res.videos.results);
-            this.playTrailerVideo = this.videoService.getYouTubeVideoTrailerOrFirstOne(res.videos.results);
+            res.videos.results = this.videoService.getOnlyYouTubeVideos(
+              res.videos.results
+            );
+            this.playTrailerVideo =
+              this.videoService.getYouTubeVideoTrailerOrFirstOne(
+                res.videos.results
+              );
             return res;
           })
         )
@@ -77,7 +90,9 @@ export class TvShowDetailComponent implements OnInit {
   }
 
   onSeasonSelect(): void {
-    this.selectedSeason = this.tvShowDetail.seasons.find(season => season.id === +this.seasonId);
+    this.selectedSeason = this.tvShowDetail.seasons.find(
+      season => season.id === +this.seasonId
+    );
     this.changeDetectorRef.detectChanges();
 
     if (!this.selectedSeason) {
@@ -100,7 +115,9 @@ export class TvShowDetailComponent implements OnInit {
     this.selectedSeason = null;
     this.changeDetectorRef.detectChanges();
 
-    this.router.navigate(['/', APP_ROUTES.TV_SHOWS.self, this.tvShowDetail.id]).then();
+    this.router
+      .navigate(['/', APP_ROUTES.TV_SHOWS.self, this.tvShowDetail.id])
+      .then();
   }
 
   onCallToActionClicked(): void {
@@ -116,12 +133,15 @@ export class TvShowDetailComponent implements OnInit {
   }
 
   private initSeasons(): void {
-    const seasonNumber = +this.activatedRoute.firstChild?.snapshot?.params?.seasonNumber;
+    const seasonNumber =
+      +this.activatedRoute.firstChild?.snapshot?.params?.seasonNumber;
     if (isNaN(seasonNumber)) {
       return;
     }
 
-    const season = this.tvShowDetail.seasons.find(s => s.season_number === seasonNumber);
+    const season = this.tvShowDetail.seasons.find(
+      s => s.season_number === seasonNumber
+    );
     if (!season) {
       return;
     }

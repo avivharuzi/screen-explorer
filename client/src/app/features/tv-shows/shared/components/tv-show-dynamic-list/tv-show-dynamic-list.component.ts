@@ -1,4 +1,9 @@
-import { ChangeDetectionStrategy, ChangeDetectorRef, Component, Input } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  ChangeDetectorRef,
+  Component,
+  Input,
+} from '@angular/core';
 
 import { TvShow } from '../../tv-show';
 import { TvShowListType } from '../../tv-show-list-type.enum';
@@ -16,7 +21,10 @@ export class TvShowDynamicListComponent {
   tvShows: TvShow[];
   totalItems: number;
 
-  constructor(private changeDetectorRef: ChangeDetectorRef, private tvShowService: TvShowService) {}
+  constructor(
+    private changeDetectorRef: ChangeDetectorRef,
+    private tvShowService: TvShowService
+  ) {}
 
   load(page: number): void {
     this.tvShowService.getList(this.listType, { page }).subscribe(res => {

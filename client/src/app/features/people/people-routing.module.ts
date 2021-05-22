@@ -12,7 +12,11 @@ const routes: Routes = [
     path: '',
     component: PeopleComponent,
     children: [
-      { path: APP_ROUTES.PEOPLE.children.POPULAR, component: PersonListPopularComponent, data: { seo: PEOPLE_SEO.POPULAR } },
+      {
+        path: APP_ROUTES.PEOPLE.children.POPULAR,
+        component: PersonListPopularComponent,
+        data: { seo: PEOPLE_SEO.POPULAR },
+      },
       { path: ':id', component: PersonDetailComponent },
       { path: '', redirectTo: 'popular', pathMatch: 'full' },
     ],

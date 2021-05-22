@@ -14,7 +14,7 @@ export class PersonTimelineListComponent {
 
   getEpisodesSubtitle(count?: number): string {
     if (!count) {
-      return;
+      return '';
     }
 
     return `${count} ${count > 1 ? 'episodes' : 'episode'}`;

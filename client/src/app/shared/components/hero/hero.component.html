@@ -1,11 +1,20 @@
-<div class="hero" [style.background-image]="'url(' + (backdrop || posterHref) + ')'">
+<div
+  class="hero"
+  [style.background-image]="'url(' + (backdrop || posterHref) + ')'"
+>
   <div class="hero-filter">
     <div class="container py-5">
       <div class="row justify-content-center">
         <div class="col-12 col-sm-6 col-md-4">
           <div class="hero-poster">
             <a class="spotlight" [href]="posterHref">
-              <img appDefaultImage class="rounded-lg" loading="lazy" [src]="poster" [alt]="title" />
+              <img
+                appDefaultImage
+                class="rounded-lg"
+                loading="lazy"
+                [src]="poster"
+                [alt]="title"
+              />
             </a>
           </div>
         </div>
@@ -23,9 +32,17 @@
                 <app-read-more [text]="description"></app-read-more>
               </p>
             </div>
-            <div *ngIf="displayCallToAction && callToActionTitle && callToActionIcon">
-              <button class="btn btn-outline-light" (click)="callToActionClicked.emit()">
-                <i [class]="'fas fa-' + callToActionIcon + ' mr-2'"></i>{{ callToActionTitle }}
+            <div
+              *ngIf="
+                displayCallToAction && callToActionTitle && callToActionIcon
+              "
+            >
+              <button
+                class="btn btn-outline-light"
+                (click)="callToActionClicked.emit()"
+              >
+                <i [class]="'fas fa-' + callToActionIcon + ' mr-2'"></i
+                >{{ callToActionTitle }}
               </button>
             </div>
           </div>

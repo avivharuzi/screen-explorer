@@ -23,7 +23,11 @@ export class HeaderComponent implements OnInit {
       name: 'Popular',
     },
     {
-      route: ['/', APP_ROUTES.MOVIES.self, APP_ROUTES.MOVIES.children.TOP_RATED],
+      route: [
+        '/',
+        APP_ROUTES.MOVIES.self,
+        APP_ROUTES.MOVIES.children.TOP_RATED,
+      ],
       name: 'Top Rated',
     },
     {
@@ -31,26 +35,46 @@ export class HeaderComponent implements OnInit {
       name: 'Upcoming',
     },
     {
-      route: ['/', APP_ROUTES.MOVIES.self, APP_ROUTES.MOVIES.children.NOW_PLAYING],
+      route: [
+        '/',
+        APP_ROUTES.MOVIES.self,
+        APP_ROUTES.MOVIES.children.NOW_PLAYING,
+      ],
       name: 'Now Playing',
     },
   ];
 
   TV_SHOW_NAV_LINKS: NavLink[] = [
     {
-      route: ['/', APP_ROUTES.TV_SHOWS.self, APP_ROUTES.TV_SHOWS.children.POPULAR],
+      route: [
+        '/',
+        APP_ROUTES.TV_SHOWS.self,
+        APP_ROUTES.TV_SHOWS.children.POPULAR,
+      ],
       name: 'Popular',
     },
     {
-      route: ['/', APP_ROUTES.TV_SHOWS.self, APP_ROUTES.TV_SHOWS.children.TOP_RATED],
+      route: [
+        '/',
+        APP_ROUTES.TV_SHOWS.self,
+        APP_ROUTES.TV_SHOWS.children.TOP_RATED,
+      ],
       name: 'Top Rated',
     },
     {
-      route: ['/', APP_ROUTES.TV_SHOWS.self, APP_ROUTES.TV_SHOWS.children.ON_THE_AIR],
+      route: [
+        '/',
+        APP_ROUTES.TV_SHOWS.self,
+        APP_ROUTES.TV_SHOWS.children.ON_THE_AIR,
+      ],
       name: 'On The Air',
     },
     {
-      route: ['/', APP_ROUTES.TV_SHOWS.self, APP_ROUTES.TV_SHOWS.children.AIRING_TODAY],
+      route: [
+        '/',
+        APP_ROUTES.TV_SHOWS.self,
+        APP_ROUTES.TV_SHOWS.children.AIRING_TODAY,
+      ],
       name: 'Airing Today',
     },
   ];

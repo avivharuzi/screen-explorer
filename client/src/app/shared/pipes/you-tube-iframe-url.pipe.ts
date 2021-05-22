@@ -10,6 +10,8 @@ export class YouTubeIframeUrlPipe implements PipeTransform {
   constructor(private domSanitizer: DomSanitizer) {}
 
   transform(value: string): SafeResourceUrl {
-    return this.domSanitizer.bypassSecurityTrustResourceUrl(`${environment.youtubeEmbedBaseUrl}/${value}`);
+    return this.domSanitizer.bypassSecurityTrustResourceUrl(
+      `${environment.youtubeEmbedBaseUrl}/${value}`
+    );
   }
 }

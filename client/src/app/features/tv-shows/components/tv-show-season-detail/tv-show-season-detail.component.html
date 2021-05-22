@@ -4,16 +4,27 @@
       <div class="d-flex justify-content-between">
         <app-section-title>{{ tvShowSeasonDetail.name }}</app-section-title>
         <span class="align-self-start badge badge-dark"
-          >{{ tvShowSeasonDetail.episodes.length }} {{ tvShowSeasonDetail.episodes.length > 1 ? 'episodes' : 'episode' }}</span
+          >{{ tvShowSeasonDetail.episodes.length }}
+          {{
+            tvShowSeasonDetail.episodes.length > 1 ? 'episodes' : 'episode'
+          }}</span
         >
       </div>
       <p>{{ tvShowSeasonDetail.overview }}</p>
     </div>
   </div>
   <div class="row">
-    <div class="col-12 col-md-6 mb-3" *ngFor="let episode of tvShowSeasonDetail.episodes; trackBy: trackByEpisode">
+    <div
+      class="col-12 col-md-6 mb-3"
+      *ngFor="
+        let episode of tvShowSeasonDetail.episodes;
+        trackBy: trackByEpisode
+      "
+    >
       <app-card
-        [title]="(episode.episode_number | episodeNumber) + ' - ' + episode.name"
+        [title]="
+          (episode.episode_number | episodeNumber) + ' - ' + episode.name
+        "
         [poster]="episode.still_path | tmdbImage: 'w780'"
         [subtitle]="episode.overview"
         [footer]="episode.air_date | date"

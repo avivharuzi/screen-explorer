@@ -17,8 +17,14 @@ export class TvShowService {
 
   constructor(private httpClient: HttpClient) {}
 
-  getList(type: TvShowListType, params = {}): Observable<HttpResponsePagination<TvShow>> {
-    return this.httpClient.get<HttpResponsePagination<TvShow>>(`${this.baseUrl}/${type}`, { params });
+  getList(
+    type: TvShowListType,
+    params = {}
+  ): Observable<HttpResponsePagination<TvShow>> {
+    return this.httpClient.get<HttpResponsePagination<TvShow>>(
+      `${this.baseUrl}/${type}`,
+      { params }
+    );
   }
 
   getDetail(id: number): Observable<TvShowDetail> {
@@ -26,10 +32,17 @@ export class TvShowService {
   }
 
   getSimilar(id: number): Observable<HttpResponsePagination<TvShow>> {
-    return this.httpClient.get<HttpResponsePagination<TvShow>>(`${this.baseUrl}/${id}/similar`);
+    return this.httpClient.get<HttpResponsePagination<TvShow>>(
+      `${this.baseUrl}/${id}/similar`
+    );
   }
 
-  getSeasonDetail(id: number, seasonNumber: number): Observable<TvShowSeasonDetail> {
-    return this.httpClient.get<TvShowSeasonDetail>(`${this.baseUrl}/${id}/seasons/${seasonNumber}`);
+  getSeasonDetail(
+    id: number,
+    seasonNumber: number
+  ): Observable<TvShowSeasonDetail> {
+    return this.httpClient.get<TvShowSeasonDetail>(
+      `${this.baseUrl}/${id}/seasons/${seasonNumber}`
+    );
   }
 }

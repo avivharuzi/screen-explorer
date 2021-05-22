@@ -1,4 +1,12 @@
-import { ChangeDetectionStrategy, ChangeDetectorRef, Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  ChangeDetectorRef,
+  Component,
+  Input,
+  OnChanges,
+  OnInit,
+  SimpleChanges,
+} from '@angular/core';
 
 @Component({
   selector: 'app-read-more',
@@ -25,7 +33,10 @@ export class ReadMoreComponent implements OnInit, OnChanges {
   }
 
   ngOnChanges(changes: SimpleChanges): void {
-    if (changes.text && changes.text.previousValue !== changes.text.currentValue) {
+    if (
+      changes.text &&
+      changes.text.previousValue !== changes.text.currentValue
+    ) {
       this.determineView();
       this.changeDetectorRef.detectChanges();
     }

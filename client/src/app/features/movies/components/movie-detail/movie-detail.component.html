@@ -4,7 +4,11 @@
     [posterHref]="movieDetail.poster_path | tmdbImage: 'original'"
     [backdrop]="movieDetail.backdrop_path | tmdbImage: 'original'"
     [title]="movieDetail.title"
-    [subtitle]="movieDetail.release_date ? '(' + (movieDetail.release_date | date: 'yyyy') + ')' : null"
+    [subtitle]="
+      movieDetail.release_date
+        ? '(' + (movieDetail.release_date | date: 'yyyy') + ')'
+        : null
+    "
     [description]="movieDetail.overview"
     descriptionLabel="Overview"
     callToActionTitle="Play Trailer"
@@ -13,22 +17,37 @@
     [displayCallToAction]="hasVideo()"
   >
     <div class="mb-3">
-      <app-hero-stats [date]="movieDetail.release_date" [genres]="movieDetail.genres" [runtime]="movieDetail.runtime"></app-hero-stats>
+      <app-hero-stats
+        [date]="movieDetail.release_date"
+        [genres]="movieDetail.genres"
+        [runtime]="movieDetail.runtime"
+      ></app-hero-stats>
     </div>
     <div class="mb-4">
-      <app-rating [rate]="movieDetail.vote_average" [votes]="movieDetail.vote_count"></app-rating>
+      <app-rating
+        [rate]="movieDetail.vote_average"
+        [votes]="movieDetail.vote_count"
+      ></app-rating>
     </div>
   </app-hero>
   <div class="container mb-5">
     <tabset [justified]="true">
       <tab id="overview" heading="Overview">
-        <ng-container *ngIf="movieDetail.credits.cast && movieDetail.credits.cast.length > 0">
+        <ng-container
+          *ngIf="
+            movieDetail.credits.cast && movieDetail.credits.cast.length > 0
+          "
+        >
           <section class="mt-5 mb-5">
             <app-section-title>Cast</app-section-title>
             <app-cast-list [casts]="movieDetail.credits.cast"></app-cast-list>
           </section>
         </ng-container>
-        <ng-container *ngIf="movieDetail.credits.crew && movieDetail.credits.crew.length > 0">
+        <ng-container
+          *ngIf="
+            movieDetail.credits.crew && movieDetail.credits.crew.length > 0
+          "
+        >
           <hr />
           <section class="mt-5 mb-5">
             <app-section-title>Crew</app-section-title>
@@ -43,24 +62,43 @@
           </section>
         </ng-container>
       </tab>
-      <ng-container *ngIf="movieDetail.images.posters && movieDetail.images.posters.length > 0">
+      <ng-container
+        *ngIf="
+          movieDetail.images.posters && movieDetail.images.posters.length > 0
+        "
+      >
         <tab id="posters" heading="Posters">
           <section class="mt-5 mb-5">
-            <app-image-list [images]="movieDetail.images.posters"></app-image-list>
+            <app-image-list
+              [images]="movieDetail.images.posters"
+            ></app-image-list>
           </section>
         </tab>
       </ng-container>
-      <ng-container *ngIf="movieDetail.images.backdrops && movieDetail.images.backdrops.length > 0">
+      <ng-container
+        *ngIf="
+          movieDetail.images.backdrops &&
+          movieDetail.images.backdrops.length > 0
+        "
+      >
         <tab id="backdrops" heading="Backdrops">
           <section class="mt-5 mb-5">
-            <app-image-list [images]="movieDetail.images.backdrops"></app-image-list>
+            <app-image-list
+              [images]="movieDetail.images.backdrops"
+            ></app-image-list>
           </section>
         </tab>
       </ng-container>
-      <ng-container *ngIf="movieDetail.videos.results && movieDetail.videos.results.length > 0">
+      <ng-container
+        *ngIf="
+          movieDetail.videos.results && movieDetail.videos.results.length > 0
+        "
+      >
         <tab id="videos" heading="Videos">
           <section class="mt-5 mb-5">
-            <app-video-list [videos]="movieDetail.videos.results"></app-video-list>
+            <app-video-list
+              [videos]="movieDetail.videos.results"
+            ></app-video-list>
           </section>
         </tab>
       </ng-container>

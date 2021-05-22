@@ -1,4 +1,10 @@
-import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  EventEmitter,
+  Input,
+  Output,
+} from '@angular/core';
 
 import { MediaTypeToRouteNamePipe } from '../../../../../shared/pipes/media-type-to-route-name.pipe';
 import { SearchMulti } from '../../search-multi';
@@ -13,7 +19,9 @@ export class SearchMultiListComponent {
   @Input() title: string;
   @Input() searchMulti: SearchMulti[];
 
-  @Output() itemClick: EventEmitter<(string | number)[]> = new EventEmitter<(string | number)[]>();
+  @Output() itemClick: EventEmitter<(string | number)[]> = new EventEmitter<
+    (string | number)[]
+  >();
 
   constructor(private mediaTypeToRouteNamePipe: MediaTypeToRouteNamePipe) {}
 
@@ -22,6 +30,10 @@ export class SearchMultiListComponent {
   }
 
   onSearchSingleClick(searchSingle: SearchMulti): void {
-    this.itemClick.emit(['/', this.mediaTypeToRouteNamePipe.transform(searchSingle.media_type), searchSingle.id]);
+    this.itemClick.emit([
+      '/',
+      this.mediaTypeToRouteNamePipe.transform(searchSingle.media_type),
+      searchSingle.id,
+    ]);
   }
 }

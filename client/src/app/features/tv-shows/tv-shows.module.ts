@@ -29,6 +29,12 @@ import { TvShowsRoutingModule } from './tv-shows-routing.module';
     TvShowsComponent,
     TvShowSeasonDetailComponent,
   ],
-  imports: [CommonModule, FormsModule, SharedModule, TabsModule.forRoot(), TvShowsRoutingModule],
+  imports: [
+    CommonModule,
+    FormsModule,
+    SharedModule,
+    TabsModule.forRoot(),
+    TvShowsRoutingModule,
+  ],
 })
 export class TvShowsModule {}

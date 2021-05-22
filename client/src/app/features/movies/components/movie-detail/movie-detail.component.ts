@@ -1,5 +1,10 @@
 import { ActivatedRoute } from '@angular/router';
-import { ChangeDetectionStrategy, ChangeDetectorRef, Component, OnInit } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  ChangeDetectorRef,
+  Component,
+  OnInit,
+} from '@angular/core';
 import { map } from 'rxjs/operators';
 import { NgxSeoService } from '@avivharuzi/ngx-seo';
 
@@ -40,8 +45,13 @@ export class MovieDetailComponent implements OnInit {
           map(res => {
             this.ngxSeoService.setTitle(res.title); // Set movie title...
 
-            res.videos.results = this.videoService.getOnlyYouTubeVideos(res.videos.results);
-            this.playTrailerVideo = this.videoService.getYouTubeVideoTrailerOrFirstOne(res.videos.results);
+            res.videos.results = this.videoService.getOnlyYouTubeVideos(
+              res.videos.results
+            );
+            this.playTrailerVideo =
+              this.videoService.getYouTubeVideoTrailerOrFirstOne(
+                res.videos.results
+              );
             return res;
           })
         )

@@ -1,5 +1,8 @@
 <div class="flex-horizontal">
-  <div class="col-6 col-sm-4 col-md-3 col-lg-2" *ngFor="let cast of casts; trackBy: trackByCast">
+  <div
+    class="col-6 col-sm-4 col-md-3 col-lg-2"
+    *ngFor="let cast of casts; trackBy: trackByCast"
+  >
     <app-card
       [title]="cast.name"
       [subtitle]="cast.character"

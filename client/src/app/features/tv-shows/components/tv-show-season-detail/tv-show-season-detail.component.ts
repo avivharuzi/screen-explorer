@@ -1,7 +1,15 @@
 import { ActivatedRoute } from '@angular/router';
-import { ChangeDetectionStrategy, ChangeDetectorRef, Component, OnInit } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  ChangeDetectorRef,
+  Component,
+  OnInit,
+} from '@angular/core';
 
-import { Episode, TvShowSeasonDetail } from '../../shared/tv-show-season-detail';
+import {
+  Episode,
+  TvShowSeasonDetail,
+} from '../../shared/tv-show-season-detail';
 import { TvShowService } from '../../shared/tv-show.service';
 
 @Component({
@@ -13,7 +21,11 @@ import { TvShowService } from '../../shared/tv-show.service';
 export class TvShowSeasonDetailComponent implements OnInit {
   tvShowSeasonDetail: TvShowSeasonDetail;
 
-  constructor(private activatedRoute: ActivatedRoute, private changeDetectorRef: ChangeDetectorRef, private tvShowService: TvShowService) {}
+  constructor(
+    private activatedRoute: ActivatedRoute,
+    private changeDetectorRef: ChangeDetectorRef,
+    private tvShowService: TvShowService
+  ) {}
 
   ngOnInit(): void {
     this.activatedRoute.params.subscribe(params => {

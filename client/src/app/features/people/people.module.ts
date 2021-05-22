@@ -22,6 +22,11 @@ import { PersonTimelineListComponent } from './shared/components/person-timeline
     PersonListPopularComponent,
     PersonTimelineListComponent,
   ],
-  imports: [CommonModule, PeopleRoutingModule, SharedModule, TabsModule.forRoot()],
+  imports: [
+    CommonModule,
+    PeopleRoutingModule,
+    SharedModule,
+    TabsModule.forRoot(),
+  ],
 })
 export class PeopleModule {}

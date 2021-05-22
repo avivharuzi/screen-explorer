@@ -1,11 +1,36 @@
 <ng-container *ngIf="trends && trends.length > 0">
-  <ngx-glide arrowLeftLabel="&lsaquo;" arrowRightLabel="&rsaquo;" [showBullets]="false" [autoplay]="3000" [showArrows]="true">
-    <div class="trend-carousel-item" *ngFor="let trend of trends; trackBy: trackByTrend">
-      <div class="trend-carousel-img rounded-lg" [style.background-image]="'url(' + (trend.backdrop_path | tmdbImage: 'w1280') + ')'">
+  <ngx-glide
+    arrowLeftLabel="&lsaquo;"
+    arrowRightLabel="&rsaquo;"
+    [showBullets]="false"
+    [autoplay]="3000"
+    [showArrows]="true"
+  >
+    <div
+      class="trend-carousel-item"
+      *ngFor="let trend of trends; trackBy: trackByTrend"
+    >
+      <div
+        class="trend-carousel-img rounded-lg"
+        [style.background-image]="
+          'url(' + (trend.backdrop_path | tmdbImage: 'w1280') + ')'
+        "
+      >
         <div class="trend-carousel-content-container">
           <div
-            class="trend-carousel-content cursor-pointer focus-outline-none text-center w-100 rounded-lg"
-            [routerLink]="['/', trend.media_type | mediaTypeToRouteName, trend.id]"
+            class="
+              trend-carousel-content
+              cursor-pointer
+              focus-outline-none
+              text-center
+              w-100
+              rounded-lg
+            "
+            [routerLink]="[
+              '/',
+              trend.media_type | mediaTypeToRouteName,
+              trend.id
+            ]"
           >
             <h3>{{ trend.title || trend.name }}</h3>
             <p>{{ trend.release_date || trend.first_air_date | date }}</p>

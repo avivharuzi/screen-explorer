@@ -17,8 +17,13 @@ import { environment } from '../environments/environment';
     BrowserAnimationsModule,
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
     CoreModule,
-    NgxSeoModule.forRoot({ preserve: false, titleSuffixAfter: ` - ${APP_SEO.HOME.title}` }),
-    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
+    NgxSeoModule.forRoot({
+      preserve: false,
+      titleSuffixAfter: ` - ${APP_SEO.HOME.title}`,
+    }),
+    ServiceWorkerModule.register('ngsw-worker.js', {
+      enabled: environment.production,
+    }),
   ],
   providers: [],
   bootstrap: [AppComponent],

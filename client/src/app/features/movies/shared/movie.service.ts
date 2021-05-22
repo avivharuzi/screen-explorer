@@ -16,8 +16,14 @@ export class MovieService {
 
   constructor(private httpClient: HttpClient) {}
 
-  getList(type: MovieListType, params = {}): Observable<HttpResponsePagination<Movie>> {
-    return this.httpClient.get<HttpResponsePagination<Movie>>(`${this.baseUrl}/${type}`, { params });
+  getList(
+    type: MovieListType,
+    params = {}
+  ): Observable<HttpResponsePagination<Movie>> {
+    return this.httpClient.get<HttpResponsePagination<Movie>>(
+      `${this.baseUrl}/${type}`,
+      { params }
+    );
   }
 
   getDetail(id: number): Observable<MovieDetail> {
@@ -25,6 +31,8 @@ export class MovieService {
   }
 
   getSimilar(id: number): Observable<HttpResponsePagination<Movie>> {
-    return this.httpClient.get<HttpResponsePagination<Movie>>(`${this.baseUrl}/${id}/similar`);
+    return this.httpClient.get<HttpResponsePagination<Movie>>(
+      `${this.baseUrl}/${id}/similar`
+    );
   }
 }

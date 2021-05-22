@@ -1,4 +1,9 @@
-import { ChangeDetectionStrategy, ChangeDetectorRef, Component, Input } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  ChangeDetectorRef,
+  Component,
+  Input,
+} from '@angular/core';
 
 import { Person } from '../../shared/person';
 import { PersonListType } from '../../shared/person-list-type.enum';
@@ -16,7 +21,10 @@ export class PersonDynamicListComponent {
   people: Person[];
   totalItems: number;
 
-  constructor(private changeDetectorRef: ChangeDetectorRef, private personService: PersonService) {
+  constructor(
+    private changeDetectorRef: ChangeDetectorRef,
+    private personService: PersonService
+  ) {
     this.totalItems = 0;
   }
 

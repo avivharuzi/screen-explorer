@@ -24,17 +24,41 @@ export class HomeComponent implements OnInit {
   dayPeople$: Observable<Trend[]>;
   weekPeople$: Observable<Trend[]>;
 
-  constructor(private titleService: Title, private trendService: TrendService) {}
+  constructor(
+    private titleService: Title,
+    private trendService: TrendService
+  ) {}
 
   ngOnInit(): void {
     this.titleService.setTitle(APP_SEO.HOME.title);
 
-    this.weekAll$ = this.trendService.getListOnlyResults(MediaTypeList.All, TimeWindow.Week);
-    this.dayMovies$ = this.trendService.getListOnlyResults(MediaTypeList.Movie, TimeWindow.Day);
-    this.weekMovies$ = this.trendService.getListOnlyResults(MediaTypeList.Movie, TimeWindow.Week);
-    this.dayTvShows$ = this.trendService.getListOnlyResults(MediaTypeList.TV, TimeWindow.Day);
-    this.weekTvShows$ = this.trendService.getListOnlyResults(MediaTypeList.TV, TimeWindow.Week);
-    this.dayPeople$ = this.trendService.getListOnlyResults(MediaTypeList.Person, TimeWindow.Day);
-    this.weekPeople$ = this.trendService.getListOnlyResults(MediaTypeList.Person, TimeWindow.Week);
+    this.weekAll$ = this.trendService.getListOnlyResults(
+      MediaTypeList.All,
+      TimeWindow.Week
+    );
+    this.dayMovies$ = this.trendService.getListOnlyResults(
+      MediaTypeList.Movie,
+      TimeWindow.Day
+    );
+    this.weekMovies$ = this.trendService.getListOnlyResults(
+      MediaTypeList.Movie,
+      TimeWindow.Week
+    );
+    this.dayTvShows$ = this.trendService.getListOnlyResults(
+      MediaTypeList.TV,
+      TimeWindow.Day
+    );
+    this.weekTvShows$ = this.trendService.getListOnlyResults(
+      MediaTypeList.TV,
+      TimeWindow.Week
+    );
+    this.dayPeople$ = this.trendService.getListOnlyResults(
+      MediaTypeList.Person,
+      TimeWindow.Day
+    );
+    this.weekPeople$ = this.trendService.getListOnlyResults(
+      MediaTypeList.Person,
+      TimeWindow.Week
+    );
   }
 }
