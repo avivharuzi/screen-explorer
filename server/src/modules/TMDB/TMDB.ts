@@ -1,5 +1,5 @@
-import * as httpStatusCodes from 'http-status-codes';
 import got from 'got';
+import { StatusCodes } from 'http-status-codes';
 
 import config from '../../config';
 import errors from '../../errors';
@@ -32,20 +32,21 @@ export class TMDB {
     'popularity.asc',
   ];
 
-  /* eslint-disable @typescript-eslint/camelcase */
   static async getData(
     uri: string,
     // eslint-disable-next-line
     query: { [key: string]: any } = {},
     // eslint-disable-next-line
     extraQuery: { [key: string]: any } = {},
-    useCache = true,
+    useCache = true
     // eslint-disable-next-line
   ): Promise<any> {
     const searchParams = {
       // Common query params...
       api_key: config.tmdb.api.key,
-      language: query.language ? query.language : config.tmdb.api.defaultLanguage,
+      language: query.language
+        ? query.language
+        : config.tmdb.api.defaultLanguage,
       page: query.page ? query.page : 1,
       region: query.region ? query.region : config.tmdb.api.defaultRegion,
       // Dynamic query params...
@@ -74,7 +75,7 @@ export class TMDB {
       const res = await got(url, { searchParams });
       body = JSON.parse(res.body);
     } catch (err) {
-      if (err.response.statusCode === httpStatusCodes.NOT_FOUND) {
+      if (err.response.statusCode === StatusCodes.NOT_FOUND) {
         throw new ResponseError(errors.notFound);
       }
 
@@ -93,12 +94,14 @@ export class TMDB {
     return body;
   }
 
-  /* eslint-disable @typescript-eslint/camelcase */
-
   // eslint-disable-next-line
-  static getMovieDiscoverQuery(query: { [key: string]: any }): { [key: string]: string | boolean } {
+  static getMovieDiscoverQuery(query: { [key: string]: any }): {
+    [key: string]: string | boolean;
+  } {
     return {
-      sort_by: TMDB.SORT_MOVIE_OPTIONS.includes(query.sort_by) ? query.sort_by : '',
+      sort_by: TMDB.SORT_MOVIE_OPTIONS.includes(query.sort_by)
+        ? query.sort_by
+        : '',
       certification_country: query.certification_country ?? '',
       certification: query.certification ?? '',
       'certification.lte': query['certification.lte'] ?? '',
@@ -129,17 +132,17 @@ export class TMDB {
     };
   }
 
-  /* eslint-disable @typescript-eslint/camelcase */
-
   // eslint-disable-next-line
-  static getTvDiscoverQuery(query: { [key: string]: any }): { [key: string]: string | boolean } {
+  static getTvDiscoverQuery(query: { [key: string]: any }): {
+    [key: string]: string | boolean;
+  } {
     return {
       sort_by: TMDB.SORT_TV_OPTIONS.includes(query.sort_by) ?? '',
       'air_date.gte': query['air_date.gte'] ?? '',
       'air_date.lte': query['air_date.lte'] ?? '',
       'first_air_date.gte': query['first_air_date.gte'] ?? '',
       'first_air_date.lte': query['first_air_date.lte'] ?? '',
-      'first_air_date_year': query['first_air_date_year'] ?? false,
+      first_air_date_year: query['first_air_date_year'] ?? false,
       timezone: query.timezone ?? 'America/New_York',
       'vote_average.gte': query['vote_average.gte'] ?? '',
       'vote_count.gte': query['vote_count.gte'] ?? '',
@@ -157,14 +160,18 @@ export class TMDB {
   }
 
   // eslint-disable-next-line
-  static getSearchQuery(query: { [key: string]: any }): { [key: string]: string | boolean } {
+  static getSearchQuery(query: { [key: string]: any }): {
+    [key: string]: string | boolean;
+  } {
     return {
       query: query.query ?? '',
     };
   }
 
-  // eslint-disable-next-line
-  static getIncludeImageLanguageQueryParam(query: { [key: string]: any }): string {
+  static getIncludeImageLanguageQueryParam(query: {
+    // eslint-disable-next-line
+    [key: string]: any;
+  }): string {
     return `${query.language ?? config.tmdb.api.defaultLanguage},null`;
   }
 }

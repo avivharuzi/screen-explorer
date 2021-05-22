@@ -31,9 +31,12 @@ configurationsRouter.get('/languages', async (req: Request, res: Response) => {
   await TMDBHandler.handleReq(req, res, 'configuration/languages');
 });
 
-configurationsRouter.get('/primary-translations', async (req: Request, res: Response) => {
-  await TMDBHandler.handleReq(req, res, 'configuration/primary_translations');
-});
+configurationsRouter.get(
+  '/primary-translations',
+  async (req: Request, res: Response) => {
+    await TMDBHandler.handleReq(req, res, 'configuration/primary_translations');
+  }
+);
 
 configurationsRouter.get('/timezones', async (req: Request, res: Response) => {
   await TMDBHandler.handleReq(req, res, 'configuration/timezones');
@@ -45,7 +48,12 @@ configurationsRouter.get('/timezones', async (req: Request, res: Response) => {
  * =========================
  */
 moviesRouter.get('/discover', async (req: Request, res: Response) => {
-  await TMDBHandler.handleReq(req, res, 'discover/movie', TMDB.getMovieDiscoverQuery(req.query));
+  await TMDBHandler.handleReq(
+    req,
+    res,
+    'discover/movie',
+    TMDB.getMovieDiscoverQuery(req.query)
+  );
 });
 
 moviesRouter.get('/genres', async (req: Request, res: Response) => {
@@ -71,7 +79,8 @@ moviesRouter.get('/upcoming', async (req: Request, res: Response) => {
 moviesRouter.get('/:id', async (req: Request, res: Response) => {
   await TMDBHandler.handleReq(req, res, `movie/${req.params.id}`, {
     // eslint-disable-next-line
-    append_to_response: 'videos,images,external_ids,credits,keywords,release_dates',
+    append_to_response:
+      'videos,images,external_ids,credits,keywords,release_dates',
     // eslint-disable-next-line
     include_image_language: TMDB.getIncludeImageLanguageQueryParam(req.query),
   });
@@ -87,7 +96,12 @@ moviesRouter.get('/:id/similar', async (req: Request, res: Response) => {
  * ===========================
  */
 tvShowsRouter.get('/discover', async (req: Request, res: Response) => {
-  await TMDBHandler.handleReq(req, res, 'discover/tv', TMDB.getTvDiscoverQuery(req.query));
+  await TMDBHandler.handleReq(
+    req,
+    res,
+    'discover/tv',
+    TMDB.getTvDiscoverQuery(req.query)
+  );
 });
 
 tvShowsRouter.get('/genres', async (req: Request, res: Response) => {
@@ -123,23 +137,43 @@ tvShowsRouter.get('/:id/similar', async (req: Request, res: Response) => {
   await TMDBHandler.handleReq(req, res, `tv/${req.params.id}/similar`);
 });
 
-tvShowsRouter.get('/:id/seasons/:seasonNumber', async (req: Request, res: Response) => {
-  await TMDBHandler.handleReq(req, res, `tv/${req.params.id}/season/${req.params.seasonNumber}`, {
-    // eslint-disable-next-line
-    append_to_response: 'credits,external_ids,images,videos',
-    // eslint-disable-next-line
-    include_image_language: TMDB.getIncludeImageLanguageQueryParam(req.query),
-  });
-});
+tvShowsRouter.get(
+  '/:id/seasons/:seasonNumber',
+  async (req: Request, res: Response) => {
+    await TMDBHandler.handleReq(
+      req,
+      res,
+      `tv/${req.params.id}/season/${req.params.seasonNumber}`,
+      {
+        // eslint-disable-next-line
+        append_to_response: 'credits,external_ids,images,videos',
+        // eslint-disable-next-line
+        include_image_language: TMDB.getIncludeImageLanguageQueryParam(
+          req.query
+        ),
+      }
+    );
+  }
+);
 
-tvShowsRouter.get('/:id/seasons/:seasonNumber/episodes/:episodeNumber', async (req: Request, res: Response) => {
-  await TMDBHandler.handleReq(req, res, `tv/${req.params.id}/season/${req.params.seasonNumber}/episode/${req.params.episodeNumber}`, {
-    // eslint-disable-next-line
-    append_to_response: 'credits,external_ids,images,videos',
-    // eslint-disable-next-line
-    include_image_language: TMDB.getIncludeImageLanguageQueryParam(req.query),
-  });
-});
+tvShowsRouter.get(
+  '/:id/seasons/:seasonNumber/episodes/:episodeNumber',
+  async (req: Request, res: Response) => {
+    await TMDBHandler.handleReq(
+      req,
+      res,
+      `tv/${req.params.id}/season/${req.params.seasonNumber}/episode/${req.params.episodeNumber}`,
+      {
+        // eslint-disable-next-line
+        append_to_response: 'credits,external_ids,images,videos',
+        // eslint-disable-next-line
+        include_image_language: TMDB.getIncludeImageLanguageQueryParam(
+          req.query
+        ),
+      }
+    );
+  }
+);
 
 /**
  * =========================
@@ -164,9 +198,16 @@ peopleRouter.get('/:id', async (req: Request, res: Response) => {
  */
 // mediaType: 'all' | 'movie' | 'tv' | 'person'
 // timeWindow: 'week' | 'day'
-trendsRouter.get('/:mediaType/:timeWindow', async (req: Request, res: Response) => {
-  await TMDBHandler.handleReq(req, res, `trending/${req.params.mediaType}/${req.params.timeWindow}`);
-});
+trendsRouter.get(
+  '/:mediaType/:timeWindow',
+  async (req: Request, res: Response) => {
+    await TMDBHandler.handleReq(
+      req,
+      res,
+      `trending/${req.params.mediaType}/${req.params.timeWindow}`
+    );
+  }
+);
 
 /**
  * =========================
@@ -175,7 +216,12 @@ trendsRouter.get('/:mediaType/:timeWindow', async (req: Request, res: Response) 
  */
 // mediaType: 'multi' | 'movie' | 'tv' | 'person'
 searchRouter.get('/:mediaType', async (req: Request, res: Response) => {
-  await TMDBHandler.handleReq(req, res, `search/${req.params.mediaType}`, TMDB.getSearchQuery(req.query));
+  await TMDBHandler.handleReq(
+    req,
+    res,
+    `search/${req.params.mediaType}`,
+    TMDB.getSearchQuery(req.query)
+  );
 });
 
 export default {

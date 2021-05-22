@@ -1,12 +1,12 @@
-import * as httpStatusCodes from 'http-status-codes';
+import { StatusCodes } from 'http-status-codes';
 
 export default Object.freeze({
   notFound: {
-    statusCode: httpStatusCodes.NOT_FOUND,
+    statusCode: StatusCodes.NOT_FOUND,
     message: 'Not found the resource you requested for',
   },
   unknown: {
-    statusCode: httpStatusCodes.INTERNAL_SERVER_ERROR,
+    statusCode: StatusCodes.INTERNAL_SERVER_ERROR,
     message: 'An error has occurred, please try again later',
   },
 });

@@ -15,10 +15,14 @@ export class Redis {
     this.redisClient = redis.createClient(Redis.PORT, Redis.HOSTNAME);
 
     this.redisClient.on('connect', () => {
-      console.log(chalk.blue(`Connected to redis server successfully on ${Redis.HOSTNAME}:${Redis.PORT}`));
+      console.log(
+        chalk.blue(
+          `Connected to redis server successfully on ${Redis.HOSTNAME}:${Redis.PORT}`
+        )
+      );
     });
 
-    this.redisClient.on('error', (err) => {
+    this.redisClient.on('error', err => {
       console.log(chalk.red(err));
     });
   }
@@ -37,13 +41,16 @@ export class Redis {
         return resolve(null);
       }
 
-      this.redisClient.get(key, (error: Error | null, result: string | null) => {
-        if (error) {
-          reject(error);
-        } else {
-          resolve(result ? JSON.parse(result) : null);
+      this.redisClient.get(
+        key,
+        (error: Error | null, result: string | null) => {
+          if (error) {
+            reject(error);
+          } else {
+            resolve(result ? JSON.parse(result) : null);
+          }
         }
-      });
+      );
     });
   }
 
@@ -53,13 +60,17 @@ export class Redis {
         return reject('Can not set key value redis is connected yet');
       }
 
-      this.redisClient.set(key, JSON.stringify(value), (error: Error | null, result: string) => {
-        if (error) {
-          reject(error);
-        } else {
-          resolve(result);
+      this.redisClient.set(
+        key,
+        JSON.stringify(value),
+        (error: Error | null, result: string) => {
+          if (error) {
+            reject(error);
+          } else {
+            resolve(result);
+          }
         }
-      });
+      );
     });
   }
 
@@ -69,13 +80,17 @@ export class Redis {
         return reject('Can not expire key redis is connected yet');
       }
 
-      this.redisClient.expire(key, time, (error: Error | null, result: number) => {
-        if (error) {
-          reject(error);
-        } else {
-          resolve(result);
+      this.redisClient.expire(
+        key,
+        time,
+        (error: Error | null, result: number) => {
+          if (error) {
+            reject(error);
+          } else {
+            resolve(result);
+          }
         }
-      });
+      );
     });
   }
 }
