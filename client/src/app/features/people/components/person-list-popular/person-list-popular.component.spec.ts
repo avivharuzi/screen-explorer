@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { PersonListPopularComponent } from './person-list-popular.component';
 
@@ -6,11 +6,13 @@ describe('PersonListPopularComponent', () => {
   let component: PersonListPopularComponent;
   let fixture: ComponentFixture<PersonListPopularComponent>;
 
-  beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      declarations: [PersonListPopularComponent],
-    }).compileComponents();
-  }));
+  beforeEach(
+    waitForAsync(() => {
+      TestBed.configureTestingModule({
+        declarations: [PersonListPopularComponent],
+      }).compileComponents();
+    })
+  );
 
   beforeEach(() => {
     fixture = TestBed.createComponent(PersonListPopularComponent);

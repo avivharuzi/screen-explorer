@@ -4,28 +4,40 @@ Angular Application.
 
 ## Commands
 
-Serve project in development.
+Serve project in development mode.
 
 ```bash
 npm start
 ```
 
-Format project.
+Serve project in ssr mode.
 
 ```bash
-npm run format
+npm start:ssr
 ```
 
-Format project with watch mode.
+Build project for development.
 
 ```bash
-npm run format:watch
+npm run build:dev
 ```
 
-Lint project.
+Build project for production.
 
 ```bash
-npm run lint
+npm run build
+```
+
+Build project for production with Angular Universal (SSR).
+
+```bash
+npm run build:ssr
+```
+
+Build project for production with Prerender.
+
+```bash
+npm run prerender
 ```
 
 Test project.
@@ -40,32 +52,44 @@ Test project without watching files.
 npm run test:without-watch
 ```
 
-E2E project.
+Lint project.
 
 ```bash
-npm run e2e
+npm run lint
+```
+
+Lint project and fix files.
+
+```bash
+npm run lint:fix
+```
+
+Format project.
+
+```bash
+npm run format
+```
+
+Format project with watch mode.
+
+```bash
+npm run format:watch
+```
+
+Run builded project.
+
+```bash
+npm run serve
+```
+
+Run builded project after using ssr mode.
+
+```bash
+npm run serve:ssr
 ```
 
 Analyze project.
 
 ```bash
 npm run analyze
-```
-
-Build project for production.
-
-```bash
-npm run build:prod
-```
-
-Build project for production with Angular Universal (SSR).
-
-```bash
-npm run build:ssr
-```
-
-Build project for production with Prerender.
-
-```bash
-npm run prerender
 ```

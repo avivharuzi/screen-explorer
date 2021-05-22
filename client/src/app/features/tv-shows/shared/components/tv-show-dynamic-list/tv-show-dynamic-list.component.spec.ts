@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { TvShowDynamicListComponent } from './tv-show-dynamic-list.component';
 
@@ -6,11 +6,13 @@ describe('TvShowDynamicListComponent', () => {
   let component: TvShowDynamicListComponent;
   let fixture: ComponentFixture<TvShowDynamicListComponent>;
 
-  beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      declarations: [TvShowDynamicListComponent],
-    }).compileComponents();
-  }));
+  beforeEach(
+    waitForAsync(() => {
+      TestBed.configureTestingModule({
+        declarations: [TvShowDynamicListComponent],
+      }).compileComponents();
+    })
+  );
 
   beforeEach(() => {
     fixture = TestBed.createComponent(TvShowDynamicListComponent);

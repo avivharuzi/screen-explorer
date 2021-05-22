@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { TvShowSeasonDetailComponent } from './tv-show-season-detail.component';
 
@@ -6,11 +6,13 @@ describe('TvShowSeasonDetailComponent', () => {
   let component: TvShowSeasonDetailComponent;
   let fixture: ComponentFixture<TvShowSeasonDetailComponent>;
 
-  beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      declarations: [TvShowSeasonDetailComponent],
-    }).compileComponents();
-  }));
+  beforeEach(
+    waitForAsync(() => {
+      TestBed.configureTestingModule({
+        declarations: [TvShowSeasonDetailComponent],
+      }).compileComponents();
+    })
+  );
 
   beforeEach(() => {
     fixture = TestBed.createComponent(TvShowSeasonDetailComponent);

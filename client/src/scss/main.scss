@@ -1,13 +1,10 @@
-/*---------- Vendor ----------*/
 @import './vendor/bootstrap/bootstrap';
 @import './vendor/fontawesome/fontawesome';
 @import './vendor/glide/glide';
 
-/*---------- Base ----------*/
 @import './base/typography';
 @import './base/common';
 @import './base/theme';
 
-/*---------- Components ----------*/
 @import './components/modal';
 @import './components/tab';

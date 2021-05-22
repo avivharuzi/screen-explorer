@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { TvShowListAiringTodayComponent } from './tv-show-list-airing-today.component';
 
@@ -6,11 +6,13 @@ describe('TvShowListAiringTodayComponent', () => {
   let component: TvShowListAiringTodayComponent;
   let fixture: ComponentFixture<TvShowListAiringTodayComponent>;
 
-  beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      declarations: [TvShowListAiringTodayComponent],
-    }).compileComponents();
-  }));
+  beforeEach(
+    waitForAsync(() => {
+      TestBed.configureTestingModule({
+        declarations: [TvShowListAiringTodayComponent],
+      }).compileComponents();
+    })
+  );
 
   beforeEach(() => {
     fixture = TestBed.createComponent(TvShowListAiringTodayComponent);

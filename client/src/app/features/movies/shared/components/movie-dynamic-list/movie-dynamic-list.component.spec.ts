@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { MovieDynamicListComponent } from './movie-dynamic-list.component';
 
@@ -6,11 +6,13 @@ describe('MovieDynamicListComponent', () => {
   let component: MovieDynamicListComponent;
   let fixture: ComponentFixture<MovieDynamicListComponent>;
 
-  beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      declarations: [MovieDynamicListComponent],
-    }).compileComponents();
-  }));
+  beforeEach(
+    waitForAsync(() => {
+      TestBed.configureTestingModule({
+        declarations: [MovieDynamicListComponent],
+      }).compileComponents();
+    })
+  );
 
   beforeEach(() => {
     fixture = TestBed.createComponent(MovieDynamicListComponent);

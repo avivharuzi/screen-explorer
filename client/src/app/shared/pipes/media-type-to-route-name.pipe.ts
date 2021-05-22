@@ -16,7 +16,7 @@ export class MediaTypeToRouteNamePipe implements PipeTransform {
       case MediaType.Person:
         return APP_ROUTES.PEOPLE.self;
       default:
-        return;
+        return '';
     }
   }
 }

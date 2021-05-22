@@ -55,9 +55,9 @@
                 <div class="form-group">
                   <select class="form-control" id="season" aria-label="Select Season" [(ngModel)]="seasonId" (change)="onSeasonSelect()">
                     <option value="" selected disabled>Select Season</option>
-                    <option [value]="season.id" *ngFor="let season of tvShowDetail.seasons; trackBy: trackBySeason">{{
-                      season.name
-                    }}</option>
+                    <option [value]="season.id" *ngFor="let season of tvShowDetail.seasons; trackBy: trackBySeason">
+                      {{ season.name }}
+                    </option>
                   </select>
                 </div>
               </div>
