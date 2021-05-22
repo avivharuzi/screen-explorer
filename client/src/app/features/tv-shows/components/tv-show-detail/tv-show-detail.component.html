@@ -20,7 +20,11 @@
       <app-hero-stats
         [date]="tvShowDetail.first_air_date"
         [genres]="tvShowDetail.genres"
-        [runtime]="(tvShowDetail?.episode_run_time)[0]"
+        [runtime]="
+          tvShowDetail.episode_run_time &&
+          tvShowDetail.episode_run_time.length > 0 &&
+          tvShowDetail.episode_run_time[0]
+        "
       ></app-hero-stats>
     </div>
     <div class="mb-4">
